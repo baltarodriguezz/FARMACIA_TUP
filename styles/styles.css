@@ -1,0 +1,31 @@
+.section1{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 200px;
+}
+
+.div-section1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+.img-section1{
+    width: 80px;
+    height: 80px;
+}
+
+.li-section1{
+    list-style: none;
+    font-size: 16px;
+    font-family: 'Tituto';
+}
+
+@font-face {
+    font-family: 'Tituto';
+    src: url(../BodoniModa-VariableFont_opsz\,wght.ttf) format('truetype');
+}
