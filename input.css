@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'Titulos';
+  src: url('/assets/fonts/PlayfairDisplay-Regular.ttf')
+    format('truetype');
+}
+
+@theme {
+  /* Colores */
+  --color-primary: #0033cc;
+  --color-secondary: #0066ff;
+
+  /* Tipografía */
+  --font-family-base: 'Titulos';
+}
+
+
+.styles_li {
+  @apply text-xs font-semibold text-gray-400 font-family-base transition-colors duration-300 hover:text-blue-400;
+}
+
+.li_titulos{
+  @apply text-xl font-semibold text-blue-50 font-family-base transition-colors duration-300 hover:text-blue-400 text-shadow-md text-shadow-black;
+}
