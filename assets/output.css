@@ -313,7 +313,7 @@
 }
 @font-face {
   font-family: 'Titulos';
-  src: url('/assets/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  src: url('assets/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
 }
 .styles_li {
   font-family: var(--font-family-base);
