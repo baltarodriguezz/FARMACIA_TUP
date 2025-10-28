@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmacia</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
     <link rel="stylesheet" href="assets/output.css">
 </head>
 <body>
@@ -44,98 +45,148 @@
             <!-- Menú pequeño -->
             <ul id="menu-mobile" class="flex flex-col gap-10 items-center lg:hidden absolute top-20 h-full right-0 bg-[#275c74] py-10 px-8 transform translate-x-full opacity-0 transition-all duration-500 ease-in-out" style="width: 60%;">
                 <li class="flex gap-2 items-center">
-                    <a id="btn_inicio" class="styles_li cursor-pointer">INICIO</a>
+                    <a id="btn_inicio" class="styles_li cursor-pointer active">Inicio</a>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a id="btn-categorias" class="styles_li cursor-pointer">MEDICAMENTOS</a>
-                    <img class="w-3 h-3 red" src="assets/img/icons8-adelante-50.png" alt="">
+                    <a id="btn-categorias" class="styles_li cursor-pointer">Medicamentos</a>
+                    <img class="w-3 h-3" src="assets/img/icons8-adelante-50.png" alt="">
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a id="btn-perfumeria" class="styles_li cursor-pointer">DERMOCOSMETICA</a>
-                    <img class="w-3 h-3 red" src="assets/img/icons8-adelante-50.png" alt="">
+                    <a id="btn-perfumeria" class="styles_li cursor-pointer">Dermocosmetica</a>
+                    <img class="w-3 h-3" src="assets/img/icons8-adelante-50.png" alt="">
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a id="btn-productos" class="styles_li cursor-pointer">PERFUMES</a>
-                    <img class="w-3 h-3 red" src="assets/img/icons8-adelante-50.png" alt="">
+                    <a id="btn-productos" class="styles_li cursor-pointer">Perfumes</a>
+                    <img class="w-3 h-3" src="assets/img/icons8-adelante-50.png" alt="">
                 </li>
                 <li class="li_contacto">
                     <img src="assets/img/icons8-llamada-entrante-50(1).png" alt="teléfono">
-                    <p>+3576 12679812</p>
+                    <p class="text-white">+3576 12679812</p>
                 </li>
                 <button class="btn_moderno">Reservar cita</button>
             </ul>
             <!-- Menú Categorias -->
             <ul id="menu-mobile2" class="flex flex-col gap-4 items-center lg:hidden absolute top-20 h-full right-0 bg-[#275c74] py-10 px-8 transform translate-x-full opacity-0 transition-all duration-500 ease-in-out" style="width: 60%;">
                 <li class="flex gap-2 items-center">
-                    <a class="li_volver cursor-pointer" id="btn-volver1">⬅ VOLVER</a>
+                    <a class="li_volver cursor-pointer" id="btn-volver1">⬅ Volver</a>
                 </li>
                 <li class="flex gap-2 items-center">
                     <H2 class="li_titulos ">MEDICAMENTOS</H2>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">ANALGESTICOS</a>
+                    <a class="styles_li m-3" href="">Analgesticos</a>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">VITAMINAS</a>
+                    <a class="styles_li m-3" href="">Vitaminas</a>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">ANTIBIOTICOS</a>
+                    <a class="styles_li m-3" href="">Antibioticos</a>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">ANTIINFLAMATORIOS</a>
+                    <a class="styles_li m-3" href="">Antiinflamatorios</a>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">DIGESTIVOS</a>
+                    <a class="styles_li m-3" href="">Digestivos</a>
                 </li>
             </ul>
             <!-- Menú Perfumes -->
             <ul id="menu-mobile3" class="flex flex-col gap-4 items-center lg:hidden absolute top-20 h-full right-0 bg-[#275c74] py-10 px-8 transform translate-x-full opacity-0 transition-all duration-500 ease-in-out" style="width: 60%;">
                 <li class="flex gap-2 items-center">
-                    <a class="li_volver cursor-pointer" id="btn-volver2">⬅ VOLVER</a>
+                    <a class="li_volver cursor-pointer" id="btn-volver2">⬅ Volver</a>
                 </li>
                 <li class="flex gap-2 items-center">
                     <H2 class="li_titulos ">DERMOCOSMETICA</H2>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">CREMAS FACIALES</a>
+                    <a class="styles_li m-3" href="">Cremas Faciales</a>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">PROTECTORES SOLARES</a>
+                    <a class="styles_li m-3" href="">Protectores Solares</a>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">LIMPIEZA FACIAL</a>
+                    <a class="styles_li m-3" href="">Limpieza Facial</a>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">ANTI-EDAD</a>
-                </li>
-                <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">TRATAMIENTO-CORPORAL</a>
+                    <a class="styles_li m-3" href="">Anti-Edad</a>
                 </li>
             </ul>
             <!-- Menú Productos -->
             <ul id="menu-mobile4" class="flex flex-col gap-4 items-center lg:hidden absolute top-20 h-full right-0 bg-[#275c74] py-10 px-8 transform translate-x-full opacity-0 transition-all duration-500 ease-in-out" style="width: 60%;">
                 <li class="flex gap-2 items-center">
-                    <a class="li_volver cursor-pointer" id="btn-volver3">⬅ VOLVER</a>
+                    <a class="li_volver cursor-pointer" id="btn-volver3">⬅ Volver</a>
                 </li>
                 <li class="flex gap-2 items-center">
                     <H2 class="li_titulos ">PERFUMES</H2>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">PERFUMES HOMBRES</a>
+                    <a class="styles_li m-3" href="">Perfumes Hombres</a>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">PERFUMES MUJER</a>
+                    <a class="styles_li m-3" href="">Perfumes Mujer</a>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">PERFUMES UNISEX</a>
+                    <a class="styles_li m-3" href="">Perfumes Unisex</a>
                 </li>
                 <li class="flex gap-2 items-center">
-                    <a class="styles_li m-3" href="">COLONIAS</a>
+                    <a class="styles_li m-3" href="">Colonias</a>
                 </li>
             </ul>
         </nav>      
     </header>
-    <main></main>
+    <main>
+        <section class="section1">
+            <div class="flex m-3 flex-wrap">
+                <div class="flex flex-col gap-2 justify-start">
+                    <h2 class="font-bold text-4xl font-family-base">Tu salud es nuestra prioridad</h2>
+                    <p class="font-family-base text-[18px]">Farmacia de confianza con más de 25 años de experiencia. Atención personalizada, productos de calidad y servicios profesionales para toda la familia.</p>
+                    <div class="flex mt-5  bg-[#12b1be] w-full rounded-xl justify-center items-center gap-2 w-40 p-3">
+                        <button class="font-family-base text-white cursor-pointer">Ver Productos</button>
+                        <img class="w-5 h-5" src="assets/img/icons8-flecha-24(2).png" alt="">
+                    </div>
+                    <div class="flex w-full w-full justify-center items-center gap-2 p-3 rounded-xl bg-white  shadow-black shadow-lg">
+                        <button class="font-family-base text-black cursor-pointer">Contactar Ahora</button>
+                    </div>
+                    <div class="flex mt-10 justify-start m-3.5 gap-3 items-center">
+                        <div class="w-10 h-10 flex rounded-md justify-center items-center bg-[#12B1BE33]">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256">
+                                <g fill="#12b1be" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M16,4c-6.61719,0 -12,5.38281 -12,12c0,6.61719 5.38281,12 12,12c6.61719,0 12,-5.38281 12,-12c0,-6.61719 -5.38281,-12 -12,-12zM16,6c5.53516,0 10,4.46484 10,10c0,5.53516 -4.46484,10 -10,10c-5.53516,0 -10,-4.46484 -10,-10c0,-5.53516 4.46484,-10 10,-10zM15,8v9h7v-2h-5v-7z"></path></g></g>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold font-family-base">Horario Amplio</h4>
+                            <p class="text-xs text-gray-500">Lun-Sáb 8:00-22:00</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-start m-3.5 gap-3 items-center">
+                        <div class="w-10 h-10 flex rounded-md justify-center items-center bg-[#12B1BE33]">
+                            <img src="assets/img/icons8-me-gusta-24(1).png" alt="">
+                        </div>
+                        <div>
+                            <h4 class="font-bold font-family-base">Descuentos con Obras Sociales</h4>
+                            <p class="text-xs text-gray-500">Beneficios exclusivos para afiliados</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-start m-3.5 gap-3 items-center">
+                        <div class="w-10 h-10 flex rounded-md justify-center items-center bg-[#12B1BE33]">
+                            <img src="assets/img/icons8-tarjeta-50(1).png" class="w-7 h-7 alt="">
+                        </div>
+                        <div>
+                            <h4 class="font-bold font-family-base">Medios de Pago Flexibles</h4>
+                            <p class="text-xs text-gray-500">Aceptamos débito, crédito y billeteras virtuales</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative m-3 mt-5">
+                    <img src="assets/img/modern-pharmacy-interior-with-professional-pharmac.png" 
+                    class="w-full h-auto rounded-2xl" alt="Imagen de farmacia">
+                    <div class="absolute bottom-[-20px] right-5 bg-white rounded-2xl shadow-lg px-5 py-3">
+                        <h3 class="text-3xl font-bold text-[#009FB7]">25+</h3>
+                        <p class="text-sm text-gray-700">Años de experiencia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer></footer>
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
