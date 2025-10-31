@@ -19,7 +19,7 @@
 
 .styles_li {
   @apply font-semibold text-white font-family-base transition-all duration-300 
-         hover:text-[#19e6f7];
+         hover:text-[#19e6f7] flex justify-start gap-3 items-center;
 }
 
 .li_titulos{
@@ -42,7 +42,4 @@
 
 .btn_moderno {
     @apply px-5 py-2 rounded-full cursor-pointer border-0 bg-blue-950 text-white font-family-base;
-}
-.active {
-    @apply text-blue-950;
 }
