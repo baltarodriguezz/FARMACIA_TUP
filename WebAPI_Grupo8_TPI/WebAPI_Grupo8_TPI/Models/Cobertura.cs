@@ -23,7 +23,7 @@ public partial class Cobertura
 
     public virtual Localidad IdLocalidadNavigation { get; set; }
 
-    public virtual Mes IdMesNavigation { get; set; }
+    public virtual Meses IdMesNavigation { get; set; }
 
     public virtual ObrasSociale IdObraSocialNavigation { get; set; }
 

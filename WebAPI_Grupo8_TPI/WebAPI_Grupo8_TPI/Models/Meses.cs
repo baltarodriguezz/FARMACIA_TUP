@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace WebAPI_Grupo8_TPI.Models;
 
-public partial class Mes
+public partial class Meses
 {
     public int IdMes { get; set; }
 
