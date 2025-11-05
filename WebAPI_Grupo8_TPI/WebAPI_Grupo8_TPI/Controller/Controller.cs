@@ -21,7 +21,7 @@ public class CarritoController : ControllerBase
         try
         {
             await _service.VaciarCarritoAsync(idCliente);
-            return NoContent(); // 204
+            return Ok("Carrito vaciado correctamente.");
         }
         catch (Exception ex)
         {

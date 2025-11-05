@@ -14,8 +14,23 @@ namespace WebAPI_Grupo8_TPI.Repositories.Implementation
         }
         public async Task AgregarOAumentarAsync(int idCliente, int idSuministro, int cantidad)
         {
-            await _context.Database.ExecuteSqlRawAsync("EXEC Agregar_o_Aumentar @p0, @p1, @p2", idCliente, idSuministro, cantidad);
+            var existeCliente = await _context.Clientes.AnyAsync(c => c.IdCliente == idCliente);
+            if (!existeCliente)
+                throw new Exception("El cliente especificado no existe.");
+
+            var suministro = await _context.Suministros
+                .FirstOrDefaultAsync(s => s.IdSuministro == idSuministro);
+
+            if (suministro == null)
+                throw new Exception("El suministro especificado no existe.");
+
+            if (cantidad <= 0)
+                throw new Exception("La cantidad debe ser mayor que cero.");
+
+            await _context.Database.ExecuteSqlAsync(
+                $"EXEC Agregar_o_Aumentar @id_cliente = {idCliente}, @id_suministro = {idSuministro}, @cantidad = {cantidad}");
         }
+        
         public async Task<List<CarritoDTO>> ListarPorClienteAsync(int idCliente)
         {
             var lista = new List<CarritoDTO>();
