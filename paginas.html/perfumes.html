@@ -14,7 +14,8 @@
   <!-- Tailwind compilado -->
   <link rel="stylesheet" href="../assets/output.css">
 
-  <!-- Flowbite -->
+  <!-- Flowbite CSS y JS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 </head>
 
@@ -105,18 +106,20 @@
     </section>
 
     <!--  CARRUSEL FLOWBITE -->
-    <div id="carousel-perfumes" class="relative w-full max-w-3xl mx-auto" data-carousel="slide">
-      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-          <img src="../assets/img/carrusel 3.webp" class="absolute block w-full h-full object-cover" alt="Perfume 1">
-        </div>
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img src="../assets/img/carrusel 2.webp" class="absolute block w-full h-full object-cover" alt="Perfume 2">
-        </div>
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img src="../assets/img/3 carrusel.webp" class="absolute block w-full h-full object-cover" alt="Perfume 3">
-        </div>
-      </div>
+   <div id="carousel-perfumes" class="relative w-full max-w-3xl mx-auto" data-carousel="slide">
+  <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+      <img src="../assets/img/3carrusel.webp" class="absolute block w-full h-full object-cover" alt="Perfume 1">
+    </div>
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="../assets/img/carrusel2.webp" class="absolute block w-full h-full object-cover" alt="Perfume 2">
+    </div>
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="../assets/img/3carrusel.webp" class="absolute block w-full h-full object-cover" alt="Perfume 3">
+    </div>
+  </div>
+</div>
+
 
       <!-- Flechas -->
       <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
@@ -197,6 +200,7 @@
     </div>
     <p class="text-center text-xs text-gray-300 mt-4">© 2025 Farmacia Luz. Todos los derechos reservados.</p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 
   <script src="../index.js"></script>
 </body>
