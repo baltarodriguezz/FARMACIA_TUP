@@ -1,0 +1,169 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\farmacia\\controllers\\suministrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:controllers\\suministrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\farmacia\\services\\implementations\\suministroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:services\\implementations\\suministroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\farmacia\\services\\interfaces\\isuministroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:services\\interfaces\\isuministroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\farmacia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\farmacia\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\farmacia\\dtos\\suministrodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:dtos\\suministrodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\farmacia\\repositories\\implementations\\suministrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:repositories\\implementations\\suministrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\farmacia\\repositories\\interfaces\\isuministrosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:repositories\\interfaces\\isuministrosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\farmacia\\models\\tpi_farmaciacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:models\\tpi_farmaciacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SuministroController.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Controllers\\SuministroController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SuministroController.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Controllers\\SuministroController.cs",
+              "RelativeToolTip": "Controllers\\SuministroController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:50:59.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAC8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:07:33.169Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SuministroService.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Services\\Implementations\\SuministroService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\SuministroService.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Services\\Implementations\\SuministroService.cs",
+              "RelativeToolTip": "Services\\Implementations\\SuministroService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:42:35.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ISuministroService.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Services\\Interfaces\\ISuministroService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ISuministroService.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Services\\Interfaces\\ISuministroService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ISuministroService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:41:56.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SuministroRepository.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Repositories\\Implementations\\SuministroRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\SuministroRepository.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Repositories\\Implementations\\SuministroRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\SuministroRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:39:00.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SuministroDTO.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\DTOs\\SuministroDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\SuministroDTO.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\DTOs\\SuministroDTO.cs",
+              "RelativeToolTip": "DTOs\\SuministroDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:36:37.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAB4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-09T13:08:58.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ISuministrosRepository.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Repositories\\Interfaces\\ISuministrosRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ISuministrosRepository.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Repositories\\Interfaces\\ISuministrosRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ISuministrosRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:11:57.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "tpi_farmaciaContext.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Models\\tpi_farmaciaContext.cs",
+              "RelativeDocumentMoniker": "Models\\tpi_farmaciaContext.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\FARMACIA\\Models\\tpi_farmaciaContext.cs",
+              "RelativeToolTip": "Models\\tpi_farmaciaContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:02:15.578Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
