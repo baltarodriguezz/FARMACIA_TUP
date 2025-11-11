@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrar Productos - Farmacia Luz</title>
+  <link rel="stylesheet" href="../assets/output.css" />
+</head>
+<body class="bg-gray-100 flex min-h-screen font-sans">
+
+  <!-- 🔹 SIDEBAR -->
+  <aside class="w-64 bg-[#275c74] text-white flex flex-col justify-between">
+    <div>
+      <div class="p-6 border-b border-white/20">
+        <h2 class="text-2xl font-bold text-center">Admin Farmacia</h2>
+      </div>
+      <nav class="flex flex-col gap-2 p-4">
+        <a href="index.html" class="py-2 px-3 rounded hover:bg-[#12b1be] transition">🏠 Dashboard</a>
+        <a href="productos.html" class="py-2 px-3 bg-[#12b1be] rounded font-semibold">🧴 Productos</a>
+        <a href="clientes.html" class="py-2 px-3 rounded hover:bg-[#12b1be] transition">👥 Clientes</a>
+        <a href="ventas.html" class="py-2 px-3 rounded hover:bg-[#12b1be] transition">🧾 Ventas</a>
+      </nav>
+    </div>
+    <div class="p-4 text-center border-t border-white/20 text-sm opacity-80">
+      © 2025 Farmacia Luz
+    </div>
+  </aside>
+
+  <!-- 🔹 CONTENIDO PRINCIPAL -->
+  <main class="flex-1 p-8">
+
+    <!-- Encabezado -->
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-3xl font-bold text-[#275c74]">Gestión de Productos</h1>
+      <button id="btnNuevo" class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white px-4 py-2 rounded-lg transition">
+        ➕ Nuevo Producto
+      </button>
+    </div>
+
+    <!-- Tabla -->
+    <div class="overflow-x-auto bg-white rounded-xl shadow-md">
+      <table class="min-w-full border-collapse text-sm text-left">
+        <thead class="bg-[#275c74] text-white">
+          <tr>
+            <th class="p-3">ID</th>
+            <th class="p-3">Nombre</th>
+            <th class="p-3">Precio</th>
+            <th class="p-3">Stock</th>
+            <th class="p-3">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaProductos" class="divide-y">
+          <!-- JS inyectará filas -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Modal (Agregar / Editar) -->
+    <div id="modalProducto" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+      <div class="bg-white rounded-xl p-6 w-96 shadow-xl">
+        <h2 id="tituloModal" class="text-xl font-bold text-[#275c74] mb-4">Nuevo Producto</h2>
+        <form id="formProducto" class="flex flex-col gap-3">
+          <input id="nombre" placeholder="Nombre del producto" class="border rounded p-2">
+          <input id="precio" placeholder="Precio" type="number" class="border rounded p-2">
+          <input id="stock" placeholder="Stock" type="number" class="border rounded p-2">
+          <textarea id="descripcion" placeholder="Descripción" class="border rounded p-2"></textarea>
+          <div class="flex justify-end gap-2 mt-3">
+            <button type="button" id="btnCancelar" class="px-4 py-2 rounded border border-gray-400 hover:bg-gray-100">Cancelar</button>
+            <button type="submit" class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white px-4 py-2 rounded">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // ==================== VARIABLES ====================
+    const modal = document.getElementById("modalProducto");
+    const btnNuevo = document.getElementById("btnNuevo");
+    const btnCancelar = document.getElementById("btnCancelar");
+    const form = document.getElementById("formProducto");
+    const tabla = document.getElementById("tablaProductos");
+    const tituloModal = document.getElementById("tituloModal");
+
+    let productos = [
+      { id: 1, nombre: "Ibuprofeno 400mg", precio: 2500, stock: 30 },
+      { id: 2, nombre: "Paracetamol 500mg", precio: 1900, stock: 45 },
+      { id: 3, nombre: "Omeprazol 20mg", precio: 3200, stock: 20 }
+    ];
+
+    let productoEditando = null;
+
+    // ==================== FUNCIONES ====================
+
+    function renderTabla() {
+      tabla.innerHTML = "";
+      productos.forEach(p => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td class="p-3">${p.id}</td>
+          <td class="p-3">${p.nombre}</td>
+          <td class="p-3">$${p.precio}</td>
+          <td class="p-3">${p.stock}</td>
+          <td class="p-3 flex gap-2">
+            <button onclick="editar(${p.id})" class="text-blue-600 hover:underline">Editar</button>
+            <button onclick="eliminar(${p.id})" class="text-red-600 hover:underline">Eliminar</button>
+          </td>
+        `;
+        tabla.appendChild(tr);
+      });
+    }
+
+    function abrirModal(titulo) {
+      tituloModal.textContent = titulo;
+      modal.classList.remove("hidden");
+    }
+
+    function cerrarModal() {
+      modal.classList.add("hidden");
+      form.reset();
+      productoEditando = null;
+    }
+
+    // ==================== EVENTOS ====================
+    btnNuevo.addEventListener("click", () => abrirModal("Nuevo Producto"));
+    btnCancelar.addEventListener("click", cerrarModal);
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nombre = form.nombre.value.trim();
+      const precio = parseFloat(form.precio.value);
+      const stock = parseInt(form.stock.value);
+
+      if (!nombre || isNaN(precio) || isNaN(stock)) {
+        alert("Por favor, complete todos los campos correctamente.");
+        return;
+      }
+
+      if (productoEditando) {
+        // Actualizar producto existente
+        productoEditando.nombre = nombre;
+        productoEditando.precio = precio;
+        productoEditando.stock = stock;
+      } else {
+        // Crear producto nuevo
+        const nuevo = {
+          id: productos.length + 1,
+          nombre,
+          precio,
+          stock
+        };
+        productos.push(nuevo);
+      }
+
+      renderTabla();
+      cerrarModal();
+    });
+
+    // ==================== FUNCIONES GLOBALES ====================
+    window.editar = (id) => {
+      const prod = productos.find(p => p.id === id);
+      if (!prod) return;
+      productoEditando = prod;
+      form.nombre.value = prod.nombre;
+      form.precio.value = prod.precio;
+      form.stock.value = prod.stock;
+      abrirModal("Editar Producto");
+    };
+
+    window.eliminar = (id) => {
+      if (confirm("¿Seguro que deseas eliminar este producto?")) {
+        productos = productos.filter(p => p.id !== id);
+        renderTabla();
+      }
+    };
+
+    // ==================== INICIO ====================
+    renderTabla();
+  </script>
+
+</body>
+</html>
