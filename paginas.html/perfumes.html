@@ -14,79 +14,86 @@
   <!-- Tailwind compilado -->
   <link rel="stylesheet" href="../assets/output.css">
 
-  <!-- Flowbite CSS y JS -->
+  <!-- Flowbite CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 </head>
 
-<body class="overflow-x-hidden bg-gray-50">
+<body class="overflow-x-hidden  bg-[#ebfafe]">
 
   <!-- HEADER -->
-  <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
-    <div class="flex justify-between items-center py-2 px-4">
-      <!-- Logo -->
-      <a href="../index.html">
-        <img src="../assets/img/logo.png" class="w-16 h-16" alt="Logo Farmacia">
-      </a>
+ <!-- ====================================================== -->
+<!-- ======================= NAVBAR NUEVO ================== -->
+<!-- ====================================================== -->
+<header class="fixed top-0 left-0 w-full bg-white shadow z-50">
+  <div class="flex justify-between items-center p-3 px-5">
 
-      <!-- Menú grande -->
-      <nav class="hidden lg:flex gap-10 text-base font-medium text-[#275c74]">
-                <a href="../index.html" class="hover:text-[#12b1be] transition-colors duration-300">Inicio</a>
-                <a href="../paginas.html/medicamentos.html" class="text-[#12b1be] font-semibold transition-colors duration-300">Medicamentos</a>
-                <a href="../paginas.html/perfumes.html" class="hover:text-[#12b1be] transition-colors duration-300">Perfumes</a>
-                <a href="../paginas.html/cuidado-personal.html" class="hover:text-[#12b1be] transition-colors duration-300">Cuidado Personal</a>
-                <a href="../paginas.html/dermocomestica.html" class="hover:text-[#12b1be] transition-colors duration-300">Dermocosmética</a>
-                <a href="../paginas.html/bebes.html" class="hover:text-[#12b1be] transition-colors duration-300">Bebés</a>
-            </nav>
+    <!-- LOGO + NOMBRE -->
+    <a href="../index.html" class="flex items-center gap-2">
+      <img src="../assets/img/logo.png" class="w-8 h-8" alt="logo">
+      <span class="text-lg font-semibold text-[#275c74]">Farmacia La Mano del Momo</span>
+    </a>
 
-      <!-- Íconos -->
-      <div class="flex items-center gap-4">
-        <img src="../assets/img/icons8-carrito-de-compras-50.png" class="w-6 h-6 cursor-pointer" alt="Carrito">
-        <img src="../assets/img/icons8-usuario-24.png" alt="Usuario" class="cursor-pointer hover:opacity-70 transition-opacity">
+    <!-- MENU DESKTOP -->
+    <nav class="hidden lg:flex gap-10 text-base font-medium text-[#275c74]">
+      <a href="../index.html" class="hover:text-[#12b1be] transition">Inicio</a>
+      <a href="../paginas.html/perfumes.html" class="hover:text-[#12b1be] transition">Perfumes</a>
+      <a href="../paginas.html/cuidado-personal.html" class="hover:text-[#12b1be] transition">Cuidado Personal</a>
+      <a href="../paginas.html/dermocomestica.html" class="text-[#12b1be] font-semibold border-b-2 border-[#12b1be] pb-1">Dermocosmética</a>
+      <a href="../paginas.html/medicamentos.html" class="hover:text-[#12b1be] transition">Medicamentos</a>
+      <a href="../paginas.html/bebes.html" class="hover:text-[#12b1be] transition">Bebés</a>
+    </nav>
 
-        <!-- Botón menú móvil -->
-        <button id="btnAbrir" class="lg:hidden">
+    <!-- ICONOS -->
+    <div class="flex items-center gap-4">
+      <img src="../assets/img/icons8-carrito-de-compras-50.png" class="w-6" alt="carrito">
+      <img src="../assets/img/icons8-usuario-24.png" class="w-6" alt="usuario">
+<button id="btnAbrir" class="lg:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 50 50">
-            <path d="M 3 9 A 1 1 0 1 0 3 11 L 47 11 A 1 1 0 1 0 47 9 L 3 9 z M 3 24 A 1 1 0 1 0 3 26 L 47 26 A 1 1 0 1 0 47 24 L 3 24 z M 3 39 A 1 1 0 1 0 3 41 L 47 41 A 1 1 0 1 0 47 39 L 3 39 z"></path>
+            <path d="M3 9a1 1 0 1 0 0 2h44a1 1 0 1 0 0-2H3zm0 15a1 1 0 1 0 0 2h44a1 1 0 1 0 0-2H3zm0 15a1 1 0 1 0 0 2h44a1 1 0 1 0 0-2H3z"/>
           </svg>
         </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- MENÚ MÓVIL -->
-  <div id="menuOffcanvas" class="shadow-lg shadow-black/30 fixed top-0 right-0 h-full w-3/4 max-w-sm bg-[#275c74] text-white transform translate-x-full transition-transform duration-500 ease-in-out z-[999] flex flex-col justify-between">
-    <div>
-      <div class="flex justify-between items-center p-5 border-b border-white/20">
-        <h2 class="li_titulos">Menú</h2>
-        <button id="btnCerrar">
-          <img src="../assets/img/icons8-x-50.png" class="h-6.5 w-8" alt="cerrar">
-        </button>
-      </div>
-
-            <ul class="flex flex-col gap-6 p-6 text-lg">
-                <li class="styles_li"><a href="../index.html" class="hover:text-[#12b1be]">Inicio</a></li>
-                <li class="styles_li"><a href="../paginas.html/medicamentos.html" class="text-[#12b1be] font-semibold">Medicamentos</a></li>
-                <li class="styles_li"><a href="../paginas.html/perfumes.html" class="hover:text-[#12b1be]">Perfumes</a></li>
-                <li class="styles_li"><a href="../paginas.html/cuidado-personal.html" class="hover:text-[#12b1be]">Cuidado Personal</a></li>
-                <li class="styles_li"><a href="dermocomestica.html" class="hover:text-[#12b1be]">Dermocosmética</a></li>
-                <li class="styles_li"><a href="../paginas.html/bebes.html" class="hover:text-[#12b1be]">Bebés</a></li>
-            </ul>
-
-      <div class="flex min-w-4/5 m-5 justify-center items-center gap-2 p-3 rounded-xl bg-white shadow-black shadow-lg">
-        <button class="font-family-base text-black cursor-pointer">Contactar Ahora</button>
-      </div>
-      <div class="flex min-w-4/5 m-5 justify-center items-center gap-2 p-3 rounded-xl bg-[#12b1be] shadow-black shadow-lg">
-        <button class="font-family-base text-black cursor-pointer">Reservar Cita</button>
-      </div>
-      <div class="text-center text-white/80 text-sm mt-4 italic">
-        <p>“Tu salud, nuestra prioridad.”</p>
-      </div>
     </div>
 
-    <footer class="bg-[#1e4d5f] text-white text-sm py-7 px-5">
-      <p class="font-semibold mb-2">Dirección:</p>
-      <p class="text-[#cbd5e1] text-xs">Av. Siempre Viva 742, Buenos Aires</p>
+  </div>
+</header>
+
+<!-- ==================== MENU MOVIL ==================== -->
+<div id="menuOffcanvas"
+     class="fixed top-0 right-0 h-full w-72 bg-[#275c74] text-white transform translate-x-full transition-transform duration-500 ease-in-out z-[999] shadow-xl">
+
+  <div class="flex justify-between items-center p-5 border-b border-white/20">
+    <h2 class="text-xl font-semibold">Menú</h2>
+    <button id="btnCerrar">
+      <img src="../assets/img/icons8-x-50.png" class="w-6" alt="cerrar" />
+    </button>
+  </div>
+
+  <ul class="flex flex-col gap-6 p-6 text-lg">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="../paginas.html/perfumes.html">Perfumes</a></li>
+    <li><a href="../paginas.html/cuidado-personal.html">Cuidado Personal</a></li>
+    <li><a href="../paginas.html/dermocomestica.html" class="text-[#12b1be] font-semibold">Dermocosmética</a></li>
+    <li><a href="../paginas.html/medicamentos.html">Medicamentos</a></li>
+    <li><a href="../paginas.html/bebes.html">Bebés</a></li>
+  </ul>
+
+  <div class="p-6 flex flex-col gap-3">
+    <button class="bg-white text-black rounded-lg py-2 font-medium shadow">Contactar Ahora</button>
+    <button class="bg-[#12b1be] text-white rounded-lg py-2 font-medium shadow">Reservar Cita</button>
+  </div>
+</div>
+
+<script>
+document.getElementById("btnAbrir").onclick = () =>
+  menuOffcanvas.classList.remove("translate-x-full");
+document.getElementById("btnCerrar").onclick = () =>
+  menuOffcanvas.classList.add("translate-x-full");
+</script>
+
+<!-- ESPACIADO -->
+<div class="h-5"></div>
+    <footer class="bg-[#1e4d5f] text-white text-sm py-5 px-5">
+      <p class="text-xs text-[#cbd5e1]">Av. Siempre Viva 742, Buenos Aires</p>
       <div class="flex justify-around mt-3">
         <img src="../assets/img/icons8-whatsapp-48.png" class="w-6 h-6" alt="">
         <img src="../assets/img/icons8-facebook-nuevo-48.png" class="w-6 h-6" alt="">
@@ -97,111 +104,239 @@
   </div>
 
   <!-- CONTENIDO PRINCIPAL -->
-  <main class="pt-28 pb-16 px-4">
-    <section class="text-center mb-10">
-      <h1 class="text-4xl font-bold mb-2 text-[#275c74]">Perfumes</h1>
-      <p class="text-gray-600 max-w-2xl mx-auto font-family-base">
-        Descubrí fragancias únicas, exclusivas y elegantes para cada ocasión.  
+  <main class="pt-20 pb-16 px-4">
+    <!-- HERO -->
+    <section class="text-center mb-10 max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-3 text-[#275c74]">Perfumes</h1>
+      <p class="text-gray-600 max-w-2xl mx-auto font-family-base text-sm md:text-base">
+        Descubrí fragancias únicas para cada momento: frescas, intensas, elegantes y exclusivas.
       </p>
     </section>
 
-    <!--  CARRUSEL FLOWBITE -->
-   <div id="carousel-perfumes" class="relative w-full max-w-3xl mx-auto" data-carousel="slide">
-  <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-      <img src="../assets/img/3carrusel.webp" class="absolute block w-full h-full object-cover" alt="Perfume 1">
-    </div>
-    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img src="../assets/img/carrusel2.webp" class="absolute block w-full h-full object-cover" alt="Perfume 2">
-    </div>
-    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img src="../assets/img/3carrusel.webp" class="absolute block w-full h-full object-cover" alt="Perfume 3">
+    <!-- CARRUSEL FLOWBITE -->
+    <section class="mb-14">
+      <div id="carousel-perfumes" class="relative w-full max-w-4xl mx-auto" data-carousel="slide">
+        <!-- Wrapper -->
+        <div class="relative h-56 md:h-96 overflow-hidden rounded-2xl">
+          <!-- Slide 1 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <img src="../assets/img/3carrusel.webp" class="absolute block w-full h-full object-cover" alt="Perfume 1">
+          </div>
+          <!-- Slide 2 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="../assets/img/carrusel2.webp" class="absolute block w-full h-full object-cover" alt="Perfume 2">
+          </div>
+          <!-- Slide 3 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="../assets/img/carrusel1.webp" class="absolute block w-full h-full object-cover" alt="Perfume 3">
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/60 group-hover:bg-white shadow">
+            <svg class="w-4 h-4 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </span>
+        </button>
+        <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/60 group-hover:bg-white shadow">
+            <svg class="w-4 h-4 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </section>
+
+   <!-- 🟦 CARRUSEL DE PERFUMES (FINAL CORREGIDO) -->
+<div id="carousel-perfumes" class="relative w-full max-w-6xl mx-auto py-10" data-carousel="static">
+
+  <div class="relative overflow-hidden">
+    <div class="flex gap-6 px-6 overflow-x-auto no-scrollbar snap-x snap-mandatory">
+
+      <!-- CARD 1 -->
+      <div class="snap-start bg-white border border-gray-200 rounded-xl shadow-sm 
+                  flex-shrink-0 w-64 p-5 hover:shadow-xl transition h-auto">
+        <img src="../assets/img/perfume-01.png" class="w-44 h-44 object-contain mx-auto mb-4" alt="Perfume 1">
+        <h3 class="text-lg font-semibold text-gray-800 leading-tight mb-1">Carolina Herrera 212</h3>
+        <p class="text-sm text-gray-500 mb-2">Eau de Toilette • 100ml</p>
+        <p class="text-xl font-bold text-[#275c74] mb-4">$55.000</p>
+        <button class="border border-[#12b1be] text-[#12b1be] 
+                       hover:bg-[#12b1be] hover:text-white 
+                       font-medium w-full py-2 rounded-lg transition-all
+                       !text-[#12b1be] hover:!text-white">
+          Agregar
+        </button>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="snap-start bg-white border border-gray-200 rounded-xl shadow-sm 
+                  flex-shrink-0 w-64 p-5 hover:shadow-xl transition h-auto">
+        <img src="../assets/img/perfume-02.png" class="w-44 h-44 object-contain mx-auto mb-4" alt="Perfume 2">
+        <h3 class="text-lg font-semibold text-gray-800 leading-tight mb-1">Dior Sauvage</h3>
+        <p class="text-sm text-gray-500 mb-2">Eau de Parfum • 100ml</p>
+        <p class="text-xl font-bold text-[#275c74] mb-4">$68.500</p>
+        <button class="border border-[#12b1be] text-[#12b1be] 
+                       hover:bg-[#12b1be] hover:text-white 
+                       font-medium w-full py-2 rounded-lg transition-all
+                       !text-[#12b1be] hover:!text-white">
+          Agregar
+        </button>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="snap-start bg-white border border-gray-200 rounded-xl shadow-sm 
+                  flex-shrink-0 w-64 p-5 hover:shadow-xl transition h-auto">
+        <img src="../assets/img/perfume-03.png" class="w-44 h-44 object-contain mx-auto mb-4" alt="Perfume 3">
+        <h3 class="text-lg font-semibold text-gray-800 leading-tight mb-1">Paco Rabanne Invictus</h3>
+        <p class="text-sm text-gray-500 mb-2">Eau de Toilette • 100ml</p>
+        <p class="text-xl font-bold text-[#275c74] mb-4">$52.300</p>
+        <button class="border border-[#12b1be] text-[#12b1be] 
+                       hover:bg-[#12b1be] hover:text-white 
+                       font-medium w-full py-2 rounded-lg transition-all
+                       !text-[#12b1be] hover:!text-white">
+          Agregar
+        </button>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="snap-start bg-white border border-gray-200 rounded-xl shadow-sm 
+                  flex-shrink-0 w-64 p-5 hover:shadow-xl transition h-auto">
+        <img src="../assets/img/perfume-04.png" class="w-44 h-44 object-contain mx-auto mb-4" alt="Perfume 4">
+        <h3 class="text-lg font-semibold text-gray-800 leading-tight mb-1">Versace Eros</h3>
+        <p class="text-sm text-gray-500 mb-2">Eau de Parfum • 100ml</p>
+        <p class="text-xl font-bold text-[#275c74] mb-4">$61.900</p>
+        <button class="border border-[#12b1be] text-[#12b1be] 
+                       hover:bg-[#12b1be] hover:text-white 
+                       font-medium w-full py-2 rounded-lg transition-all
+                       !text-[#12b1be] hover:!text-white">
+          Agregar
+        </button>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="snap-start bg-white border border-gray-200 rounded-xl shadow-sm 
+                  flex-shrink-0 w-64 p-5 hover:shadow-xl transition h-auto">
+        <img src="../assets/img/perfume-05.png" class="w-44 h-44 object-contain mx-auto mb-4" alt="Perfume 5">
+        <h3 class="text-lg font-semibold text-gray-800 leading-tight mb-1">Jean Paul Gaultier Le Male</h3>
+        <p class="text-sm text-gray-500 mb-2">Eau de Toilette • 125ml</p>
+        <p class="text-xl font-bold text-[#275c74] mb-4">$59.800</p>
+        <button class="border border-[#12b1be] text-[#12b1be] 
+                       hover:bg-[#12b1be] hover:text-white 
+                       font-medium w-full py-2 rounded-lg transition-all
+                       !text-[#12b1be] hover:!text-white">
+          Agregar
+        </button>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="snap-start bg-white border border-gray-200 rounded-xl shadow-sm 
+                  flex-shrink-0 w-64 p-5 hover:shadow-xl transition h-auto">
+        <img src="../assets/img/perfume-06.png" class="w-44 h-44 object-contain mx-auto mb-4" alt="Perfume 6">
+        <h3 class="text-lg font-semibold text-gray-800 leading-tight mb-1">CH Good Girl</h3>
+        <p class="text-sm text-gray-500 mb-2">Eau de Parfum • 80ml</p>
+        <p class="text-xl font-bold text-[#275c74] mb-4">$72.400</p>
+        <button class="border border-[#12b1be] text-[#12b1be] 
+                       hover:bg-[#12b1be] hover:text-white 
+                       font-medium w-full py-2 rounded-lg transition-all
+                       !text-[#12b1be] hover:!text-white">
+          Agregar
+        </button>
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="snap-start bg-white border border-gray-200 rounded-xl shadow-sm 
+                  flex-shrink-0 w-64 p-5 hover:shadow-xl transition h-auto">
+        <img src="../assets/img/perfume-07.png" class="w-44 h-44 object-contain mx-auto mb-4" alt="Perfume 7">
+        <h3 class="text-lg font-semibold text-gray-800 leading-tight mb-1">YSL Black Opium</h3>
+        <p class="text-sm text-gray-500 mb-2">Eau de Parfum • 90ml</p>
+        <p class="text-xl font-bold text-[#275c74] mb-4">$75.900</p>
+        <button class="border border-[#12b1be] text-[#12b1be] 
+                       hover:bg-[#12b1be] hover:text-white 
+                       font-medium w-full py-2 rounded-lg transition-all
+                       !text-[#12b1be] hover:!text-white">
+          Agregar
+        </button>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="snap-start bg-white border border-gray-200 rounded-xl shadow-sm 
+                  flex-shrink-0 w-64 p-5 hover:shadow-xl transition h-auto">
+        <img src="../assets/img/perfume-08.png" class="w-44 h-44 object-contain mx-auto mb-4" alt="Perfume 8">
+        <h3 class="text-lg font-semibold text-gray-800 leading-tight mb-1">Montblanc Legend</h3>
+        <p class="text-sm text-gray-500 mb-2">Eau de Toilette • 100ml</p>
+        <p class="text-xl font-bold text-[#275c74] mb-4">$48.700</p>
+        <button class="border border-[#12b1be] text-[#12b1be] 
+                       hover:bg-[#12b1be] hover:text-white 
+                       font-medium w-full py-2 rounded-lg transition-all
+                       !text-[#12b1be] hover:!text-white">
+          Agregar
+        </button>
+      </div>
+
     </div>
   </div>
+
+  <!-- Botón Izquierdo -->
+  <button type="button" 
+          class="absolute top-1/2 left-0 -translate-y-1/2 bg-white shadow rounded-full p-2 hover:bg-gray-100" 
+          data-carousel-prev>
+    <svg class="w-4 h-4 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+  </button>
+
+  <!-- Botón Derecho -->
+  <button type="button" 
+          class="absolute top-1/2 right-0 -translate-y-1/2 bg-white shadow rounded-full p-2 hover:bg-gray-100" 
+          data-carousel-next>
+    <svg class="w-4 h-4 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+
 </div>
 
 
-      <!-- Flechas -->
-      <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
-          <svg class="w-4 h-4 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-        </span>
-      </button>
-      <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
-          <svg class="w-4 h-4 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-        </span>
-      </button>
-    </div>
   </main>
 
-  <!-- GRID DE CARDS -->
-<div class="flex flex-wrap justify-center gap-6 p-6">
-
-    <!-- CARD 1 -->
-    <div class="bg-white rounded-2xl w-80 p-5 flex flex-col items-center text-center shadow-md hover:shadow-lg transition">
-        <div class="w-28 h-28 mb-4">
-            <img src="../img/tafirol-500mg-x-30-comprimidos.jpg" alt="Ibuprofeno" class="w-full h-full object-contain">
-        </div>
-        <div class="mb-4">
-            <h2 class="text-lg font-bold text-gray-800 mb-1">Tafirol 400mg</h2>
-            <p class="text-sm text-gray-500">Analgésico y antiinflamatorio de venta libre.</p>
-        </div>
-        <button class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300">
-            Añadir al carrito
-        </button>
-    </div>
-        <div class="bg-white rounded-2xl w-80 p-5 flex flex-col items-center text-center shadow-md hover:shadow-lg transition">
-        <div class="w-28 h-28 mb-4">
-            <img src="./img/tafirol-500mg-x-30-comprimidos.jpg" alt="Ibuprofeno" class="w-full h-full object-contain">
-        </div>
-        <div class="mb-4">
-            <h2 class="text-lg font-bold text-gray-800 mb-1">Tafirol 400mg</h2>
-            <p class="text-sm text-gray-500">Analgésico y antiinflamatorio de venta libre.</p>
-        </div>
-        <button class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300">
-            Añadir al carrito
-        </button>
-    </div>
-        <div class="bg-white rounded-2xl w-80 p-5 flex flex-col items-center text-center shadow-md hover:shadow-lg transition">
-        <div class="w-28 h-28 mb-4">
-            <img src="./img/tafirol-500mg-x-30-comprimidos.jpg" alt="Ibuprofeno" class="w-full h-full object-contain">
-        </div>
-        <div class="mb-4">
-            <h2 class="text-lg font-bold text-gray-800 mb-1">Tafirol 400mg</h2>
-            <p class="text-sm text-gray-500">Analgésico y antiinflamatorio de venta libre.</p>
-        </div>
-        <button class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300">
-            Añadir al carrito
-        </button>
-    </div>
-        <div class="bg-white rounded-2xl w-80 p-5 flex flex-col items-center text-center shadow-md hover:shadow-lg transition">
-        <div class="w-28 h-28 mb-4">
-            <img src="./img/tafirol-500mg-x-30-comprimidos.jpg" alt="Ibuprofeno" class="w-full h-full object-contain">
-        </div>
-        <div class="mb-4">
-            <h2 class="text-lg font-bold text-gray-800 mb-1">Tafirol 400mg</h2>
-            <p class="text-sm text-gray-500">Analgésico y antiinflamatorio de venta libre.</p>
-        </div>
-        <button class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300">
-            Añadir al carrito
-        </button>
-    </div>
-    </div>
-
   <!-- FOOTER -->
-  <footer class="bg-[#1e4d5f] text-white text-sm py-7 px-5 mt-10">
-    <p class="font-semibold mb-2">Dirección:</p>
-    <p class="text-[#cbd5e1] text-xs">Av. Siempre Viva 742, Buenos Aires</p>
-    <div class="flex justify-around mt-3">
-      <img src="../assets/img/icons8-whatsapp-48.png" class="w-6 h-6" alt="">
-      <img src="../assets/img/icons8-facebook-nuevo-48.png" class="w-6 h-6" alt="">
-      <img src="../assets/img/icons8-instagram-48.png" class="w-6 h-6" alt="">
+  <footer class="bg-white py-10 px-6 border-t border-gray-200">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+      <div>
+        <h2 class="text-2xl font-bold mb-3 font-family-base text-[#275c74]">Farmacia Luz</h2>
+        <p class="text-sm text-gray-600">
+          Atención personalizada y productos de calidad para el bienestar de toda la familia.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-3 font-family-base text-[#275c74]">Secciones</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="../index.html" class="hover:text-[#12b1be] transition-colors">Inicio</a></li>
+          <li><a href="../paginas.html/medicamentos.html" class="hover:text-[#12b1be] transition-colors">Medicamentos</a></li>
+          <li><a href="../paginas.html/perfumes.html" class="hover:text-[#12b1be] transition-colors">Perfumes</a></li>
+          <li><a href="../paginas.html/cuidado-personal.html" class="hover:text-[#12b1be] transition-colors">Cuidado Personal</a></li>
+          <li><a href="../paginas.html/bebes.html" class="hover:text-[#12b1be] transition-colors">Bebés</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-3 font-family-base text-[#275c74]">Contacto</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li>Av. Siempre Viva 742, Buenos Aires</li>
+          <li>(011) 4567-8901</li>
+          <li>farmacialuz@gmail.com</li>
+        </ul>
+      </div>
     </div>
-    <p class="text-center text-xs text-gray-300 mt-4">© 2025 Farmacia Luz. Todos los derechos reservados.</p>
+    <div class="border-t border-gray-200 mt-8 pt-4 text-center text-xs text-gray-500">
+      © 2025 Farmacia Luz. Todos los derechos reservados.
+    </div>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 
+  <!-- Flowbite JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
   <script src="../index.js"></script>
 </body>
 </html>
