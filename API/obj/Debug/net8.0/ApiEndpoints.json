@@ -1,5 +1,132 @@
 [
   {
+    "ContainingType": "API_Farmacia.Controllers.CarritoController",
+    "Method": "CrearCarrito",
+    "RelativePath": "api/Carrito",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "API_Farmacia.DTOs.CarritoCreateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.CarritoController",
+    "Method": "Vaciar",
+    "RelativePath": "api/Carrito/{idCarrito}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCarrito",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.CarritoController",
+    "Method": "Checkout",
+    "RelativePath": "api/Carrito/{idCarrito}/checkout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCarrito",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "API_Farmacia.DTOs.CheckoutDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.CarritoController",
+    "Method": "AddItem",
+    "RelativePath": "api/Carrito/{idCarrito}/items",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCarrito",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "API_Farmacia.DTOs.CarritoItemCreateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.CarritoController",
+    "Method": "GetCarrito",
+    "RelativePath": "api/Carrito/cliente/{idCliente}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCliente",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.CarritoController",
+    "Method": "UpdateItem",
+    "RelativePath": "api/Carrito/items/{idItem}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idItem",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "API_Farmacia.DTOs.CarritoItemCreateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.CarritoController",
+    "Method": "DeleteItem",
+    "RelativePath": "api/Carrito/items/{idItem}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idItem",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_Farmacia.Controllers.ClientesController",
     "Method": "Get",
     "RelativePath": "api/Clientes",

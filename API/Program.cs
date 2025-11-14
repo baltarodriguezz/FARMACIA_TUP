@@ -19,6 +19,7 @@ builder.Services.AddScoped<IFacturaService, FacturaService>();
 builder.Services.AddScoped<IFacturaRepository, FacturaRepository>();
 builder.Services.AddScoped<ISuministrosService, SuministrosService>();
 builder.Services.AddScoped<ISuministrosRepository, SuministroRepository>();
+builder.Services.AddScoped<ICarritoService, CarritoService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

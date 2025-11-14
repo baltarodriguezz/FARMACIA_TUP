@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\rama\\farmacia_tup\\api\\models\\farmaciacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:models\\farmaciacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\rama\\farmacia_tup\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\rama\\farmacia_tup\\api\\services\\implementations\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\implementations\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\rama\\farmacia_tup\\api\\services\\interfaces\\icarritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\interfaces\\icarritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\rama\\farmacia_tup\\api\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\rama\\farmacia_tup\\api\\dtos\\checkoutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\checkoutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\rama\\farmacia_tup\\api\\dtos\\carritoitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\carritoitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\rama\\farmacia_tup\\api\\dtos\\carritodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\carritodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\rama\\farmacia_tup\\api\\dtos\\carritoitemcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\carritoitemcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\rama\\farmacia_tup\\api\\dtos\\carritocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\carritocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\rama\\farmacia_tup\\api\\controllers\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,10 +87,6 @@
       "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\rama\\farmacia_tup\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\franc\\onedrive\\desktop\\tpi\\rama\\farmacia_tup\\api\\services\\interfaces\\iclienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\interfaces\\iclienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -86,24 +114,128 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FarmaciaContext.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Models\\FarmaciaContext.cs",
-              "RelativeDocumentMoniker": "Models\\FarmaciaContext.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Models\\FarmaciaContext.cs",
-              "RelativeToolTip": "Models\\FarmaciaContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "CarritoService.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Services\\Implementations\\CarritoService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\CarritoService.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Services\\Implementations\\CarritoService.cs",
+              "RelativeToolTip": "Services\\Implementations\\CarritoService.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAQwIoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T01:33:52.44Z",
+              "WhenOpened": "2025-11-14T02:59:20.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ICarritoService.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Services\\Interfaces\\ICarritoService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ICarritoService.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Services\\Interfaces\\ICarritoService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ICarritoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:56:30.958Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "CarritoController.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Controllers\\CarritoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CarritoController.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Controllers\\CarritoController.cs",
+              "RelativeToolTip": "Controllers\\CarritoController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:43:41.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CheckoutDTO.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\CheckoutDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CheckoutDTO.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\CheckoutDTO.cs",
+              "RelativeToolTip": "DTOs\\CheckoutDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T03:05:10.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CarritoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\CarritoDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CarritoDTO.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\CarritoDTO.cs",
+              "RelativeToolTip": "DTOs\\CarritoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:30:04.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CarritoItemDTO.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\CarritoItemDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CarritoItemDTO.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\CarritoItemDTO.cs",
+              "RelativeToolTip": "DTOs\\CarritoItemDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:30:33.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T23:36:44.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CarritoItemCreateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\CarritoItemCreateDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CarritoItemCreateDTO.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\CarritoItemCreateDTO.cs",
+              "RelativeToolTip": "DTOs\\CarritoItemCreateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:40:51.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CarritoCreateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\CarritoCreateDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CarritoCreateDTO.cs",
+              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\CarritoCreateDTO.cs",
+              "RelativeToolTip": "DTOs\\CarritoCreateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:40:07.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "FacturaService.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Services\\Implementations\\FacturaService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\FacturaService.cs",
@@ -111,12 +243,11 @@
               "RelativeToolTip": "Services\\Implementations\\FacturaService.cs",
               "ViewState": "AgIAAGkAAAAAAAAAAAAowH4AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:13:57.936Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:13:57.936Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "IFacturaService.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Services\\Interfaces\\IFacturaService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IFacturaService.cs",
@@ -124,12 +255,11 @@
               "RelativeToolTip": "Services\\Interfaces\\IFacturaService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T01:07:04.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T01:07:04.802Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "DetalleFacturaPostDTO.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\DetalleFacturaPostDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\DetalleFacturaPostDTO.cs",
@@ -137,12 +267,11 @@
               "RelativeToolTip": "DTOs\\DetalleFacturaPostDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T01:00:56.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T01:00:56.817Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "FacturaPostDTO.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\FacturaPostDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\FacturaPostDTO.cs",
@@ -150,12 +279,11 @@
               "RelativeToolTip": "DTOs\\FacturaPostDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T01:00:11.934Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T01:00:11.934Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "FacturaRepository.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Repositories\\Implementations\\FacturaRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\FacturaRepository.cs",
@@ -163,12 +291,11 @@
               "RelativeToolTip": "Repositories\\Implementations\\FacturaRepository.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAkwDEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:15:45.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:15:45.552Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
               "Title": "DetalleFacturaDTO.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\DetalleFacturaDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\DetalleFacturaDTO.cs",
@@ -176,12 +303,11 @@
               "RelativeToolTip": "DTOs\\DetalleFacturaDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:58:56.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:58:56.315Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "FacturaController.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Controllers\\FacturaController.cs",
               "RelativeDocumentMoniker": "Controllers\\FacturaController.cs",
@@ -189,12 +315,11 @@
               "RelativeToolTip": "Controllers\\FacturaController.cs",
               "ViewState": "AgIAAFYAAAAAAAAAAAAswF8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:35:52.678Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:35:52.678Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 14,
               "Title": "IFacturaRepository.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Repositories\\Interfaces\\IFacturaRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IFacturaRepository.cs",
@@ -202,12 +327,11 @@
               "RelativeToolTip": "Repositories\\Interfaces\\IFacturaRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T01:07:39.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T01:07:39.128Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "FacturaDTO.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\FacturaDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\FacturaDTO.cs",
@@ -215,12 +339,11 @@
               "RelativeToolTip": "DTOs\\FacturaDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:58:44.579Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:58:44.579Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 20,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
@@ -228,12 +351,11 @@
               "RelativeToolTip": "Controllers\\LoginController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T23:51:52.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T23:51:52.557Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 18,
               "Title": "ClientesController.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Controllers\\ClientesController.cs",
               "RelativeDocumentMoniker": "Controllers\\ClientesController.cs",
@@ -241,12 +363,11 @@
               "RelativeToolTip": "Controllers\\ClientesController.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAgwF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T23:43:59.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T23:43:59.954Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 19,
               "Title": "ClienteService.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Services\\Implementations\\ClienteService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\ClienteService.cs",
@@ -254,12 +375,11 @@
               "RelativeToolTip": "Services\\Implementations\\ClienteService.cs",
               "ViewState": "AgIAAGIAAAAAAAAAAAAswHgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T23:41:43.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T23:41:43.503Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 21,
               "Title": "IClienteService.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Services\\Interfaces\\IClienteService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IClienteService.cs",
@@ -267,12 +387,11 @@
               "RelativeToolTip": "Services\\Interfaces\\IClienteService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T23:41:29.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T23:41:29.31Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 22,
               "Title": "ClientesRepository.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Repositories\\Implementations\\ClientesRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\ClientesRepository.cs",
@@ -280,12 +399,11 @@
               "RelativeToolTip": "Repositories\\Implementations\\ClientesRepository.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAAswFwAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T23:39:53.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T23:39:53.716Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "IClientesRepository.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Repositories\\Interfaces\\IClientesRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IClientesRepository.cs",
@@ -293,12 +411,11 @@
               "RelativeToolTip": "Repositories\\Interfaces\\IClientesRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T23:39:34.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T23:39:34.466Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 24,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\DTOs\\LoginDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\LoginDTO.cs",
@@ -306,25 +423,11 @@
               "RelativeToolTip": "DTOs\\LoginDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T23:39:20.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T23:39:20.728Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T23:36:44.919Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 25,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Desktop\\TPI\\Rama\\FARMACIA_TUP\\API\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -332,8 +435,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-13T23:37:46.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T23:37:46.611Z"
             }
           ]
         }
