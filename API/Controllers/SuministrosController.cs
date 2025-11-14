@@ -67,23 +67,12 @@ namespace API_Farmacia.Controllers
         }
         // POST api/<SuministrosController>
         [HttpPost]
-        public IActionResult Post( int id, int codBarra, string descripcion, double preUnitario, int TSuministro, int TVenta, int stock, string urlfoto)
+        public IActionResult Post(SuministroPostDTO suministro)
         {
-            SuministroDTO newSuministro = new SuministroDTO
-            {
-                IdSuministro = id,
-                CodBarra = codBarra,
-                Descripcion = descripcion,
-                PrecioUnitario = preUnitario,
-                IdTipoSuministro = TSuministro,
-                IdTipoVenta = TVenta,
-                Stock = stock,
-                UrlImagen = urlfoto
-            };
-
+            
             try
             {
-                var result = _service.Add(newSuministro);
+                var result = _service.Add(suministro);
                 if (result)
                     return Ok("Suministro agregado con exito");
                 else
@@ -97,21 +86,11 @@ namespace API_Farmacia.Controllers
 
         // PUT api/<SuministrosController>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, int codBarra, string descripcion, double preUnitario, int TSuministro, int TVenta, int stock)
+        public IActionResult Put(SuministroPostDTO suministro , int id)
         {
-            SuministroDTO newSuministro = new SuministroDTO
-            {
-                IdSuministro = id,
-                CodBarra = codBarra,
-                Descripcion = descripcion,
-                PrecioUnitario = preUnitario,
-                IdTipoSuministro = TSuministro,
-                IdTipoVenta = TVenta,
-                Stock = stock
-            };
             try
             {
-                var result = _service.Update(newSuministro);
+                var result = _service.Update(suministro , id);
                 if (result)
                     return Ok("Suministro actualizado con exito");
                 else
@@ -150,6 +129,25 @@ namespace API_Farmacia.Controllers
             catch (Exception)
             {
                 return StatusCode(500, "Error Interno");
+            }
+        }
+
+        // GET api/<SuministroController>/5
+        [HttpGet("tipo/{id}")]
+        public IActionResult GetSuministrosPorTipo(int id)
+        {
+            try
+            {
+                var suministros = _service.GetSuministrosPorTipo(id);
+
+                if (suministros == null || !suministros.Any())
+                    return BadRequest("El ID del tipo de suministro no es válido o no tiene suministros asociados.");
+
+                return Ok(suministros);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
         }
     }

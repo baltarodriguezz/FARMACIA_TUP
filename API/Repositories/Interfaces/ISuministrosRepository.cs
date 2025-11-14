@@ -11,5 +11,6 @@ namespace API_Farmacia.Repositories.Interfaces
         void Delete(int id);
         List<Suministro>? GetProductosMasVendido();
         List<TiposSuministro> tiposSuministros();
+        List<Suministro> GetSuministrosPorTipo(int idTipoSuministro);
     }
 }

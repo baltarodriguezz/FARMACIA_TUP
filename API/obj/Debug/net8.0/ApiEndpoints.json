@@ -306,44 +306,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "codBarra",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "descripcion",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "preUnitario",
-        "Type": "System.Double",
-        "IsRequired": false
-      },
-      {
-        "Name": "TSuministro",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "TVenta",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "stock",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "urlfoto",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "suministro",
+        "Type": "API_Farmacia.DTOs.SuministroPostDTO",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -373,39 +338,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "suministro",
+        "Type": "API_Farmacia.DTOs.SuministroPostDTO",
         "IsRequired": true
       },
       {
-        "Name": "codBarra",
+        "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "descripcion",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "preUnitario",
-        "Type": "System.Double",
-        "IsRequired": false
-      },
-      {
-        "Name": "TSuministro",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "TVenta",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "stock",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -440,6 +380,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.SuministrosController",
+    "Method": "GetSuministrosPorTipo",
+    "RelativePath": "api/Suministros/tipo/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
