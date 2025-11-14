@@ -1,0 +1,247 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-gettiposuministro\\farmacia_tup-gettiposuministro\\farmacia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-gettiposuministro\\farmacia_tup-gettiposuministro\\farmacia\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-gettiposuministro\\farmacia_tup-gettiposuministro\\farmacia\\farmacia.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:farmacia.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-gettiposuministro\\farmacia_tup-gettiposuministro\\farmacia\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-gettiposuministro\\farmacia_tup-gettiposuministro\\farmacia\\efpt.config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:efpt.config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-gettiposuministro\\farmacia_tup-gettiposuministro\\farmacia\\farmacia.csproj.backup.tmp||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:farmacia.csproj.backup.tmp||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-gettiposuministro\\farmacia_tup-gettiposuministro\\farmacia\\repositories\\interfaces\\isuministrosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:repositories\\interfaces\\isuministrosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-gettiposuministro\\farmacia_tup-gettiposuministro\\farmacia\\repositories\\implementations\\suministrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:repositories\\implementations\\suministrorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-gettiposuministro\\farmacia_tup-gettiposuministro\\farmacia\\services\\implementations\\suministroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:services\\implementations\\suministroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-gettiposuministro\\farmacia_tup-gettiposuministro\\farmacia\\dtos\\suministrodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:dtos\\suministrodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-gettiposuministro\\farmacia_tup-gettiposuministro\\farmacia\\controllers\\suministrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:controllers\\suministrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-gettiposuministro\\farmacia_tup-gettiposuministro\\farmacia\\services\\interfaces\\isuministroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:services\\interfaces\\isuministroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-gettiposuministro\\farmacia_tup-gettiposuministro\\farmacia\\models\\tpi_farmaciacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62D487D4-B658-4718-8484-EDB6D74C89DC}|FARMACIA.csproj|solutionrelative:models\\tpi_farmaciacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-14T05:11:05.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FARMACIA.http",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\FARMACIA.http",
+              "RelativeDocumentMoniker": "FARMACIA.http",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\FARMACIA.http",
+              "RelativeToolTip": "FARMACIA.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-11-14T05:07:38.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FARMACIA.csproj.Backup.tmp",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\FARMACIA.csproj.Backup.tmp",
+              "RelativeDocumentMoniker": "FARMACIA.csproj.Backup.tmp",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\FARMACIA.csproj.Backup.tmp",
+              "RelativeToolTip": "FARMACIA.csproj.Backup.tmp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-14T05:07:33.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "efpt.config.json",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\efpt.config.json",
+              "RelativeDocumentMoniker": "efpt.config.json",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\efpt.config.json",
+              "RelativeToolTip": "efpt.config.json",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-14T05:07:21.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SuministroController.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Controllers\\SuministroController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SuministroController.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Controllers\\SuministroController.cs",
+              "RelativeToolTip": "Controllers\\SuministroController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:50:59.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAADAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:07:33.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SuministroService.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Services\\Implementations\\SuministroService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\SuministroService.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Services\\Implementations\\SuministroService.cs",
+              "RelativeToolTip": "Services\\Implementations\\SuministroService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:42:35.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ISuministroService.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Services\\Interfaces\\ISuministroService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ISuministroService.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Services\\Interfaces\\ISuministroService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ISuministroService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:41:56.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SuministroRepository.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Repositories\\Implementations\\SuministroRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\SuministroRepository.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Repositories\\Implementations\\SuministroRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\SuministroRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:39:00.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SuministroDTO.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\DTOs\\SuministroDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\SuministroDTO.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\DTOs\\SuministroDTO.cs",
+              "RelativeToolTip": "DTOs\\SuministroDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:36:37.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-09T13:08:58.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ISuministrosRepository.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Repositories\\Interfaces\\ISuministrosRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ISuministrosRepository.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Repositories\\Interfaces\\ISuministrosRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ISuministrosRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:11:57.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "tpi_farmaciaContext.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Models\\tpi_farmaciaContext.cs",
+              "RelativeDocumentMoniker": "Models\\tpi_farmaciaContext.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\Models\\tpi_farmaciaContext.cs",
+              "RelativeToolTip": "Models\\tpi_farmaciaContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:02:15.578Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
