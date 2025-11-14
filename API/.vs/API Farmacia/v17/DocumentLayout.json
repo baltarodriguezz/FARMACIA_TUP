@@ -1,0 +1,658 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\controllers\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:controllers\\facturacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\dtos\\clientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\clientedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\services\\implementations\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\implementations\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\dtos\\carritoitemcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\carritoitemcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\dtos\\carritodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\carritodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\models\\obrassociale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:models\\obrassociale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\models\\clienteobrasocial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:models\\clienteobrasocial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\models\\contacto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:models\\contacto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\dtos\\facturadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\facturadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\models\\suministro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:models\\suministro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\models\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:models\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\models\\detallesfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:models\\detallesfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\models\\detalleentrega.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:models\\detalleentrega.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\services\\implementations\\facturaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\implementations\\facturaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\controllers\\suministroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:controllers\\suministroscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\services\\implementations\\suministrosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\implementations\\suministrosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\services\\implementations\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\implementations\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\services\\interfaces\\icarritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\interfaces\\icarritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\dtos\\checkoutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\checkoutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\dtos\\carritoitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\carritoitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\dtos\\carritocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\carritocreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\repositories\\implementations\\facturarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:repositories\\implementations\\facturarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\dtos\\detallefacturapostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\detallefacturapostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\dtos\\facturapostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\facturapostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\repositories\\interfaces\\ifacturarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:repositories\\interfaces\\ifacturarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\services\\interfaces\\ifacturaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\interfaces\\ifacturaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\dtos\\detallefacturadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\detallefacturadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\services\\interfaces\\iclienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\interfaces\\iclienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\repositories\\implementations\\clientesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:repositories\\implementations\\clientesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\repositories\\interfaces\\iclientesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:repositories\\interfaces\\iclientesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\maxte\\desktop\\farmacia_tup-rama_franco\\farmacia_tup-rama_franco\\api\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 29,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClienteDTO.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\ClienteDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\ClienteDTO.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\ClienteDTO.cs",
+              "RelativeToolTip": "DTOs\\ClienteDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T10:15:06.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ObrasSociale.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\ObrasSociale.cs",
+              "RelativeDocumentMoniker": "Models\\ObrasSociale.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\ObrasSociale.cs",
+              "RelativeToolTip": "Models\\ObrasSociale.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T10:10:58.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClienteObraSocial.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\ClienteObraSocial.cs",
+              "RelativeDocumentMoniker": "Models\\ClienteObraSocial.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\ClienteObraSocial.cs",
+              "RelativeToolTip": "Models\\ClienteObraSocial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T10:10:30.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Contacto.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\Contacto.cs",
+              "RelativeDocumentMoniker": "Models\\Contacto.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\Contacto.cs",
+              "RelativeToolTip": "Models\\Contacto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T10:10:12.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\Cliente.cs",
+              "RelativeToolTip": "Models\\Cliente.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAYwBEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T10:09:00.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Factura.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\Factura.cs",
+              "RelativeDocumentMoniker": "Models\\Factura.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\Factura.cs",
+              "RelativeToolTip": "Models\\Factura.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T10:01:33.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DetalleEntrega.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\DetalleEntrega.cs",
+              "RelativeDocumentMoniker": "Models\\DetalleEntrega.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\DetalleEntrega.cs",
+              "RelativeToolTip": "Models\\DetalleEntrega.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T10:01:04.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DetallesFactura.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\DetallesFactura.cs",
+              "RelativeDocumentMoniker": "Models\\DetallesFactura.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\DetallesFactura.cs",
+              "RelativeToolTip": "Models\\DetallesFactura.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T09:07:24.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Suministro.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\Suministro.cs",
+              "RelativeDocumentMoniker": "Models\\Suministro.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Models\\Suministro.cs",
+              "RelativeToolTip": "Models\\Suministro.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAqwBkAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T09:06:53.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SuministrosService.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Implementations\\SuministrosService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\SuministrosService.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Implementations\\SuministrosService.cs",
+              "RelativeToolTip": "Services\\Implementations\\SuministrosService.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwCkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T08:53:45.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-14T07:45:45.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SuministrosController.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Controllers\\SuministrosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SuministrosController.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Controllers\\SuministrosController.cs",
+              "RelativeToolTip": "Controllers\\SuministrosController.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T07:45:19.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CarritoService.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Implementations\\CarritoService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\CarritoService.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Implementations\\CarritoService.cs",
+              "RelativeToolTip": "Services\\Implementations\\CarritoService.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAQwIoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:59:20.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ICarritoService.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Interfaces\\ICarritoService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ICarritoService.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Interfaces\\ICarritoService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ICarritoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:56:30.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CarritoController.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Controllers\\CarritoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CarritoController.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Controllers\\CarritoController.cs",
+              "RelativeToolTip": "Controllers\\CarritoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:43:41.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CheckoutDTO.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\CheckoutDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CheckoutDTO.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\CheckoutDTO.cs",
+              "RelativeToolTip": "DTOs\\CheckoutDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T03:05:10.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CarritoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\CarritoDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CarritoDTO.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\CarritoDTO.cs",
+              "RelativeToolTip": "DTOs\\CarritoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:30:04.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CarritoItemDTO.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\CarritoItemDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CarritoItemDTO.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\CarritoItemDTO.cs",
+              "RelativeToolTip": "DTOs\\CarritoItemDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:30:33.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAwwFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T23:36:44.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CarritoItemCreateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\CarritoItemCreateDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CarritoItemCreateDTO.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\CarritoItemCreateDTO.cs",
+              "RelativeToolTip": "DTOs\\CarritoItemCreateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:40:51.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CarritoCreateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\CarritoCreateDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\CarritoCreateDTO.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\CarritoCreateDTO.cs",
+              "RelativeToolTip": "DTOs\\CarritoCreateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:40:07.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FacturaService.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Implementations\\FacturaService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\FacturaService.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Implementations\\FacturaService.cs",
+              "RelativeToolTip": "Services\\Implementations\\FacturaService.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAcwG0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T00:13:57.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "IFacturaService.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Interfaces\\IFacturaService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IFacturaService.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Interfaces\\IFacturaService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IFacturaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T01:07:04.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "DetalleFacturaPostDTO.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\DetalleFacturaPostDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\DetalleFacturaPostDTO.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\DetalleFacturaPostDTO.cs",
+              "RelativeToolTip": "DTOs\\DetalleFacturaPostDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T01:00:56.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "FacturaPostDTO.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\FacturaPostDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\FacturaPostDTO.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\FacturaPostDTO.cs",
+              "RelativeToolTip": "DTOs\\FacturaPostDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T01:00:11.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "FacturaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Repositories\\Implementations\\FacturaRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\FacturaRepository.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Repositories\\Implementations\\FacturaRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\FacturaRepository.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAkwDEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T00:15:45.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "DetalleFacturaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\DetalleFacturaDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\DetalleFacturaDTO.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\DetalleFacturaDTO.cs",
+              "RelativeToolTip": "DTOs\\DetalleFacturaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T00:58:56.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FacturaController.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Controllers\\FacturaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FacturaController.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Controllers\\FacturaController.cs",
+              "RelativeToolTip": "Controllers\\FacturaController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAUwF8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T00:35:52.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IFacturaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Repositories\\Interfaces\\IFacturaRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IFacturaRepository.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Repositories\\Interfaces\\IFacturaRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IFacturaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T01:07:39.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FacturaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\FacturaDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\FacturaDTO.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\FacturaDTO.cs",
+              "RelativeToolTip": "DTOs\\FacturaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T00:58:44.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T23:51:52.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ClientesController.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Controllers\\ClientesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ClientesController.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Controllers\\ClientesController.cs",
+              "RelativeToolTip": "Controllers\\ClientesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T23:43:59.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClienteService.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Implementations\\ClienteService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\ClienteService.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Implementations\\ClienteService.cs",
+              "RelativeToolTip": "Services\\Implementations\\ClienteService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T23:41:43.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "IClienteService.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Interfaces\\IClienteService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IClienteService.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Services\\Interfaces\\IClienteService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IClienteService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T23:41:29.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ClientesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Repositories\\Implementations\\ClientesRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\ClientesRepository.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Repositories\\Implementations\\ClientesRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\ClientesRepository.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAswFwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T23:39:53.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IClientesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Repositories\\Interfaces\\IClientesRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IClientesRepository.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\Repositories\\Interfaces\\IClientesRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IClientesRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T23:39:34.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\DTOs\\LoginDTO.cs",
+              "RelativeToolTip": "DTOs\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T23:39:20.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-rama_franco\\FARMACIA_TUP-rama_franco\\API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-13T23:37:46.611Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
