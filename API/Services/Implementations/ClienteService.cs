@@ -1,5 +1,6 @@
 ﻿using API_Farmacia.DTOs;
 using API_Farmacia.Models;
+using API_Farmacia.Repositories.Implementations;
 using API_Farmacia.Repositories.Interfaces;
 using API_Farmacia.Services.Interfaces;
 
@@ -31,6 +32,46 @@ namespace API_Farmacia.Services.Implementations
             return clientesDTO;
         }
 
+        public ClienteDTO? GetByEmail(string email)
+        {
+            
+            Cliente? cliente = _repository.GetByEmail(email);
+
+            if (cliente == null)
+                return null;
+
+            
+            ClienteDTO clienteDTO = new ClienteDTO
+            {
+                IdCliente = cliente.IdCliente,
+                Nombre = cliente.Nombre,
+                Apellido = cliente.Apellido,
+                IdDireccion = cliente.IdDireccion,
+                Email = cliente.Email
+            };
+
+            return clienteDTO;
+        }
+
+        public bool ActualizarPerfil(string emailFromToken, UpdateClienteDto dto)
+        {
+            
+            var cliente = _repository.GetByEmail(emailFromToken);
+            if (cliente == null) return false;
+
+            
+            if (!string.IsNullOrWhiteSpace(dto.Nombre))
+                cliente.Nombre = dto.Nombre.Trim();
+
+            if (!string.IsNullOrWhiteSpace(dto.Apellido))
+                cliente.Apellido = dto.Apellido.Trim();
+
+            if (!string.IsNullOrWhiteSpace(dto.Email))
+                cliente.Email = dto.Email.Trim();
+
+            _repository.Update(cliente);
+            return true;
+        }
         public ClienteDTO? GetById(int id)
         {
             ClienteDTO clienteDTO = new ClienteDTO();
@@ -117,6 +158,46 @@ namespace API_Farmacia.Services.Implementations
             {
                 return false;
             }
+        }
+
+        public ClienteDTO RegistrarCliente(RegisterClienteDto dto)
+        {
+
+            var existente = _repository.GetByEmail(dto.Email);
+            if (existente != null)
+            {
+                throw new Exception("Ya existe un cliente registrado con ese email.");
+            }
+
+
+            var direccion = new Direccion
+            {
+                NomCalle = dto.Calle,
+                NroCalle = dto.Numero,
+                IdBarrio = 1 
+            };
+            direccion = _repository.CrearDireccion(direccion);
+
+            var cliente = new Cliente
+            {
+                Nombre = dto.Nombre,
+                Apellido = dto.Apellido,
+                Email = dto.Email,
+                Contrasena = dto.Contrasena, 
+                IdDireccion = direccion.IdDireccion,
+                IdTipoUsuario = 1 
+            };
+
+            cliente = _repository.CrearCliente(cliente);
+
+
+            return new ClienteDTO
+            {
+                IdCliente = cliente.IdCliente,
+                Nombre = cliente.Nombre,
+                Apellido = cliente.Apellido,
+                Email = cliente.Email
+            };
         }
     }
 }

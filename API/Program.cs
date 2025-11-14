@@ -1,4 +1,4 @@
-using API_Farmacia.Models; 
+﻿using API_Farmacia.Models;
 using API_Farmacia.Repositories.Implementations;
 using API_Farmacia.Repositories.Interfaces;
 using API_Farmacia.Services.Implementations;
@@ -9,9 +9,19 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy
+            .AllowAnyOrigin()  
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
-builder.Services.AddDbContext<FarmaciaContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<FarmaciaContext>(o =>
+    o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IClienteService, ClienteService>();
 builder.Services.AddScoped<IClientesRepository, ClientesRepository>();
@@ -22,11 +32,10 @@ builder.Services.AddScoped<ISuministrosRepository, SuministroRepository>();
 builder.Services.AddScoped<ICarritoService, CarritoService>();
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// JWT
+
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
 
 builder.Services.AddAuthentication("Bearer")
@@ -48,7 +57,6 @@ builder.Services.AddAuthorization();
 var app = builder.Build();
 
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -57,8 +65,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
 
+app.UseCors();
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

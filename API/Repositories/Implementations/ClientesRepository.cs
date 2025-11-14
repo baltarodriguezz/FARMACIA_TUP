@@ -67,6 +67,11 @@ namespace API_Farmacia.Repositories.Implementations
             return GetById(query.IdCliente);
 
         }
+        public Cliente? GetByEmail(string email)
+        {
+            return _context.Clientes
+                           .FirstOrDefault(c => c.Email == email);
+        }
 
         public List<Cliente> GetClientesTarjetaCredito()
         {
@@ -98,6 +103,26 @@ namespace API_Farmacia.Repositories.Implementations
             {
                 return false;
             }
+        }
+
+        public void Update(Cliente cliente)
+        {
+            _context.Clientes.Update(cliente);
+            _context.SaveChanges();
+        }
+
+        public Direccion CrearDireccion(Direccion direccion)
+        {
+            _context.Direccions.Add(direccion);
+            _context.SaveChanges();
+            return direccion;
+        }
+
+        public Cliente CrearCliente(Cliente cliente)
+        {
+            _context.Clientes.Add(cliente);
+            _context.SaveChanges();
+            return cliente;
         }
     }
 }

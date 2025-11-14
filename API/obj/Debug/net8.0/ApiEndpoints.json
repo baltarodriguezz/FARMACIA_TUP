@@ -183,6 +183,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "API_Farmacia.Controllers.ClientesController",
+    "Method": "GetMe",
+    "RelativePath": "api/Clientes/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.ClientesController",
+    "Method": "UpdateMe",
+    "RelativePath": "api/Clientes/me",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "API_Farmacia.DTOs.UpdateClienteDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.ClientesController",
+    "Method": "Register",
+    "RelativePath": "api/Clientes/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "API_Farmacia.DTOs.RegisterClienteDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_Farmacia.Controllers.FacturaController",
     "Method": "Get",
     "RelativePath": "api/Factura",
