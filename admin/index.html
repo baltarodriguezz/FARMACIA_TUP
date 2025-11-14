@@ -6,9 +6,10 @@
   <title>Panel de Administración - Farmacia Luz</title>
   <link rel="stylesheet" href="../assets/output.css" />
 </head>
+
 <body class="bg-gray-100 flex min-h-screen font-sans">
 
-  <!-- 🔹 SIDEBAR -->
+  <!-- SIDEBAR -->
   <aside class="w-64 bg-[#275c74] text-white flex flex-col justify-between">
     <div>
       <div class="p-6 border-b border-white/20">
@@ -26,10 +27,10 @@
     </div>
   </aside>
 
-  <!-- 🔹 CONTENIDO PRINCIPAL -->
+  <!-- CONTENIDO -->
   <main class="flex-1 p-8">
 
-    <!-- Encabezado -->
+    <!-- ENCABEZADO -->
     <div class="flex justify-between items-center mb-8">
       <div>
         <h1 class="text-3xl font-bold text-[#275c74]">Panel de Administración</h1>
@@ -38,98 +39,110 @@
       <img src="../assets/img/logo.png" class="w-16 h-16" alt="Logo Farmacia Luz" />
     </div>
 
-    <!-- Tarjetas de resumen -->
+    <!-- TARJETAS -->
     <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-
-      <!-- Productos -->
       <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition flex items-center gap-4">
-        <div class="bg-[#12b1be]/10 p-3 rounded-full">
-          <img src="../assets/img/icons8-pills-50.png" alt="Productos" class="w-8 h-8">
-        </div>
+        <div class="bg-[#12b1be]/10 p-3 rounded-full">Prod</div>
         <div>
           <p class="text-sm text-gray-500">Productos</p>
-          <h3 id="totalProductos" class="text-2xl font-semibold text-[#275c74]">45</h3>
+          <h3 id="totalProductos" class="text-2xl font-semibold text-[#275c74]">0</h3>
         </div>
       </div>
 
-      <!-- Clientes -->
       <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition flex items-center gap-4">
-        <div class="bg-[#12b1be]/10 p-3 rounded-full">
-          <img src="../assets/img/icons8-users-50.png" alt="Clientes" class="w-8 h-8">
-        </div>
+        <div class="bg-[#12b1be]/10 p-3 rounded-full">Clien</div>
         <div>
           <p class="text-sm text-gray-500">Clientes</p>
-          <h3 id="totalClientes" class="text-2xl font-semibold text-[#275c74]">120</h3>
+          <h3 id="totalClientes" class="text-2xl font-semibold text-[#275c74]">0</h3>
         </div>
       </div>
 
-      <!-- Ventas -->
       <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition flex items-center gap-4">
-        <div class="bg-[#12b1be]/10 p-3 rounded-full">
-          <img src="../assets/img/icons8-shopping-basket-50.png" alt="Ventas" class="w-8 h-8">
-        </div>
+        <div class="bg-[#12b1be]/10 p-3 rounded-full">Vent</div>
         <div>
           <p class="text-sm text-gray-500">Ventas</p>
-          <h3 id="totalVentas" class="text-2xl font-semibold text-[#275c74]">89</h3>
+          <h3 id="totalVentas" class="text-2xl font-semibold text-[#275c74]">0</h3>
         </div>
       </div>
 
-      <!-- Ingresos -->
       <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition flex items-center gap-4">
-        <div class="bg-[#12b1be]/10 p-3 rounded-full">
-          <img src="../assets/img/icons8-money-50.png" alt="Ingresos" class="w-8 h-8">
-        </div>
+        <div class="bg-[#12b1be]/10 p-3 rounded-full">Ingr</div>
         <div>
           <p class="text-sm text-gray-500">Ingresos (AR$)</p>
-          <h3 id="totalIngresos" class="text-2xl font-semibold text-[#275c74]">$250.000</h3>
+          <h3 id="totalIngresos" class="text-2xl font-semibold text-[#275c74]">$0</h3>
         </div>
       </div>
-
     </section>
 
-    <!-- Tabla de resumen -->
+    <!-- TABLA DE VENTAS -->
     <section class="bg-white rounded-xl shadow p-6">
       <h2 class="text-xl font-semibold text-[#275c74] mb-4">Últimas ventas</h2>
+
       <table class="w-full border-collapse text-sm">
         <thead class="bg-[#275c74] text-white">
           <tr>
-            <th class="p-3 text-left">ID</th>
+            <!-- ❌ ID ELIMINADO -->
             <th class="p-3 text-left">Cliente</th>
             <th class="p-3 text-left">Fecha</th>
             <th class="p-3 text-left">Total</th>
           </tr>
         </thead>
-        <tbody id="tablaVentas" class="divide-y">
-          <!-- JS agregará filas -->
-        </tbody>
+        <tbody id="tablaVentas" class="divide-y"></tbody>
       </table>
     </section>
 
   </main>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Simulamos datos por ahora
-      const ventas = [
-        { id: 101, cliente: "Juan Pérez", fecha: "2025-11-10", total: 15800 },
-        { id: 102, cliente: "María Gómez", fecha: "2025-11-09", total: 9700 },
-        { id: 103, cliente: "Lucía Fernández", fecha: "2025-11-08", total: 13200 },
-      ];
+  <!-- SCRIPT API -->
+  <script src="../assets/js/api.js"></script>
 
-      const tbody = document.getElementById("tablaVentas");
-      ventas.forEach(v => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td class="p-3">${v.id}</td>
-          <td class="p-3">${v.cliente}</td>
-          <td class="p-3">${v.fecha}</td>
-          <td class="p-3 text-[#12b1be] font-semibold">$${v.total}</td>
-        `;
-        tbody.appendChild(tr);
-      });
+  <!-- SCRIPT DASHBOARD -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const clientes    = await apiGet("Clientes");
+        const suministros = await apiGet("Suministros");
+        const facturas    = await apiGet("Factura");
+
+        // Tarjetas
+        document.getElementById("totalProductos").textContent = suministros.length;
+        document.getElementById("totalClientes").textContent  = clientes.length;
+        document.getElementById("totalVentas").textContent    = facturas.length;
+
+        const totalIngresos = facturas.reduce((acc, f) => acc + f.total, 0);
+        document.getElementById("totalIngresos").textContent =
+          "$" + totalIngresos.toLocaleString("es-AR");
+
+        // Crear un diccionario de clientes para lookup
+        const mapClientes = {};
+        clientes.forEach(c => {
+          mapClientes[c.idCliente] = `${c.nombre} ${c.apellido}`;
+        });
+
+        // Tabla ventas
+        const tbody = document.getElementById("tablaVentas");
+        tbody.innerHTML = "";
+
+        facturas.slice(0, 5).forEach(f => {
+          const nombreCompleto = mapClientes[f.idCliente] ?? "Cliente desconocido";
+          const fecha = f.fechaEmision.split("T")[0];
+          const total = f.total;
+
+          tbody.innerHTML += `
+            <tr>
+              <td class="p-3">${nombreCompleto}</td>
+              <td class="p-3">${fecha}</td>
+              <td class="p-3 text-[#12b1be] font-semibold">$${total}</td>
+            </tr>
+          `;
+        });
+
+      } catch (err) {
+        console.error("Error cargando dashboard:", err);
+        alert("Error al conectarse con la API");
+      }
     });
   </script>
 
 </body>
 </html>
-

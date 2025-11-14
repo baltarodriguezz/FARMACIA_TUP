@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Administrar Ventas - Farmacia Luz</title>
   <link rel="stylesheet" href="../assets/output.css" />
+  <script src="../assets/js/api.js"></script>
 </head>
 <body class="bg-gray-100 flex min-h-screen font-sans">
 
-  <!-- 🔹 SIDEBAR -->
+  <!-- SIDEBAR -->
   <aside class="w-64 bg-[#275c74] text-white flex flex-col justify-between">
     <div>
       <div class="p-6 border-b border-white/20">
@@ -26,144 +27,375 @@
     </div>
   </aside>
 
-  <!-- 🔹 CONTENIDO PRINCIPAL -->
-  <main class="flex-1 p-8">
+  <!-- CONTENIDO -->
+  <main class="flex-1 p-8 space-y-6">
 
-    <!-- Encabezado -->
-    <div class="flex justify-between items-center mb-8">
-      <h1 class="text-3xl font-bold text-[#275c74]">Gestión de Ventas</h1>
-    </div>
+    <!-- Título + resumen -->
+    <div class="flex justify-between items-center">
+      <div>
+        <h1 class="text-3xl font-bold text-[#275c74]">Gestión de Ventas</h1>
+        <p class="text-sm text-gray-600">Listado de facturas y filtros por cliente, fechas y recaudación.</p>
+      </div>
 
-    <!-- Tabla de ventas -->
-    <div class="overflow-x-auto bg-white rounded-xl shadow-md">
-      <table class="min-w-full border-collapse text-sm text-left">
-        <thead class="bg-[#275c74] text-white">
-          <tr>
-            <th class="p-3">ID Venta</th>
-            <th class="p-3">Cliente</th>
-            <th class="p-3">Fecha</th>
-            <th class="p-3">Total</th>
-            <th class="p-3">Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="tablaVentas" class="divide-y">
-          <!-- Filas generadas dinámicamente -->
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Modal Detalle Venta -->
-    <div id="modalDetalle" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-      <div class="bg-white rounded-xl p-6 w-[500px] shadow-xl max-h-[80vh] overflow-y-auto">
-        <h2 class="text-xl font-bold text-[#275c74] mb-4">Detalle de Venta</h2>
-        <div id="detalleVenta"></div>
-        <div class="flex justify-end mt-4">
-          <button id="btnCerrarDetalle" class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white px-4 py-2 rounded">
-            Cerrar
-          </button>
-        </div>
+      <!-- Tarjeta recaudación total -->
+      <div class="bg-white rounded-xl shadow px-6 py-4 text-right">
+        <p class="text-sm text-gray-500">Recaudación total</p>
+        <p id="lblRecaudacion" class="text-2xl font-bold text-[#12b1be]">$0</p>
       </div>
     </div>
 
+    <!-- Filtros -->
+    <section class="bg-white rounded-xl shadow p-4 flex flex-wrap gap-4 items-end">
+
+      <!-- Filtro por cliente -->
+      <div class="flex flex-col">
+        <label for="selectCliente" class="text-sm font-medium text-gray-700 mb-1">Filtrar por cliente</label>
+        <select id="selectCliente" class="border rounded-lg px-3 py-2 min-w-[220px]">
+          <option value="">Todos los clientes</option>
+        </select>
+      </div>
+
+      <!-- Filtro por fechas -->
+      <div class="flex flex-col">
+        <label class="text-sm font-medium text-gray-700 mb-1">Desde</label>
+        <input id="fechaInicio" type="date" class="border rounded-lg px-3 py-2" />
+      </div>
+      <div class="flex flex-col">
+        <label class="text-sm font-medium text-gray-700 mb-1">Hasta</label>
+        <input id="fechaFin" type="date" class="border rounded-lg px-3 py-2" />
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="flex flex-wrap gap-2 ml-auto">
+        <button id="btnTodas"
+                class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg text-sm font-medium">
+          📋 Todas las ventas
+        </button>
+        <button id="btnPorCliente"
+                class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white px-4 py-2 rounded-lg text-sm font-medium">
+          👤 Filtrar por cliente
+        </button>
+        <button id="btnEntreFechas"
+                class="bg-[#275c74] hover:bg-[#1f4d60] text-white px-4 py-2 rounded-lg text-sm font-medium">
+          📅 Ventas entre fechas
+        </button>
+        <button id="btnRecaudacion"
+                class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-medium">
+          💰 Actualizar recaudación
+        </button>
+      </div>
+
+    </section>
+
+    <!-- Tabla de ventas -->
+    <section class="overflow-x-auto bg-white rounded-xl shadow">
+      <table class="min-w-full border-collapse text-sm text-left">
+        <thead class="bg-[#275c74] text-white">
+          <tr>
+            <th class="p-3">Factura</th>
+            <th class="p-3">Fecha</th>
+            <th class="p-3">Cliente</th>
+            <th class="p-3">Forma de pago</th>
+            <th class="p-3 text-right">Total</th>
+            <th class="p-3 text-center">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaVentas" class="divide-y">
+          <!-- JS rellena -->
+        </tbody>
+      </table>
+    </section>
+
   </main>
 
-  <!-- 🔹 SCRIPT -->
+  <!-- MODAL DETALLE FACTURA -->
+  <div id="modalDetalle" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+    <div class="bg-white rounded-xl shadow-xl w-full max-w-2xl p-6">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold text-[#275c74]">Detalle de factura</h2>
+        <button id="btnCerrarDetalle" class="text-gray-500 hover:text-gray-800 text-lg">&times;</button>
+      </div>
+
+      <!-- Info cabecera -->
+      <div class="grid grid-cols-2 gap-2 text-sm mb-4">
+        <p><span class="font-semibold">Factura:</span> <span id="detNro"></span></p>
+        <p><span class="font-semibold">Fecha:</span> <span id="detFecha"></span></p>
+        <p><span class="font-semibold">Cliente:</span> <span id="detCliente"></span></p>
+        <p><span class="font-semibold">Forma de pago:</span> <span id="detFormaPago"></span></p>
+        <p class="col-span-2 text-right">
+          <span class="font-semibold">Total:</span>
+          <span id="detTotal" class="text-[#12b1be] font-bold"></span>
+        </p>
+      </div>
+
+      <!-- Detalle items -->
+      <div class="overflow-x-auto border rounded-lg">
+        <table class="min-w-full text-sm">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="p-2 text-left">Producto</th>
+              <th class="p-2 text-right">Cantidad</th>
+              <th class="p-2 text-right">Precio unitario</th>
+              <th class="p-2 text-right">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="tablaDetalle" class="divide-y">
+            <!-- JS rellena -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT VENTAS -->
   <script>
-    const ventas = [
-      {
-        id: 101,
-        cliente: "Juan Pérez",
-        fecha: "2025-11-10",
-        total: 15800,
-        detalle: [
-          { producto: "Ibuprofeno 400mg", cantidad: 2, precio: 2500 },
-          { producto: "Paracetamol 500mg", cantidad: 3, precio: 1900 }
-        ]
-      },
-      {
-        id: 102,
-        cliente: "María Gómez",
-        fecha: "2025-11-09",
-        total: 9700,
-        detalle: [
-          { producto: "Omeprazol 20mg", cantidad: 1, precio: 3200 },
-          { producto: "Ibuprofeno 400mg", cantidad: 2, precio: 2500 }
-        ]
-      },
-      {
-        id: 103,
-        cliente: "Lucía Fernández",
-        fecha: "2025-11-08",
-        total: 13200,
-        detalle: [
-          { producto: "Vitamina C 500mg", cantidad: 4, precio: 3300 }
-        ]
-      }
-    ];
-
+    // ================== CONFIG / ESTADO ==================
     const tabla = document.getElementById("tablaVentas");
-    const modal = document.getElementById("modalDetalle");
-    const btnCerrar = document.getElementById("btnCerrarDetalle");
-    const detalleVenta = document.getElementById("detalleVenta");
+    const lblRecaudacion = document.getElementById("lblRecaudacion");
+    const selectCliente = document.getElementById("selectCliente");
+    const inputFechaInicio = document.getElementById("fechaInicio");
+    const inputFechaFin = document.getElementById("fechaFin");
 
-    function renderVentas() {
+    const modalDetalle = document.getElementById("modalDetalle");
+    const btnCerrarDetalle = document.getElementById("btnCerrarDetalle");
+    const detNro = document.getElementById("detNro");
+    const detFecha = document.getElementById("detFecha");
+    const detCliente = document.getElementById("detCliente");
+    const detFormaPago = document.getElementById("detFormaPago");
+    const detTotal = document.getElementById("detTotal");
+    const tablaDetalle = document.getElementById("tablaDetalle");
+
+    let facturas = [];
+    let clientesMap = {};
+    let suministrosMap = {};
+
+    // Diccionario local de formas de pago (ajustalo si en la BD tenés otros)
+    const formasPago = {
+      1: "Efectivo",
+      2: "Débito",
+      3: "Crédito",
+      4: "Transferencia",
+      5: "Mercado Pago"
+    };
+
+    // ================== CARGA INICIAL ==================
+    async function cargarDatosIniciales() {
+      try {
+        const [facturasData, clientesData, suministrosData] = await Promise.all([
+          apiGet("Factura"),
+          apiGet("Clientes"),
+          apiGet("Suministros")
+        ]);
+
+        facturas = facturasData || [];
+
+        // Map clientes
+        clientesMap = {};
+        clientesData.forEach(c => {
+          clientesMap[c.idCliente] = c;
+        });
+
+        // Llenar combo clientes
+        selectCliente.innerHTML = '<option value="">Todos los clientes</option>';
+
+        clientesData.forEach(c => {
+          const opt = document.createElement("option");
+          opt.value = c.idCliente;
+          opt.textContent = `Cliente #${c.idCliente}`;  // ✔ Muestra solo el ID
+          selectCliente.appendChild(opt);
+        });
+
+        // Map suministros
+        suministrosMap = {};
+        suministrosData.forEach(s => {
+          suministrosMap[s.idSuministro] = s;
+        });
+
+        renderTabla(facturas);
+        await actualizarRecaudacionTotal();
+      } catch (err) {
+        console.error("Error cargando datos iniciales", err);
+        alert("Error al cargar datos de ventas.");
+      }
+    }
+
+    // ================== RENDER TABLA PRINCIPAL ==================
+    function renderTabla(lista) {
       tabla.innerHTML = "";
-      ventas.forEach(v => {
+
+      if (!lista || lista.length === 0) {
+        tabla.innerHTML = `
+          <tr>
+            <td colspan="6" class="p-4 text-center text-gray-500">
+              No hay facturas para mostrar.
+            </td>
+          </tr>`;
+        return;
+      }
+
+      lista.forEach(f => {
         const tr = document.createElement("tr");
+
+        const cliente = clientesMap[f.idCliente]
+          ? clientesMap[f.idCliente].nombreCompleto
+          : `ID ${f.idCliente}`;
+
+        const forma = formasPago[f.idFormaPago] || `ID ${f.idFormaPago}`;
+
+        const fecha = f.fechaEmision
+          ? new Date(f.fechaEmision).toLocaleDateString("es-AR")
+          : "";
+
+        const total = f.total != null ? f.total.toFixed(2) : "0.00";
+
         tr.innerHTML = `
-          <td class="p-3">${v.id}</td>
-          <td class="p-3">${v.cliente}</td>
-          <td class="p-3">${v.fecha}</td>
-          <td class="p-3 text-[#12b1be] font-semibold">$${v.total}</td>
-          <td class="p-3">
-            <button onclick="verDetalle(${v.id})" class="text-blue-600 hover:underline">Ver Detalle</button>
+          <td class="p-3">#${f.idFactura}</td>
+          <td class="p-3">${fecha}</td>
+          <td class="p-3">${cliente}</td>
+          <td class="p-3">${forma}</td>
+          <td class="p-3 text-right">$${total}</td>
+          <td class="p-3 text-center">
+            <button class="text-blue-600 hover:underline" onclick="verDetalle(${f.idFactura})">
+              Ver detalle
+            </button>
           </td>
         `;
         tabla.appendChild(tr);
       });
     }
 
-    window.verDetalle = (id) => {
-      const venta = ventas.find(v => v.id === id);
-      if (!venta) return;
+    // ================== RECAUDACIÓN TOTAL ==================
+    async function actualizarRecaudacionTotal() {
+      try {
+        const total = await apiGet("Factura/RecaudacionTotal");
+        const valor = typeof total === "number" ? total : parseFloat(total);
+        if (!isNaN(valor)) {
+          lblRecaudacion.textContent = "$" + valor.toFixed(2);
+        }
+      } catch (err) {
+        console.warn("Error API recaudación — fallback.", err);
+        const suma = facturas.reduce((acc, f) => acc + (f.total || 0), 0);
+        lblRecaudacion.textContent = "$" + suma.toFixed(2);
+      }
+    }
 
-      let html = `
-        <p class="mb-2"><span class="font-semibold text-[#275c74]">Cliente:</span> ${venta.cliente}</p>
-        <p class="mb-2"><span class="font-semibold text-[#275c74]">Fecha:</span> ${venta.fecha}</p>
-        <p class="mb-4"><span class="font-semibold text-[#275c74]">Total:</span> $${venta.total}</p>
-        <h3 class="text-lg font-semibold text-[#275c74] mb-2">Productos:</h3>
-        <table class="w-full text-sm border border-gray-200">
-          <thead class="bg-gray-100">
+    // ================== FILTROS ==================
+
+    // Todas
+    document.getElementById("btnTodas").addEventListener("click", () => {
+      renderTabla(facturas);
+    });
+
+    // Recaudación
+    document.getElementById("btnRecaudacion").addEventListener("click", () => {
+      actualizarRecaudacionTotal();
+    });
+
+    // Filtrar por cliente (ARREGLADO)
+    document.getElementById("btnPorCliente").addEventListener("click", async () => {
+      const idCliente = selectCliente.value;
+
+      if (!idCliente) {
+        alert("Seleccioná un cliente para filtrar.");
+        return;
+      }
+
+      try {
+        const lista = await apiGet(`Factura/FacturaPorCliente/${idCliente}`);
+        renderTabla(lista);
+      } catch (err) {
+        console.error(err);
+        alert("Error al filtrar por cliente.");
+      }
+    });
+
+    // Filtrar entre fechas
+    document.getElementById("btnEntreFechas").addEventListener("click", async () => {
+      const desde = inputFechaInicio.value;
+      const hasta = inputFechaFin.value;
+
+      if (!desde || !hasta) {
+        alert("Seleccioná fecha de inicio y fin.");
+        return;
+      }
+
+      try {
+        const url = `Factura/entre-fecha?fechaInicio=${desde}&fechaFin=${hasta}`;
+        const lista = await apiGet(url);
+        renderTabla(lista);
+      } catch (err) {
+        console.error(err);
+        alert("Error al filtrar por fechas.");
+      }
+    });
+
+    // ================== DETALLE FACTURA ==================
+    window.verDetalle = async function (idFactura) {
+      try {
+        let f = facturas.find(x => x.idFactura === idFactura);
+
+        if (!f) {
+          f = await apiGet(`Factura/${idFactura}`);
+        }
+
+        const cliente = clientesMap[f.idCliente]
+          ? clientesMap[f.idCliente].nombreCompleto
+          : `ID ${f.idCliente}`;
+
+        const forma = formasPago[f.idFormaPago] || `ID ${f.idFormaPago}`;
+        const fecha = f.fechaEmision
+          ? new Date(f.fechaEmision).toLocaleDateString("es-AR")
+          : "";
+        const total = f.total != null ? f.total.toFixed(2) : "0.00";
+
+        detNro.textContent = "#" + f.idFactura;
+        detFecha.textContent = fecha;
+        detCliente.textContent = cliente;
+        detFormaPago.textContent = forma;
+        detTotal.textContent = "$" + total;
+
+        tablaDetalle.innerHTML = "";
+        if (f.detalles && f.detalles.length > 0) {
+          f.detalles.forEach(d => {
+            const s = suministrosMap[d.idSuministro];
+            const nombreProd = s ? s.descripcion : `ID ${d.idSuministro}`;
+            const precio = Number(d.precioUnitario || 0);
+            const cant = d.cantidad || 0;
+            const sub = precio * cant;
+
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td class="p-2">${nombreProd}</td>
+              <td class="p-2 text-right">${cant}</td>
+              <td class="p-2 text-right">$${precio.toFixed(2)}</td>
+              <td class="p-2 text-right">$${sub.toFixed(2)}</td>
+            `;
+            tablaDetalle.appendChild(tr);
+          });
+        } else {
+          tablaDetalle.innerHTML = `
             <tr>
-              <th class="p-2 border">Producto</th>
-              <th class="p-2 border">Cantidad</th>
-              <th class="p-2 border">Precio Unitario</th>
-              <th class="p-2 border">Subtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-      `;
+              <td colspan="4" class="p-3 text-center text-gray-500">
+                Esta factura no tiene ítems de detalle.
+              </td>
+            </tr>`;
+        }
 
-      venta.detalle.forEach(d => {
-        html += `
-          <tr>
-            <td class="p-2 border">${d.producto}</td>
-            <td class="p-2 border text-center">${d.cantidad}</td>
-            <td class="p-2 border text-center">$${d.precio}</td>
-            <td class="p-2 border text-center">$${d.precio * d.cantidad}</td>
-          </tr>
-        `;
-      });
-
-      html += `</tbody></table>`;
-      detalleVenta.innerHTML = html;
-      modal.classList.remove("hidden");
+        modalDetalle.classList.remove("hidden");
+      } catch (err) {
+        console.error(err);
+        alert("No se pudo cargar el detalle de la factura.");
+      }
     };
 
-    btnCerrar.addEventListener("click", () => modal.classList.add("hidden"));
+    btnCerrarDetalle.addEventListener("click", () => {
+      modalDetalle.classList.add("hidden");
+    });
 
-    renderVentas();
-  </script>
+    // ================== INICIO ==================
+    cargarDatosIniciales();
+</script>
+
 
 </body>
 </html>

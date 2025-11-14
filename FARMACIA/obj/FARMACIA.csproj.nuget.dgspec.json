@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\FARMACIA.csproj": {}
+    "C:\\Users\\maxte\\Desktop\\hola\\FARMACIA_TUP\\FARMACIA\\FARMACIA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\FARMACIA.csproj": {
+    "C:\\Users\\maxte\\Desktop\\hola\\FARMACIA_TUP\\FARMACIA\\FARMACIA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\FARMACIA.csproj",
+        "projectUniqueName": "C:\\Users\\maxte\\Desktop\\hola\\FARMACIA_TUP\\FARMACIA\\FARMACIA.csproj",
         "projectName": "FARMACIA",
-        "projectPath": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\FARMACIA.csproj",
+        "projectPath": "C:\\Users\\maxte\\Desktop\\hola\\FARMACIA_TUP\\FARMACIA\\FARMACIA.csproj",
         "packagesPath": "C:\\Users\\maxte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\obj\\",
+        "outputPath": "C:\\Users\\maxte\\Desktop\\hola\\FARMACIA_TUP\\FARMACIA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

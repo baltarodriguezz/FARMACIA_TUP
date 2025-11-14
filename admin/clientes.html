@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Administrar Clientes - Farmacia Luz</title>
   <link rel="stylesheet" href="../assets/output.css" />
+  <script src="../assets/js/api.js"></script>
 </head>
+
 <body class="bg-gray-100 flex min-h-screen font-sans">
 
-  <!-- 🔹 SIDEBAR -->
+  <!-- SIDEBAR -->
   <aside class="w-64 bg-[#275c74] text-white flex flex-col justify-between">
     <div>
       <div class="p-6 border-b border-white/20">
@@ -26,178 +28,86 @@
     </div>
   </aside>
 
-  <!-- 🔹 CONTENIDO PRINCIPAL -->
+  <!-- CONTENIDO PRINCIPAL -->
   <main class="flex-1 p-8">
 
-    <!-- Encabezado -->
     <div class="flex justify-between items-center mb-8">
       <h1 class="text-3xl font-bold text-[#275c74]">Gestión de Clientes</h1>
+
       <div class="flex gap-3">
-        <button id="btnTopClientes" class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white px-4 py-2 rounded-lg transition">
-          🏆 Clientes que más compran
+        <button id="btnCompraGrande" class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white px-4 py-2 rounded-lg transition">
+          🏆 Mayor compra
         </button>
+
+        <button id="btnMasCompro" class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white px-4 py-2 rounded-lg transition">
+          🥇 Cliente que más compró
+        </button>
+
         <button id="btnCredito" class="bg-[#275c74] hover:bg-[#1f4d60] text-white px-4 py-2 rounded-lg transition">
-          💳 Solo con tarjeta de crédito
+          💳 Solo tarjeta crédito
         </button>
       </div>
     </div>
 
-    <!-- Tabla de clientes -->
+    <!-- Tabla -->
     <div class="overflow-x-auto bg-white rounded-xl shadow-md">
       <table class="min-w-full border-collapse text-sm text-left">
         <thead class="bg-[#275c74] text-white">
           <tr>
             <th class="p-3">ID</th>
             <th class="p-3">Nombre</th>
-            <th class="p-3">CUIT</th>
-            <th class="p-3">Obra Social</th>
+            <th class="p-3">Apellido</th>
             <th class="p-3">Email</th>
-            <th class="p-3">Teléfono</th>
-            <th class="p-3">Forma de Pago</th>
-            <th class="p-3">Total Compras</th>
-            <th class="p-3">Acciones</th>
+            <th class="p-3">ID Dirección</th>
           </tr>
         </thead>
-        <tbody id="tablaClientes" class="divide-y">
-          <!-- JS genera las filas -->
-        </tbody>
+        <tbody id="tablaClientes" class="divide-y"></tbody>
       </table>
-    </div>
-
-    <!-- Modal editar cliente -->
-    <div id="modalCliente" class="hidden fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-      <div class="bg-white rounded-xl p-6 w-96 shadow-xl">
-        <h2 id="tituloModal" class="text-xl font-bold text-[#275c74] mb-4">Editar Cliente</h2>
-        <form id="formCliente" class="flex flex-col gap-3">
-          <input id="nombre" placeholder="Nombre completo" class="border rounded p-2">
-          <input id="cuit" placeholder="CUIT" class="border rounded p-2">
-          <input id="obraSocial" placeholder="Obra social" class="border rounded p-2">
-          <input id="email" placeholder="Email" type="email" class="border rounded p-2">
-          <input id="telefono" placeholder="Teléfono" class="border rounded p-2">
-          <select id="formaPago" class="border rounded p-2">
-            <option value="">Forma de pago</option>
-            <option value="Efectivo">Efectivo</option>
-            <option value="Tarjeta de crédito">Tarjeta de crédito</option>
-            <option value="Débito">Débito</option>
-            <option value="Transferencia">Transferencia</option>
-          </select>
-          <div class="flex justify-end gap-2 mt-3">
-            <button type="button" id="btnCancelar" class="px-4 py-2 rounded border border-gray-400 hover:bg-gray-100">Cancelar</button>
-            <button type="submit" class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white px-4 py-2 rounded">Guardar</button>
-          </div>
-        </form>
-      </div>
     </div>
 
   </main>
 
-  <!-- 🔹 SCRIPT -->
+  <!-- SCRIPT JS -->
   <script>
-    const clientes = [
-      { id: 1, nombre: "Juan Pérez", cuit: "20-34567890-1", obraSocial: "OSDE", email: "juanperez@mail.com", telefono: "1123456789", formaPago: "Tarjeta de crédito", totalCompras: 150000 },
-      { id: 2, nombre: "María Gómez", cuit: "27-98765432-5", obraSocial: "Swiss Medical", email: "maria@mail.com", telefono: "1145678901", formaPago: "Efectivo", totalCompras: 70000 },
-      { id: 3, nombre: "Lucía Fernández", cuit: "23-11223344-7", obraSocial: "IOMA", email: "lucia@mail.com", telefono: "1132214455", formaPago: "Tarjeta de crédito", totalCompras: 120000 },
-      { id: 4, nombre: "Carlos Díaz", cuit: "20-99999999-9", obraSocial: "Galeno", email: "carlos@mail.com", telefono: "1188877766", formaPago: "Débito", totalCompras: 40000 }
-    ];
-
-    let clienteEditando = null;
     const tabla = document.getElementById("tablaClientes");
-    const modal = document.getElementById("modalCliente");
-    const form = document.getElementById("formCliente");
-    const btnCancelar = document.getElementById("btnCancelar");
-    const btnTopClientes = document.getElementById("btnTopClientes");
-    const btnCredito = document.getElementById("btnCredito");
 
-    // Render tabla
-    function renderTabla(lista = clientes) {
+    function renderTabla(data) {
       tabla.innerHTML = "";
-      lista.forEach(c => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td class="p-3">${c.id}</td>
-          <td class="p-3">${c.nombre}</td>
-          <td class="p-3">${c.cuit}</td>
-          <td class="p-3">${c.obraSocial}</td>
-          <td class="p-3">${c.email}</td>
-          <td class="p-3">${c.telefono}</td>
-          <td class="p-3">${c.formaPago}</td>
-          <td class="p-3 text-[#12b1be] font-semibold">$${c.totalCompras}</td>
-          <td class="p-3 flex gap-2">
-            <button onclick="editar(${c.id})" class="text-blue-600 hover:underline">Editar</button>
-            <button onclick="eliminar(${c.id})" class="text-red-600 hover:underline">Eliminar</button>
-          </td>
+      data.forEach(c => {
+        tabla.innerHTML += `
+          <tr>
+            <td class="p-3">${c.idCliente}</td>
+            <td class="p-3">${c.nombre}</td>
+            <td class="p-3">${c.apellido}</td>
+            <td class="p-3">${c.email}</td>
+            <td class="p-3">${c.idDireccion}</td>
+          </tr>
         `;
-        tabla.appendChild(tr);
       });
     }
 
-    renderTabla();
-
-    // Modal handlers
-    function abrirModal() {
-      modal.classList.remove("hidden");
-    }
-    function cerrarModal() {
-      modal.classList.add("hidden");
-      form.reset();
-      clienteEditando = null;
+    async function cargarClientes() {
+      const datos = await apiGet("Clientes");
+      renderTabla(datos);
     }
 
-    btnCancelar.addEventListener("click", cerrarModal);
-
-    // Guardar cliente editado
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!clienteEditando) return;
-
-      clienteEditando.nombre = form.nombre.value;
-      clienteEditando.cuit = form.cuit.value;
-      clienteEditando.obraSocial = form.obraSocial.value;
-      clienteEditando.email = form.email.value;
-      clienteEditando.telefono = form.telefono.value;
-      clienteEditando.formaPago = form.formaPago.value;
-
-      renderTabla();
-      cerrarModal();
-    });
-
-    // Funciones globales
-    window.editar = (id) => {
-      const cliente = clientes.find(c => c.id === id);
-      if (!cliente) return;
-      clienteEditando = cliente;
-
-      form.nombre.value = cliente.nombre;
-      form.cuit.value = cliente.cuit;
-      form.obraSocial.value = cliente.obraSocial;
-      form.email.value = cliente.email;
-      form.telefono.value = cliente.telefono;
-      form.formaPago.value = cliente.formaPago;
-
-      abrirModal();
+    document.getElementById("btnCompraGrande").onclick = async () => {
+      const datos = await apiGet("Clientes/CompraMasGrande");
+      renderTabla([datos]); // devuelve SOLO 1 cliente
     };
 
-    window.eliminar = (id) => {
-      if (confirm("¿Eliminar este cliente?")) {
-        const index = clientes.findIndex(c => c.id === id);
-        if (index !== -1) {
-          clientes.splice(index, 1);
-          renderTabla();
-        }
-      }
+    document.getElementById("btnMasCompro").onclick = async () => {
+      const datos = await apiGet("Clientes/ClienteQueMasCompro");
+      renderTabla([datos]);
     };
 
-    // Botón "Clientes que más compran"
-    btnTopClientes.addEventListener("click", () => {
-      const top = [...clientes].sort((a, b) => b.totalCompras - a.totalCompras).slice(0, 3);
-      renderTabla(top);
-    });
+    document.getElementById("btnCredito").onclick = async () => {
+      const datos = await apiGet("Clientes/ClientesCredito");
+      renderTabla(datos);
+    };
 
-    // Botón "Solo tarjeta de crédito"
-    btnCredito.addEventListener("click", () => {
-      const filtrados = clientes.filter(c => c.formaPago === "Tarjeta de crédito");
-      renderTabla(filtrados);
-    });
+    // Inicial
+    cargarClientes();
   </script>
 
 </body>

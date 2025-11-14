@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b2pzBw0vPDA=",
+  "dgSpecHash": "mX/7dPuOMws=",
   "success": true,
-  "projectFilePath": "C:\\Users\\maxte\\Desktop\\FARMACIA_TUP-getTipoSuministro\\FARMACIA_TUP-getTipoSuministro\\FARMACIA\\FARMACIA.csproj",
+  "projectFilePath": "C:\\Users\\maxte\\Desktop\\hola\\FARMACIA_TUP\\FARMACIA\\FARMACIA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxte\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\maxte\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
