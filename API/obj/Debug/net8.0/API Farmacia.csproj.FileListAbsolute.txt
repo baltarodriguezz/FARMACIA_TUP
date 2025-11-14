@@ -245,3 +245,14 @@ C:\Users\LAPTOP\OneDrive\Desktop\testinffff\FARMACIA_TUP\API\obj\Debug\net8.0\re
 C:\Users\LAPTOP\OneDrive\Desktop\testinffff\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.pdb
 C:\Users\LAPTOP\OneDrive\Desktop\testinffff\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.genruntimeconfig.cache
 C:\Users\LAPTOP\OneDrive\Desktop\testinffff\FARMACIA_TUP\API\obj\Debug\net8.0\ref\API Farmacia.dll
+C:\Users\maxte\Desktop\hola\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.csproj.AssemblyReference.cache
+C:\Users\maxte\Desktop\hola\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maxte\Desktop\hola\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.AssemblyInfoInputs.cache
+C:\Users\maxte\Desktop\hola\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.AssemblyInfo.cs
+C:\Users\maxte\Desktop\hola\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.csproj.CoreCompileInputs.cache
+C:\Users\maxte\Desktop\hola\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\maxte\Desktop\hola\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\maxte\Desktop\hola\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.sourcelink.json
+C:\Users\maxte\Desktop\hola\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.dll
+C:\Users\maxte\Desktop\hola\FARMACIA_TUP\API\obj\Debug\net8.0\refint\API Farmacia.dll
+C:\Users\maxte\Desktop\hola\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.pdb
