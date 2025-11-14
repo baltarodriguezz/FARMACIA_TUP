@@ -1,0 +1,194 @@
+﻿{
+   "CodeGenerationMode": 4,
+   "ContextClassName": "tpi_farmaciaContext",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "MinimumProductVersion": "2.6.1166",
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "FARMACIA",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[Barrios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Carrito_Items]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Carritos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Ciudad]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Cliente_Obra_Social]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Clientes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Coberturas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Contactos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Detalle_Entrega]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Detalle_Reembolso]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Detalle_Respaldo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Detalles_Factura]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Detalles_receta]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Direccion]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Empleado_Externo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Empleados_internos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Empresa_Logistica]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Entregas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Estado_Respaldo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Facturas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Forma_Pago]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Localidad]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Medicos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Meses]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Obras_sociales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Pais]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Proveedor]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Receta]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Reembolsos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Respaldos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Roles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Sucursales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Suministros]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Tipo_contacto]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Tipo_Usuario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Tipos_Suministros]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Tipos_Venta]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseAsyncStoredProcedureCalls": true,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDatabaseNamesForRoutines": true,
+   "UseDateOnlyTimeOnly": true,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseInternalAccessModifiersForSprocsAndFunctions": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false,
+   "UseT4Split": false
+}

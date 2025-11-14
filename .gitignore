@@ -1,0 +1,5 @@
+# Ignorar carpetas de Visual Studio
+API/.vs/
+FARMACIA/.vs/
+.vs/
+*.vsidx

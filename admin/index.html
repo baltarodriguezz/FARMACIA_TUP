@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administración - Farmacia Luz</title>
+  <link rel="stylesheet" href="../assets/output.css" />
+</head>
+
+<body class="bg-gray-100 flex min-h-screen font-sans">
+
+  <!-- SIDEBAR -->
+  <aside class="w-64 bg-[#275c74] text-white flex flex-col justify-between">
+    <div>
+      <div class="p-6 border-b border-white/20">
+        <h2 class="text-2xl font-bold text-center">Admin Farmacia</h2>
+      </div>
+      <nav class="flex flex-col gap-2 p-4">
+        <a href="index.html" class="py-2 px-3 bg-[#12b1be] rounded font-semibold">🏠 Dashboard</a>
+        <a href="productos.html" class="py-2 px-3 rounded hover:bg-[#12b1be] transition">🧴 Productos</a>
+        <a href="clientes.html" class="py-2 px-3 rounded hover:bg-[#12b1be] transition">👥 Clientes</a>
+        <a href="ventas.html" class="py-2 px-3 rounded hover:bg-[#12b1be] transition">🧾 Ventas</a>
+      </nav>
+    </div>
+    <div class="p-4 text-center border-t border-white/20 text-sm opacity-80">
+      © 2025 Farmacia Luz
+    </div>
+  </aside>
+
+  <!-- CONTENIDO -->
+  <main class="flex-1 p-8">
+
+    <!-- ENCABEZADO -->
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h1 class="text-3xl font-bold text-[#275c74]">Panel de Administración</h1>
+        <p class="text-gray-500 mt-1">Bienvenido, Administrador 👋</p>
+      </div>
+      <img src="../assets/img/logo.png" class="w-16 h-16" alt="Logo Farmacia Luz" />
+    </div>
+
+    <!-- TARJETAS -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition flex items-center gap-4">
+        <div class="bg-[#12b1be]/10 p-3 rounded-full">Prod</div>
+        <div>
+          <p class="text-sm text-gray-500">Productos</p>
+          <h3 id="totalProductos" class="text-2xl font-semibold text-[#275c74]">0</h3>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition flex items-center gap-4">
+        <div class="bg-[#12b1be]/10 p-3 rounded-full">Clien</div>
+        <div>
+          <p class="text-sm text-gray-500">Clientes</p>
+          <h3 id="totalClientes" class="text-2xl font-semibold text-[#275c74]">0</h3>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition flex items-center gap-4">
+        <div class="bg-[#12b1be]/10 p-3 rounded-full">Vent</div>
+        <div>
+          <p class="text-sm text-gray-500">Ventas</p>
+          <h3 id="totalVentas" class="text-2xl font-semibold text-[#275c74]">0</h3>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition flex items-center gap-4">
+        <div class="bg-[#12b1be]/10 p-3 rounded-full">Ingr</div>
+        <div>
+          <p class="text-sm text-gray-500">Ingresos (AR$)</p>
+          <h3 id="totalIngresos" class="text-2xl font-semibold text-[#275c74]">$0</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLA DE VENTAS -->
+    <section class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-xl font-semibold text-[#275c74] mb-4">Últimas ventas</h2>
+
+      <table class="w-full border-collapse text-sm">
+        <thead class="bg-[#275c74] text-white">
+          <tr>
+            <!-- ❌ ID ELIMINADO -->
+            <th class="p-3 text-left">Cliente</th>
+            <th class="p-3 text-left">Fecha</th>
+            <th class="p-3 text-left">Total</th>
+          </tr>
+        </thead>
+        <tbody id="tablaVentas" class="divide-y"></tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- SCRIPT API -->
+  <script src="../assets/js/api.js"></script>
+
+  <!-- SCRIPT DASHBOARD -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const clientes    = await apiGet("Clientes");
+        const suministros = await apiGet("Suministros");
+        const facturas    = await apiGet("Factura");
+
+        // Tarjetas
+        document.getElementById("totalProductos").textContent = suministros.length;
+        document.getElementById("totalClientes").textContent  = clientes.length;
+        document.getElementById("totalVentas").textContent    = facturas.length;
+
+        const totalIngresos = facturas.reduce((acc, f) => acc + f.total, 0);
+        document.getElementById("totalIngresos").textContent =
+          "$" + totalIngresos.toLocaleString("es-AR");
+
+        // Crear un diccionario de clientes para lookup
+        const mapClientes = {};
+        clientes.forEach(c => {
+          mapClientes[c.idCliente] = `${c.nombre} ${c.apellido}`;
+        });
+
+        // Tabla ventas
+        const tbody = document.getElementById("tablaVentas");
+        tbody.innerHTML = "";
+
+        facturas.slice(0, 5).forEach(f => {
+          const nombreCompleto = mapClientes[f.idCliente] ?? "Cliente desconocido";
+          const fecha = f.fechaEmision.split("T")[0];
+          const total = f.total;
+
+          tbody.innerHTML += `
+            <tr>
+              <td class="p-3">${nombreCompleto}</td>
+              <td class="p-3">${fecha}</td>
+              <td class="p-3 text-[#12b1be] font-semibold">$${total}</td>
+            </tr>
+          `;
+        });
+
+      } catch (err) {
+        console.error("Error cargando dashboard:", err);
+        alert("Error al conectarse con la API");
+      }
+    });
+  </script>
+
+</body>
+</html>

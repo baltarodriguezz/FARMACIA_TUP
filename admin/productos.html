@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrar Productos - Farmacia Luz</title>
+  <link rel="stylesheet" href="../assets/output.css" />
+  <script src="../assets/js/api.js"></script>
+</head>
+
+<body class="bg-gray-100 flex min-h-screen font-sans">
+
+  <!-- SIDEBAR -->
+  <aside class="w-64 bg-[#275c74] text-white flex flex-col justify-between">
+    <div>
+      <div class="p-6 border-b border-white/20">
+        <h2 class="text-2xl font-bold text-center">Admin Farmacia</h2>
+      </div>
+      <nav class="flex flex-col gap-2 p-4">
+        <a href="index.html" class="py-2 px-3 rounded hover:bg-[#12b1be] transition">🏠 Dashboard</a>
+        <a href="productos.html" class="py-2 px-3 bg-[#12b1be] rounded font-semibold">🧴 Productos</a>
+        <a href="clientes.html" class="py-2 px-3 rounded hover:bg-[#12b1be] transition">👥 Clientes</a>
+        <a href="ventas.html" class="py-2 px-3 rounded hover:bg-[#12b1be] transition">🧾 Ventas</a>
+      </nav>
+    </div>
+    <div class="p-4 text-center border-t border-white/20 text-sm opacity-80">
+      © 2025 Farmacia Luz
+    </div>
+  </aside>
+
+  <!-- CONTENIDO -->
+  <main class="flex-1 p-8">
+
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-3xl font-bold text-[#275c74]">Gestión de Productos</h1>
+
+      <button id="btnNuevo"
+        class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white px-4 py-2 rounded-lg transition">
+        ➕ Nuevo Producto
+      </button>
+    </div>
+
+    <!-- TABLA -->
+    <div class="overflow-x-auto bg-white rounded-xl shadow-md">
+      <table class="min-w-full border-collapse text-sm">
+        <thead class="bg-[#275c74] text-white">
+          <tr>
+            <th class="p-3">ID</th>
+            <th class="p-3">Nombre</th>
+            <th class="p-3">Precio</th>
+            <th class="p-3">Stock</th>
+            <th class="p-3">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaProductos" class="divide-y"></tbody>
+      </table>
+    </div>
+
+    <!-- MODAL -->
+    <div id="modalProducto"
+      class="hidden fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+      <div class="bg-white rounded-xl p-6 w-96 shadow-xl">
+        <h2 id="tituloModal" class="text-xl font-bold text-[#275c74] mb-4">Nuevo Producto</h2>
+
+        <form id="formProducto" class="flex flex-col gap-3">
+
+          <input id="descripcion" placeholder="Descripción" class="border rounded p-2" />
+          <input id="precioUnitario" placeholder="Precio" type="number" class="border rounded p-2" />
+          <input id="stock" placeholder="Stock" type="number" class="border rounded p-2" />
+          <input id="codBarra" placeholder="Código de barras" type="number" class="border rounded p-2" />
+          <input id="urlImagen" placeholder="Nombre imagen (opcional)" class="border rounded p-2" />
+
+          <div class="flex justify-end gap-2 mt-3">
+            <button type="button" id="btnCancelar"
+              class="px-4 py-2 rounded border border-gray-400 hover:bg-gray-200">
+              Cancelar
+            </button>
+
+            <button type="submit"
+              class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white px-4 py-2 rounded">
+              Guardar
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </main>
+<script>
+const modal = document.getElementById("modalProducto");
+const tabla = document.getElementById("tablaProductos");
+const tituloModal = document.getElementById("tituloModal");
+
+const inputDescripcion = document.getElementById("descripcion");
+const inputPrecio      = document.getElementById("precioUnitario");
+const inputStock       = document.getElementById("stock");
+const inputCodBarra    = document.getElementById("codBarra");
+const inputUrlImagen   = document.getElementById("urlImagen");
+
+let editId = null;
+let productosCache = [];
+
+// ==================== CARGAR PRODUCTOS ====================
+async function cargarProductos() {
+    const datos = await apiGet("Suministros");
+    productosCache = datos;
+
+    tabla.innerHTML = "";
+
+    datos.forEach(p => {
+        tabla.innerHTML += `
+        <tr>
+            <td class="p-3">${p.idSuministro}</td>
+            <td class="p-3">${p.descripcion}</td>
+            <td class="p-3">$${p.precioUnitario}</td>
+            <td class="p-3">${p.stock}</td>
+            <td class="p-3 flex gap-2">
+                <button onclick="editar(${p.idSuministro})" class="text-blue-600 hover:underline">Editar</button>
+                <button onclick="eliminar(${p.idSuministro})" class="text-red-600 hover:underline">Eliminar</button>
+            </td>
+        </tr>`;
+    });
+}
+
+// ==================== NUEVO ====================
+document.getElementById("btnNuevo").addEventListener("click", () => {
+    editId = null;
+    tituloModal.textContent = "Nuevo Producto";
+
+    inputDescripcion.value = "";
+    inputPrecio.value      = "";
+    inputStock.value       = "";
+    inputCodBarra.value    = "";
+    inputUrlImagen.value   = "";
+
+    modal.classList.remove("hidden");
+});
+
+// ==================== CANCELAR ====================
+document.getElementById("btnCancelar").addEventListener("click", () => {
+    modal.classList.add("hidden");
+});
+
+// ==================== GUARDAR ====================
+document.getElementById("formProducto").addEventListener("submit", async e => {
+    e.preventDefault();
+
+    let nuevoId = editId;
+    if (nuevoId === null) {
+        const max = productosCache.length ? Math.max(...productosCache.map(x => x.idSuministro)) : 0;
+        nuevoId = max + 1;
+    }
+
+    const descripcion = inputDescripcion.value.trim();
+    const precio      = parseFloat(inputPrecio.value);
+    const stock       = parseInt(inputStock.value);
+    const codBarra    = parseInt(inputCodBarra.value || "0");
+    const urlfoto     = inputUrlImagen.value || "";
+
+    if (!descripcion || isNaN(precio) || isNaN(stock)) {
+        alert("Completá descripción, precio y stock correctamente.");
+        return;
+    }
+
+    // La API usa QUERYSTRING (NO JSON)
+    const params = new URLSearchParams({
+        id: nuevoId,
+        codBarra: codBarra,
+        descripcion: descripcion,
+        preUnitario: precio,
+        TSuministro: 1,
+        TVenta: 1,
+        stock: stock,
+        urlfoto: urlfoto
+    });
+
+    let url = "";
+    let method = "";
+
+    if (editId === null) {
+        // POST api/Suministros?id=...
+        url = `${API_URL}/Suministros?${params.toString()}`;
+        method = "POST";
+    } else {
+        // PUT api/Suministros/{id}?descripcion=...
+        params.delete("id");
+        url = `${API_URL}/Suministros/${editId}?${params.toString()}`;
+        method = "PUT";
+    }
+
+    try {
+        const resp = await fetch(url, { method });
+        const text = await resp.text();
+
+        if (!resp.ok) {
+            alert(`Error al guardar (${resp.status}): ${text}`);
+            return;
+        }
+
+    } catch (err) {
+        alert("No se pudo conectar con el servidor.");
+        console.error(err);
+        return;
+    }
+
+    modal.classList.add("hidden");
+    await cargarProductos();
+});
+
+// ==================== EDITAR ====================
+window.editar = async id => {
+    editId = id;
+    tituloModal.textContent = "Editar Producto";
+
+    const p = await apiGet(`Suministros/${id}`);
+
+    inputDescripcion.value = p.descripcion;
+    inputPrecio.value      = p.precioUnitario;
+    inputStock.value       = p.stock;
+    inputCodBarra.value    = p.codBarra;
+    inputUrlImagen.value   = p.urlImagen;
+
+    modal.classList.remove("hidden");
+};
+
+// ==================== ELIMINAR ====================
+window.eliminar = async id => {
+    if (!confirm("¿Seguro que deseas eliminar este producto?")) return;
+
+    try {
+        const resp = await fetch(`${API_URL}/Suministros/${id}`, { method: "DELETE" });
+        const message = await resp.text();
+
+        if (!resp.ok) {
+            alert(`No se pudo eliminar (${resp.status}): ${message}`);
+            return;
+        }
+
+    } catch (err) {
+        console.error(err);
+        alert("Error de red al eliminar.");
+        return;
+    }
+
+    cargarProductos();
+};
+
+// ==================== INICIO ====================
+cargarProductos();
+</script>
+
+
+
+
+</body>
+</html>
