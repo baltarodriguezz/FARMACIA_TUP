@@ -7,10 +7,11 @@ namespace API_Farmacia.Services.Interfaces
     {
         List<SuministroDTO> GetAll();
         SuministroDTO? GetById(int id);
-        bool Add(SuministroDTO suministro);
-        bool Update(SuministroDTO suministro);
+        bool Add(SuministroPostDTO suministro);
+        bool Update(SuministroPostDTO suministro, int id);
         bool Delete(int id);
         List<SuministroDTO>? GetProductosMasVendidos();
         List<TipoSuministroDTO> tiposSuministros();
+        List<SuministroDTO>? GetSuministrosPorTipo(int idTipoSuministro);
     }
 }
