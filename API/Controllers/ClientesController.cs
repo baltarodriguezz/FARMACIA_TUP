@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 ﻿using API_Farmacia.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+=======
+﻿using API_Farmacia.DTOs;
+using API_Farmacia.Services.Implementations;
+using API_Farmacia.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+>>>>>>> c2e6b9acb9943b6cc12f952f238aef53933e74a9
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,7 +24,11 @@ namespace API_Farmacia.Controllers
         {
             _service = service;
         }
+<<<<<<< HEAD
         // GET: api/<ClientesController>
+=======
+
+>>>>>>> c2e6b9acb9943b6cc12f952f238aef53933e74a9
         [HttpGet]
         public IActionResult Get()
         {
@@ -29,7 +43,10 @@ namespace API_Farmacia.Controllers
             }
         }
 
+<<<<<<< HEAD
         // GET api/<ClientesController>/5
+=======
+>>>>>>> c2e6b9acb9943b6cc12f952f238aef53933e74a9
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -92,6 +109,67 @@ namespace API_Farmacia.Controllers
             }
         }
 
+<<<<<<< HEAD
+=======
+        [HttpGet("me")]
+        [Authorize]  
+        public IActionResult GetMe()
+        {
+            try
+            {
+
+                var email = User.FindFirst(ClaimTypes.Email)?.Value;
+
+                if (string.IsNullOrEmpty(email))
+                    return Unauthorized("No se pudo obtener el email del token.");
+
+
+                var cliente = _service.GetByEmail(email);
+
+                if (cliente == null)
+                    return NotFound($"No se encontró un cliente con el email {email}.");
+
+
+                return Ok(cliente);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error Interno");
+            }
+        }
+
+        [HttpPut("me")]
+        [Authorize]
+        public IActionResult UpdateMe([FromBody] UpdateClienteDto dto)
+        {
+            var email = User.FindFirst(ClaimTypes.Email)?.Value;
+            if (string.IsNullOrEmpty(email))
+                return Unauthorized();
+
+            var ok = _service.ActualizarPerfil(email, dto);
+
+            if (!ok)
+                return NotFound("No se encontró el cliente logueado.");
+
+            return NoContent(); 
+        }
+
+        [HttpPost("register")]
+        [AllowAnonymous] 
+        public IActionResult Register([FromBody] RegisterClienteDto dto)
+        {
+            try
+            {
+                var nuevo = _service.RegistrarCliente(dto);
+                return Ok(nuevo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+>>>>>>> c2e6b9acb9943b6cc12f952f238aef53933e74a9
 
     }
 }

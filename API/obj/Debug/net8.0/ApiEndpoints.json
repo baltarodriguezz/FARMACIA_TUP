@@ -183,6 +183,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "API_Farmacia.Controllers.ClientesController",
+    "Method": "GetMe",
+    "RelativePath": "api/Clientes/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.ClientesController",
+    "Method": "UpdateMe",
+    "RelativePath": "api/Clientes/me",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "API_Farmacia.DTOs.UpdateClienteDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.ClientesController",
+    "Method": "Register",
+    "RelativePath": "api/Clientes/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "API_Farmacia.DTOs.RegisterClienteDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_Farmacia.Controllers.FacturaController",
     "Method": "Get",
     "RelativePath": "api/Factura",
@@ -288,7 +330,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SuministrosController",
+    "ContainingType": "API_Farmacia.Controllers.SuministrosController",
     "Method": "Get",
     "RelativePath": "api/Suministros",
     "HttpMethod": "GET",
@@ -298,7 +340,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SuministrosController",
+    "ContainingType": "API_Farmacia.Controllers.SuministrosController",
     "Method": "Post",
     "RelativePath": "api/Suministros",
     "HttpMethod": "POST",
@@ -306,16 +348,16 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "newSuministro",
-        "Type": "API_Farmacia.DTOs.SuministroDTO",
+        "Name": "suministro",
+        "Type": "API_Farmacia.DTOs.SuministroPostDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SuministrosController",
-    "Method": "GetById",
+    "ContainingType": "API_Farmacia.Controllers.SuministrosController",
+    "Method": "Get",
     "RelativePath": "api/Suministros/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -330,7 +372,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SuministrosController",
+    "ContainingType": "API_Farmacia.Controllers.SuministrosController",
     "Method": "Put",
     "RelativePath": "api/Suministros/{id}",
     "HttpMethod": "PUT",
@@ -338,20 +380,20 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "suministro",
+        "Type": "API_Farmacia.DTOs.SuministroPostDTO",
         "IsRequired": true
       },
       {
-        "Name": "newSuministro",
-        "Type": "API_Farmacia.DTOs.SuministroDTO",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SuministrosController",
+    "ContainingType": "API_Farmacia.Controllers.SuministrosController",
     "Method": "Delete",
     "RelativePath": "api/Suministros/{id}",
     "HttpMethod": "DELETE",
@@ -364,6 +406,48 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.SuministrosController",
+    "Method": "GetMasVendido",
+    "RelativePath": "api/Suministros/MasVendidos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.SuministrosController",
+    "Method": "GetSuministrosPorTipo",
+    "RelativePath": "api/Suministros/tipo/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.SuministrosController",
+    "Method": "GetTiposSuministros",
+    "RelativePath": "api/Suministros/TiposSuministros",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

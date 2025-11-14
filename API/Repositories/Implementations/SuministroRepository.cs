@@ -67,5 +67,16 @@ namespace API_Farmacia.Repositories.Implementations
         {
             return _context.TiposSuministros.ToList();
         }
+<<<<<<< HEAD
+=======
+
+        public List<Suministro> GetSuministrosPorTipo(int idTipoSuministro)
+        {
+            List<Suministro> suministros = _context.Suministros
+                .Where(s => s.IdTipoSuministro == idTipoSuministro)
+                .ToList();
+            return suministros;
+        }
+>>>>>>> c2e6b9acb9943b6cc12f952f238aef53933e74a9
     }
 }

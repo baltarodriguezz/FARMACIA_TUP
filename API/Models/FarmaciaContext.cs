@@ -877,9 +877,13 @@ public partial class FarmaciaContext : DbContext
         {
             entity.HasKey(e => e.IdSuministro).HasName("PK__Suminist__ABFE9BD113F13DC7");
 
+<<<<<<< HEAD
             entity.Property(e => e.IdSuministro)
                 .ValueGeneratedNever()
                 .HasColumnName("id_suministro");
+=======
+            entity.Property(e => e.IdSuministro).HasColumnName("id_suministro");
+>>>>>>> c2e6b9acb9943b6cc12f952f238aef53933e74a9
             entity.Property(e => e.CodBarra).HasColumnName("cod_barra");
             entity.Property(e => e.Descripcion)
                 .HasMaxLength(150)
@@ -888,7 +892,13 @@ public partial class FarmaciaContext : DbContext
             entity.Property(e => e.IdTipoSuministro).HasColumnName("id_tipo_suministro");
             entity.Property(e => e.IdTipoVenta).HasColumnName("id_tipo_venta");
             entity.Property(e => e.PrecioUnitario).HasColumnName("precio_unitario");
+<<<<<<< HEAD
             entity.Property(e => e.Stock).HasColumnName("stock");
+=======
+            entity.Property(e => e.Stock)
+                .HasAnnotation("Relational:DefaultConstraintName", "DF__Suministr__stock__3493CFA7")
+                .HasColumnName("stock");
+>>>>>>> c2e6b9acb9943b6cc12f952f238aef53933e74a9
             entity.Property(e => e.UrlImagen)
                 .IsRequired()
                 .HasMaxLength(500)

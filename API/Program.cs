@@ -9,6 +9,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+<<<<<<< HEAD
 // ------------------------------
 // 🔥 CORS: permitir frontend en 127.0.0.1:5500
 // ------------------------------
@@ -32,6 +33,22 @@ builder.Services.AddDbContext<FarmaciaContext>(o =>
 // ------------------------------
 // Inyección de dependencias
 // ------------------------------
+=======
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy
+            .AllowAnyOrigin()  
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
+builder.Services.AddDbContext<FarmaciaContext>(o =>
+    o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+>>>>>>> c2e6b9acb9943b6cc12f952f238aef53933e74a9
 builder.Services.AddScoped<IClienteService, ClienteService>();
 builder.Services.AddScoped<IClientesRepository, ClientesRepository>();
 builder.Services.AddScoped<IFacturaService, FacturaService>();
@@ -44,9 +61,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+<<<<<<< HEAD
 // ------------------------------
 // JWT
 // ------------------------------
+=======
+
+>>>>>>> c2e6b9acb9943b6cc12f952f238aef53933e74a9
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
 
 builder.Services.AddAuthentication("Bearer")
@@ -67,21 +88,33 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
+<<<<<<< HEAD
 // ------------------------------
 // PIPELINE
 // ------------------------------
+=======
+
+>>>>>>> c2e6b9acb9943b6cc12f952f238aef53933e74a9
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
+<<<<<<< HEAD
 // ❗ CORRE SIEMPRE ANTES DE Authentication & Authorization
 app.UseCors("DevPolicy");
 
 // Si usás HTTP, podés comentar esta línea (solo desarrollo):
 app.UseHttpsRedirection();
 
+=======
+app.UseHttpsRedirection();
+
+
+app.UseCors();
+
+>>>>>>> c2e6b9acb9943b6cc12f952f238aef53933e74a9
 app.UseAuthentication();
 app.UseAuthorization();
 

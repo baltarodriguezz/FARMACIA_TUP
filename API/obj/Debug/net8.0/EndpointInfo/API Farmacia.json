@@ -479,17 +479,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SuministroDTO"
+                "$ref": "#/components/schemas/SuministroPostDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SuministroDTO"
+                "$ref": "#/components/schemas/SuministroPostDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SuministroDTO"
+                "$ref": "#/components/schemas/SuministroPostDTO"
               }
             }
           }
@@ -542,17 +542,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SuministroDTO"
+                "$ref": "#/components/schemas/SuministroPostDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SuministroDTO"
+                "$ref": "#/components/schemas/SuministroPostDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SuministroDTO"
+                "$ref": "#/components/schemas/SuministroPostDTO"
               }
             }
           }
@@ -564,6 +564,53 @@
         }
       },
       "delete": {
+        "tags": [
+          "Suministros"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Suministros/MasVendidos": {
+      "get": {
+        "tags": [
+          "Suministros"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Suministros/TiposSuministros": {
+      "get": {
+        "tags": [
+          "Suministros"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Suministros/tipo/{id}": {
+      "get": {
         "tags": [
           "Suministros"
         ],
@@ -687,13 +734,9 @@
         },
         "additionalProperties": false
       },
-      "SuministroDTO": {
+      "SuministroPostDTO": {
         "type": "object",
         "properties": {
-          "idSuministro": {
-            "type": "integer",
-            "format": "int32"
-          },
           "codBarra": {
             "type": "integer",
             "format": "int32"
