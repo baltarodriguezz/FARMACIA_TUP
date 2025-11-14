@@ -210,8 +210,7 @@
               "RelativeToolTip": "Controllers\\FacturaController.cs",
               "ViewState": "AgIAAEsAAAAAAAAAAAAowFoAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:35:52.678Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:35:52.678Z"
             },
             {
               "$type": "Document",
@@ -543,8 +542,8 @@
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\maxte\\Desktop\\hola\\FARMACIA_TUP\\API\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\maxte\\Desktop\\hola\\FARMACIA_TUP\\API\\appsettings.json*",
-              "RelativeToolTip": "appsettings.json*",
+              "ToolTip": "C:\\Users\\maxte\\Desktop\\hola\\FARMACIA_TUP\\API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-11-13T23:37:46.611Z",
