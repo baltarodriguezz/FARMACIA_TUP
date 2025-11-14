@@ -103,12 +103,10 @@
         </div>
 
         <div class="py-2">
-            <a href="perfil.html">
             <button id="linkPerfil"
                     class="w-full text-left px-4 py-2.5 text-sm text-slate-700 hover:bg-[#98bfc2]">
                 Perfil
             </button>
-            </a>
             <button id="misCompras"
                     class="w-full text-left px-4 py-2.5 text-sm text-slate-700 hover:bg-[#98bfc2]">
                 Mis compras
@@ -208,53 +206,42 @@
         </div>
     </div>
 
-<div id="cartOverlay" class="fixed inset-0 bg-black/40 z-[60] hidden"></div>
+    <!-- CARRITO -->
+    <div id="cartOverlay" class="fixed inset-0 bg-black/40 z-[60] hidden"></div>
 
-<div id="cartPanel"
-     class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl border-l border-gray-100 z-[70] transform translate-x-full transition-transform duration-300 ease-out flex flex-col">
+    <div id="cartPanel"
+         class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl border-l border-gray-100 z-[70] transform translate-x-full transition-transform duration-300 ease-out flex flex-col">
+        <div class="flex items-center justify-between px-5 py-4 border-b border-gray-200">
+            <h2 class="text-lg font-semibold text-gray-800 font-family-base">
+                Tu carrito
+            </h2>
+            <button id="cartCloseBtn"
+                    class="text-gray-400 hover:text-gray-600 transition-colors">
+                ✕
+            </button>
+        </div>
 
-   
-    <div class="flex items-center justify-between px-5 py-4 border-b border-gray-200">
-        <h2 class="text-lg font-semibold text-gray-800 font-family-base">
-            Tu carrito
-        </h2>
-        <button id="cartCloseBtn"
-                class="text-gray-400 hover:text-gray-600 transition-colors">
-            ✕
-        </button>
-    </div>
-
-   
-    <div class="flex-1 overflow-y-auto px-5 py-4 space-y-4">
-
-        <div id="cartEmptyState" class="flex flex-col items-center justify-center h-full space-y-3">
-            <p class="text-sm text-gray-500 font-family-base text-center">
+        <div class="flex-1 overflow-y-auto px-5 py-4 space-y-4">
+            <p class="text-sm text-gray-500 font-family-base">
                 Todavía no agregaste productos al carrito.
             </p>
         </div>
 
-        
-        <div id="cartItemsWrapper" class="space-y-4 hidden">
-            <ul id="cartItemsList" class="space-y-4">
-                
-            </ul>
+        <div class="border-t border-gray-200 px-5 py-4 bg-white">
+            <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-gray-600 font-family-base">Total</span>
+                <span class="text-lg font-semibold text-gray-900 font-family-base">$0,00</span>
+            </div>
+            <button
+                class="w-full bg-gradient-to-r from-[#0e4448] to-[#12b1be] hover:from-[#12b1be] hover:to-[#0ea4ac] text-white font-semibold text-sm py-2.5 rounded-lg transition-colors">
+                Comprar
+            </button>
         </div>
     </div>
 
-    
-    <div class="border-t border-gray-200 px-5 py-4 bg-white">
-        <div class="flex justify-between items-center mb-3">
-            <span class="text-sm text-gray-600 font-family-base">Total</span>
-            <span id="cartTotal" class="text-lg font-semibold text-gray-900 font-family-base">$0,00</span>
-        </div>
-        <button id="btnCheckout"
-                class="w-full bg-gradient-to-r from-[#0e4448] to-[#12b1be] hover:from-[#12b1be] hover:to-[#0ea4ac] text-white font-semibold text-sm py-2.5 rounded-lg transition-colors">
-            Comprar
-        </button>
-    </div>
-</div>
-    
+    <!-- MAIN -->
     <main>
+        <!-- HERO -->
         <section class="section1 bg-[#E6F3F5] py-16 px-6">
             <div class="flex flex-col mt-10 lg:flex-row items-center justify-between gap-10 max-w-7xl mx-auto">
                 <div class="flex flex-col gap-5 lg:w-1/2">

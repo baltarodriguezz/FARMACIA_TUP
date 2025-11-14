@@ -53,6 +53,10 @@ const perfilPassInput     = document.getElementById("password");
 const perfilForm          = document.getElementById("perfilForm");
 
   // ---------- REFERENCIAS DEL CARRITO ----------
+  const cartBtn         = document.getElementById("cartBtn");
+  const cartOverlay     = document.getElementById("cartOverlay");
+  const cartPanel       = document.getElementById("cartPanel");
+  const cartCloseBtn    = document.getElementById("cartCloseBtn");
   const cartEmptyState  = document.getElementById("cartEmptyState");
   const cartItemsWrapper= document.getElementById("cartItemsWrapper");
   const cartItemsList   = document.getElementById("cartItemsList");

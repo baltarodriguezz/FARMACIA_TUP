@@ -208,12 +208,13 @@
         </div>
     </div>
 
+    <!-- CARRITO -->
 <div id="cartOverlay" class="fixed inset-0 bg-black/40 z-[60] hidden"></div>
 
 <div id="cartPanel"
      class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl border-l border-gray-100 z-[70] transform translate-x-full transition-transform duration-300 ease-out flex flex-col">
 
-   
+    <!-- Header -->
     <div class="flex items-center justify-between px-5 py-4 border-b border-gray-200">
         <h2 class="text-lg font-semibold text-gray-800 font-family-base">
             Tu carrito
@@ -224,24 +225,25 @@
         </button>
     </div>
 
-   
+    <!-- Contenido -->
     <div class="flex-1 overflow-y-auto px-5 py-4 space-y-4">
 
+        <!-- Estado vacío -->
         <div id="cartEmptyState" class="flex flex-col items-center justify-center h-full space-y-3">
             <p class="text-sm text-gray-500 font-family-base text-center">
                 Todavía no agregaste productos al carrito.
             </p>
         </div>
 
-        
+        <!-- Lista de items (se muestra solo si hay productos) -->
         <div id="cartItemsWrapper" class="space-y-4 hidden">
             <ul id="cartItemsList" class="space-y-4">
-                
+                <!-- acá se generan los <li> con JS -->
             </ul>
         </div>
     </div>
 
-    
+    <!-- Footer -->
     <div class="border-t border-gray-200 px-5 py-4 bg-white">
         <div class="flex justify-between items-center mb-3">
             <span class="text-sm text-gray-600 font-family-base">Total</span>
@@ -253,8 +255,11 @@
         </button>
     </div>
 </div>
-    
+
+
+    <!-- MAIN -->
     <main>
+        <!-- HERO -->
         <section class="section1 bg-[#E6F3F5] py-16 px-6">
             <div class="flex flex-col mt-10 lg:flex-row items-center justify-between gap-10 max-w-7xl mx-auto">
                 <div class="flex flex-col gap-5 lg:w-1/2">

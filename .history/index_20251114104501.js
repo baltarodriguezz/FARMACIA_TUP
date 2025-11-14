@@ -19,7 +19,6 @@ let currentOpenUserMenu = null;
 
 document.addEventListener("DOMContentLoaded", () => {
 
-
   const perfilBtn        = document.getElementById("perfilBtn");
   const userMenuNoSesion = document.getElementById("userMenuNoSesion");
   const userMenuSesion   = document.getElementById("userMenuSesion");
@@ -52,91 +51,6 @@ const perfilEmailInput    = document.getElementById("email2");
 const perfilPassInput     = document.getElementById("password");
 const perfilForm          = document.getElementById("perfilForm");
 
-  // ---------- REFERENCIAS DEL CARRITO ----------
-  const cartEmptyState  = document.getElementById("cartEmptyState");
-  const cartItemsWrapper= document.getElementById("cartItemsWrapper");
-  const cartItemsList   = document.getElementById("cartItemsList");
-  const cartTotalSpan   = document.getElementById("cartTotal");
-  const btnCheckout     = document.getElementById("btnCheckout");
-
-  // ---------- ABRIR / CERRAR ----------
-  function abrirCarrito() {
-    if (!cartPanel || !cartOverlay) return;
-    cartPanel.classList.remove("translate-x-full");
-    cartOverlay.classList.remove("hidden");
-  }
-
-  function cerrarCarrito() {
-    if (!cartPanel || !cartOverlay) return;
-    cartPanel.classList.add("translate-x-full");
-    cartOverlay.classList.add("hidden");
-  }
-
-  if (cartBtn) {
-    cartBtn.addEventListener("click", async () => {
-      await cargarCarritoDelServidor(); // esta función la vimos antes
-      abrirCarrito();
-    });
-  }
-
-  if (cartCloseBtn) {
-    cartCloseBtn.addEventListener("click", cerrarCarrito);
-  }
-
-  if (cartOverlay) {
-    cartOverlay.addEventListener("click", cerrarCarrito);
-  }
-
-  // ---------- RENDER DEL CARRITO ----------
-  function mostrarCarritoVacio() {
-    if (!cartEmptyState || !cartItemsWrapper) return;
-    cartEmptyState.classList.remove("hidden");
-    cartItemsWrapper.classList.add("hidden");
-    if (cartTotalSpan) cartTotalSpan.textContent = "$0,00";
-  }
-
-  function dibujarCarrito(items) {
-    if (!cartEmptyState || !cartItemsWrapper || !cartItemsList) return;
-
-    if (!items || items.length === 0) {
-      mostrarCarritoVacio();
-      return;
-    }
-
-    cartEmptyState.classList.add("hidden");
-    cartItemsWrapper.classList.remove("hidden");
-    cartItemsList.innerHTML = "";
-
-    let total = 0;
-
-    items.forEach((item) => {
-      // ajustá estos nombres a tu DTO real
-      const nombre   = item.nombreSuministro || item.nombre || "Producto";
-      const cantidad = item.cantidad || 1;
-      const precio   = item.precioUnitario || item.precio || 0;
-      const subtotal = cantidad * precio;
-      total += subtotal;
-
-      const li = document.createElement("li");
-      li.className = "flex justify-between items-center bg-gray-50 border border-gray-200 rounded-lg px-3 py-2";
-
-      li.innerHTML = `
-        <div>
-          <p class="text-sm font-semibold text-gray-800">${nombre}</p>
-          <p class="text-xs text-gray-500">Cant: ${cantidad}</p>
-        </div>
-        <div class="text-right">
-          <p class="text-sm font-semibold text-gray-900">$${subtotal.toFixed(2)}</p>
-        </div>
-      `;
-
-      cartItemsList.appendChild(li);
-    });
-
-    if (cartTotalSpan) {
-      cartTotalSpan.textContent = "$" + total.toFixed(2);
-    }
-  }
 
   
 
@@ -167,65 +81,6 @@ const perfilForm          = document.getElementById("perfilForm");
       perfilPassInput.value = "";
     }
   }
-// =======================
-// Guardar cambios en perfil
-// =======================
-
-if (perfilForm) {
-  perfilForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const token = localStorage.getItem("authToken");
-    if (!token) {
-      alert("Tenés que iniciar sesión para actualizar tus datos.");
-      return;
-    }
-
-    // Armamos el objeto con los datos del formulario
-    const payload = {
-      nombre:   perfilNombreInput?.value.trim()   ?? "",
-      apellido: perfilApellidoInput?.value.trim() ?? "",
-      email:    perfilEmailInput?.value.trim()    ?? ""
-      // agregá acá otros campos que tenga tu DTO si hace falta
-    };
-
-    // Solo mandamos contraseña si el usuario escribió algo
-    const nuevaPass = perfilPassInput?.value.trim();
-    if (nuevaPass) {
-      payload.password = nuevaPass; // ajustá el nombre al que espere tu API
-    }
-
-    try {
-      const res = await fetch(`${API_BASE_URL}/api/Clientes/me`, {
-        method: "PUT",                   // o "PATCH" según tu API
-        headers: {
-          "Authorization": `Bearer ${token}`,
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(payload)
-      });
-
-      if (!res.ok) {
-        const text = await res.text().catch(() => "");
-        console.error("Error al actualizar perfil:", res.status, text);
-        alert("No se pudieron guardar los cambios. Revisá los datos.");
-        return;
-      }
-
-      // Si todo salió bien, podés volver a pedir el usuario
-      await fetchCurrentUser();
-
-      alert("Datos actualizados correctamente ✅");
-
-      // limpiamos la contraseña del input
-      if (perfilPassInput) perfilPassInput.value = "";
-    } catch (err) {
-      console.error("Error de red al actualizar perfil:", err);
-      alert("Hubo un problema de conexión al guardar los cambios.");
-    }
-  });
-}
 
   
   async function fetchCurrentUser() {

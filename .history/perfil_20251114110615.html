@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmacia</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/output.css">
+</head>
+<body class="overflow-x-hidden">
+    
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50">
+        <div class="flex justify-between items-center py-3 px-8 max-w-7xl mx-auto">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="assets/img/logo.png" alt="Logo" class="w-14 h-14">
+                <span class="hidden sm:inline font-semibold text-[#275c74] tracking-wide text-lg">Farmacia del Momo</span>
+            </a>
+
+            <nav class="hidden lg:flex gap-8 text-base font-medium text-[#275c74]">
+                <a href="index.html" class="relative group transition font-family-base">Inicio
+                    <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#12b1be] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="relative group transition font-family-base">Perfumes
+                    <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#12b1be] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="relative group transition font-family-base">Cuidado Personal
+                    <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#12b1be] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="relative group transition font-family-base">Dermocosmética
+                    <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#12b1be] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="relative group transition font-family-base">Medicamentos
+                    <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#12b1be] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="relative group transition font-family-base">Bienestar
+                    <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#12b1be] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="relative group transition font-family-base">Bebés
+                    <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#12b1be] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+
+            <div class="flex items-center gap-5">
+                <!-- Botón carrito -->
+                <button id="cartBtn" class="group relative">
+                    <img src="assets/img/icons8-carrito-de-compras-50.png" alt="Carrito" class="w-6 h-6 group-hover:scale-110 transition-transform duration-300">
+                </button>
+
+                <!-- Botón usuario -->
+                <button id="perfilBtn" class="group">
+                    <img src="assets/img/icons8-usuario-24.png" alt="Usuario" class="w-6 h-6 group-hover:opacity-70 transition-opacity duration-300">
+                </button>
+
+                <!-- Botón menú móvil -->
+                <button id="btnAbrir" class="lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 50 50">
+                        <path d="M3 9a1 1 0 1 0 0 2h44a1 1 0 1 0 0-2H3zm0 15a1 1 0 1 0 0 2h44a1 1 0 1 0 0-2H3zm0 15a1 1 0 1 0 0 2h44a1 1 0 1 0 0-2H3z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENÚ USUARIO SIN SESIÓN -->
+    <div id="userMenuNoSesion"
+         class="hidden fixed drop-shadow-md drop-shadow-black/20 absolute right-3 top-16 z-40 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden transform transition-all duration-200 ease-out translate-x-4 opacity-0 mt-4">
+        <div class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-[#0e4448] to-[#12b1be]">
+            <div>
+                <p class="text-white font-semibold text-sm font-family-base">Bienvenido</p>
+                <p class="text-white/80 text-xs">Accede o crea una cuenta</p>
+            </div>
+        </div>
+        <div class="py-2">
+            <button
+                id="inicio_sesion"
+                class="w-full text-left px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-[#98bfc2]">
+                Iniciar sesión
+            </button>
+            <a href="registro.html"
+               class="block px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-700 hover:bg-[#98bfc2]">
+                Registrarse
+            </a>
+        </div>
+    </div>
+
+    <!-- MENÚ USUARIO CON SESIÓN -->
+    <div id="userMenuSesion"
+         class="hidden fixed drop-shadow-md drop-shadow-black/80 absolute right-3 top-16 z-40 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden transform transition-all duration-200 ease-out translate-x-4 opacity-0 mt-4">
+        <div class="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-[#0e4448] to-[#12b1be]">
+            <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-[#0e4448] font-semibold">
+                <span>B</span>
+            </div>
+            <div>
+                <p class="text-white font-semibold text-sm font-family-base">
+                    Hola, <span id="nombreUsuario">Usuario</span>
+                </p>
+                <p class="text-white/80 text-xs">Gestioná tu cuenta</p>
+            </div>
+        </div>
+
+        <div class="py-2">
+            <a href="perfil.html">
+            <button id="linkPerfil"
+                    class="w-full text-left px-4 py-2.5 text-sm text-slate-700 hover:bg-[#98bfc2]">
+                Perfil
+            </button>
+            </a>
+            <button id="misCompras"
+                    class="w-full text-left px-4 py-2.5 text-sm text-slate-700 hover:bg-[#98bfc2]">
+                Mis compras
+            </button>
+            <button id="favoritos"
+                    class="w-full text-left px-4 py-2.5 text-sm text-slate-700 hover:bg-[#98bfc2]">
+                Favoritos
+            </button>
+            <button id="configuracion"
+                    class="w-full text-left px-4 py-2.5 text-sm text-slate-700 hover:bg-[#98bfc2]">
+                Configuración
+            </button>
+            <div class="border-t border-slate-100 pt-1">
+                <button id="cerrarSesion"
+                        class="w-full text-left px-4 py-2.5 text-sm text-red-500 hover:bg-[#a89090]">
+                    Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL LOGIN -->
+    <div id="loginModal" class="fixed inset-0 flex items-center justify-center bg-[rgba(0,0,0,0.6)] hidden z-50">
+        <div class="relative isolate bg-[#0e4448] px-8 py-10 sm:py-12 rounded-2xl shadow-2xl w-[22rem] sm:w-[28rem] transform transition-all duration-300 scale-100">
+            <button id="closeLoginModal" class="absolute top-3 right-3 text-gray-400 hover:text-white text-xl cursor-pointer">
+                ✕
+            </button>
+
+            <div class="text-center mb-6">
+                <h2 class="text-3xl font-semibold tracking-tight text-white font-family-base">Iniciar sesión</h2>
+                <p class="mt-2 text-base text-gray-400 font-family-base">Accede a tu cuenta para continuar</p>
+            </div>
+
+            <form id="loginForm" class="space-y-5">
+                <div>
+                    <label class="block text-sm font-semibold text-white mb-1">Correo electrónico</label>
+                    <input 
+                        id="loginEmail"
+                        name="email"
+                        type="email" 
+                        required 
+                        placeholder="tuemail@ejemplo.com"
+                        class="block w-full rounded-md bg-white/10 px-3.5 py-2 text-white placeholder-gray-400 outline-1 outline-white/10 focus:outline-2 focus:outline-[#12b1be] transition">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-white mb-1">Contraseña</label>
+                    <input 
+                        id="loginPassword"
+                        name="password"
+                        type="password" 
+                        required 
+                        placeholder="••••••••"
+                        class="block w-full rounded-md bg-white/10 px-3.5 py-2 text-white placeholder-gray-400 outline-1 outline-white/10 focus:outline-2 focus:outline-[#12b1be] transition">
+                    <div class="text-right mt-2">
+                        <a href="#" class="text-sm text-[#12b1be] hover:underline">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </div>
+
+                <p id="loginError" class="hidden text-sm text-red-300"></p>
+
+                <button 
+                    type="submit"
+                    class="w-full mt-3 rounded-md bg-[#1e6e75] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-[#12b1be] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e6e75] transition">
+                    Iniciar sesión
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MENÚ OFFCANVAS MÓVIL -->
+    <div id="menuOffcanvas" class="shadow-lg shadow-black/30 fixed top-0 right-0 h-full w-3/4 max-w-sm bg-[#275c74] text-white transform translate-x-full transition-transform duration-500 ease-in-out z-[999] flex flex-col justify-between">
+        <div>
+            <div class="flex justify-between items-center p-5 border-b border-white/20">
+                <h2 class="li_titulos">Menú</h2>
+                <button id="btnCerrar">
+                    <img src="assets/img/icons8-x-50.png" class="h-6.5 w-8" alt="cerrar">
+                </button>
+            </div>
+
+            <ul class="flex flex-col gap-6 p-6 text-lg">
+                <li class="styles_li"><a href="index.html" class="hover:text-[#12b1be]">Inicio</a></li>
+                <li class="styles_li"><a href="#" class="hover:text-[#12b1be]">Perfumes</a></li>
+                <li class="styles_li"><a href="#" class="hover:text-[#12b1be]">Cuidado Personal</a></li>
+                <li class="styles_li"><a href="#" class="hover:text-[#12b1be]">Dermocosmética</a></li>
+                <li class="styles_li"><a href="#" class="hover:text-[#12b1be]">Medicamentos</a></li>
+                <li class="styles_li"><a href="#" class="hover:text-[#12b1be]">Bienestar</a></li>
+                <li class="styles_li"><a href="#" class="hover:text-[#12b1be]">Bebés</a></li>
+            </ul>
+
+            <div class="flex min-w-4/5 m-5 justify-center items-center gap-2 p-3 rounded-xl bg-white shadow-black shadow-lg">
+                <button class="font-family-base text-black cursor-pointer">Contactar Ahora</button>
+            </div>
+            <div class="flex min-w-4/5 m-5 justify-center items-center gap-2 p-3 rounded-xl bg-[#12b1be] shadow-black shadow-lg">
+                <button class="font-family-base text-black cursor-pointer">Reservar Cita</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARRITO -->
+    <div id="cartOverlay" class="fixed inset-0 bg-black/40 z-[60] hidden"></div>
+
+    <div id="cartPanel"
+         class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl border-l border-gray-100 z-[70] transform translate-x-full transition-transform duration-300 ease-out flex flex-col">
+        <div class="flex items-center justify-between px-5 py-4 border-b border-gray-200">
+            <h2 class="text-lg font-semibold text-gray-800 font-family-base">
+                Tu carrito
+            </h2>
+            <button id="cartCloseBtn"
+                    class="text-gray-400 hover:text-gray-600 transition-colors">
+                ✕
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto px-5 py-4 space-y-4">
+            <p class="text-sm text-gray-500 font-family-base">
+                Todavía no agregaste productos al carrito.
+            </p>
+        </div>
+
+        <div class="border-t border-gray-200 px-5 py-4 bg-white">
+            <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-gray-600 font-family-base">Total</span>
+                <span class="text-lg font-semibold text-gray-900 font-family-base">$0,00</span>
+            </div>
+            <button
+                class="w-full bg-gradient-to-r from-[#0e4448] to-[#12b1be] hover:from-[#12b1be] hover:to-[#0ea4ac] text-white font-semibold text-sm py-2.5 rounded-lg transition-colors">
+                Comprar
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <main class="container mx-auto px-4 py-8 mt-20">
+        <div class="flex gap-6">
+            <aside class="w-64 bg-white rounded-lg shadow-md p-6">
+                <nav>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="perfil.html" class="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                                </svg>
+                                <span class="font-medium">Perfil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="misCompras.html" class="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                                </svg>
+                                <span class="font-medium">Mis compras</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                </svg>
+                                <span class="font-medium">Favoritos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+                                </svg>
+                                <span class="font-medium">Métodos de pago</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="config.html" class="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+                                <span class="font-medium">Configuración</span>
+                            </a>
+                        </li>
+                        <li class="pt-4 border-t border-gray-200">
+                            <a href="#" class="flex items-center gap-3 p-3 hover:bg-red-50 rounded-lg transition text-red-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                                <span class="font-medium">Cerrar sesión</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <section class="flex-1 bg-white rounded-lg shadow-md p-8">
+                <div>
+                    <div class="flex justify-between items-center border-b pb-3 mb-4">
+                        <h2 class="text-xl font-semibold text-gray-800 font-family-base">Datos Personales</h2>
+                    </div>
+                    <form id="perfilForm" class="space-y-4">
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-gray-600">Nombre</label>
+                            <input id="nombre" name="nombre" type="text" class="mt-1 w-full px-4 py-2.5 text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-300 rounded-2xl focus:outline-none focus:border-[#0e4448] focus:ring-0 transition duration-300" />
+                        </div>
+                        <div>
+                            <label for="apellido" class="block text-sm font-medium text-gray-600">Apellido</label>
+                            <input id="apellido" name="apellido" type="text" class="mt-1 w-full px-4 py-2.5 text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-300 rounded-2xl focus:outline-none focus:border-[#0e4448] focus:ring-0 transition duration-300" />
+                        </div>
+                        <div>
+                            <label for="email2" class="block text-sm font-medium text-gray-600">Email</label>
+                            <input id="email2" name="email2" type="email" class="mt-1 w-full px-4 py-2.5 text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-300 rounded-2xl focus:outline-none focus:border-[#0e4448] focus:ring-0 transition duration-300" />
+                        </div>
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-600">Contraseña</label>
+                            <input id="password" name="password" type="password" value="********"
+                                   class="mt-1 w-full px-4 py-2.5 text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-300 rounded-2xl focus:outline-none focus:border-[#0e4448] focus:ring-0 transition duration-300" />
+                        </div>
+                        <button type="submit" class="block min-w-2/12 rounded-md bg-[#1e6e75] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-[#12b1be] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e6e75]">
+                            Guardar cambios
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white py-10 px-6 md:px-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div>
+                <h2 class="text-2xl font-bold mb-3 font-family-base">Farmacia La Mano del Momo</h2>
+                <p class="text-sm text-black">
+                    Más de 25 años brindando atención personalizada y productos de calidad para el bienestar de toda la familia.
+                </p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-3 font-family-base">Secciones</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-[#12b1be] transition-colors">Inicio</a></li>
+                    <li><a href="#" class="hover:text-[#12b1be] transition-colors">Dermocosmética</a></li>
+                    <li><a href="#" class="hover:text-[#12b1be] transition-colors">Perfumería</a></li>
+                    <li><a href="#" class="hover:text-[#12b1be] transition-colors">Bebés</a></li>
+                    <li><a href="#" class="hover:text-[#12b1be] transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-3 font-family-base">Contacto</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>Achaval Rodriguez 50, Córdoba</li>
+                    <li>(011) 4567-8901</li>
+                    <li>farmaciasalud@gmail.com</li>
+                </ul>
+                <div class="flex gap-4 mt-4">
+                    <a href="#" class="hover:text-[#12b1be] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-[#12b1be] transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-[#12b1be] transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-10 pt-5 text-center text-sm text-gray-500">
+            © 2025 Farmacia Salud+. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+</body>
+</html>

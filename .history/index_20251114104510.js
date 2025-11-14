@@ -19,7 +19,6 @@ let currentOpenUserMenu = null;
 
 document.addEventListener("DOMContentLoaded", () => {
 
-
   const perfilBtn        = document.getElementById("perfilBtn");
   const userMenuNoSesion = document.getElementById("userMenuNoSesion");
   const userMenuSesion   = document.getElementById("userMenuSesion");
@@ -52,91 +51,6 @@ const perfilEmailInput    = document.getElementById("email2");
 const perfilPassInput     = document.getElementById("password");
 const perfilForm          = document.getElementById("perfilForm");
 
-  // ---------- REFERENCIAS DEL CARRITO ----------
-  const cartEmptyState  = document.getElementById("cartEmptyState");
-  const cartItemsWrapper= document.getElementById("cartItemsWrapper");
-  const cartItemsList   = document.getElementById("cartItemsList");
-  const cartTotalSpan   = document.getElementById("cartTotal");
-  const btnCheckout     = document.getElementById("btnCheckout");
-
-  // ---------- ABRIR / CERRAR ----------
-  function abrirCarrito() {
-    if (!cartPanel || !cartOverlay) return;
-    cartPanel.classList.remove("translate-x-full");
-    cartOverlay.classList.remove("hidden");
-  }
-
-  function cerrarCarrito() {
-    if (!cartPanel || !cartOverlay) return;
-    cartPanel.classList.add("translate-x-full");
-    cartOverlay.classList.add("hidden");
-  }
-
-  if (cartBtn) {
-    cartBtn.addEventListener("click", async () => {
-      await cargarCarritoDelServidor(); // esta función la vimos antes
-      abrirCarrito();
-    });
-  }
-
-  if (cartCloseBtn) {
-    cartCloseBtn.addEventListener("click", cerrarCarrito);
-  }
-
-  if (cartOverlay) {
-    cartOverlay.addEventListener("click", cerrarCarrito);
-  }
-
-  // ---------- RENDER DEL CARRITO ----------
-  function mostrarCarritoVacio() {
-    if (!cartEmptyState || !cartItemsWrapper) return;
-    cartEmptyState.classList.remove("hidden");
-    cartItemsWrapper.classList.add("hidden");
-    if (cartTotalSpan) cartTotalSpan.textContent = "$0,00";
-  }
-
-  function dibujarCarrito(items) {
-    if (!cartEmptyState || !cartItemsWrapper || !cartItemsList) return;
-
-    if (!items || items.length === 0) {
-      mostrarCarritoVacio();
-      return;
-    }
-
-    cartEmptyState.classList.add("hidden");
-    cartItemsWrapper.classList.remove("hidden");
-    cartItemsList.innerHTML = "";
-
-    let total = 0;
-
-    items.forEach((item) => {
-      // ajustá estos nombres a tu DTO real
-      const nombre   = item.nombreSuministro || item.nombre || "Producto";
-      const cantidad = item.cantidad || 1;
-      const precio   = item.precioUnitario || item.precio || 0;
-      const subtotal = cantidad * precio;
-      total += subtotal;
-
-      const li = document.createElement("li");
-      li.className = "flex justify-between items-center bg-gray-50 border border-gray-200 rounded-lg px-3 py-2";
-
-      li.innerHTML = `
-        <div>
-          <p class="text-sm font-semibold text-gray-800">${nombre}</p>
-          <p class="text-xs text-gray-500">Cant: ${cantidad}</p>
-        </div>
-        <div class="text-right">
-          <p class="text-sm font-semibold text-gray-900">$${subtotal.toFixed(2)}</p>
-        </div>
-      `;
-
-      cartItemsList.appendChild(li);
-    });
-
-    if (cartTotalSpan) {
-      cartTotalSpan.textContent = "$" + total.toFixed(2);
-    }
-  }
 
   
 
