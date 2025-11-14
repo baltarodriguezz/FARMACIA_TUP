@@ -22,10 +22,13 @@ namespace API_Farmacia.Services.Implementations
                 IdFactura = f.NroFactura,
                 IdCliente = f.IdCliente,
                 IdSucursal = f.IdSucursal,
+                IdFormaPago = f.IdFormaPago,
                 FechaEmision = f.Fecha,
                 Total = (double)f.DetallesFacturas.Sum(d => d.Cantidad * d.PreUnitario),
                 Detalles = f.DetallesFacturas.Select(d => new DetalleFacturaDTO
                 {
+                    IdDetalleFactura = d.NroDetalleFactura,
+                    IdFactura = d.NroFactura,
                     IdSuministro = d.IdSuministro,
                     Cantidad = d.Cantidad,
                     PrecioUnitario = d.PreUnitario
@@ -47,10 +50,13 @@ namespace API_Farmacia.Services.Implementations
                 IdFactura = factura.NroFactura,
                 IdCliente = factura.IdCliente,
                 IdSucursal = factura.IdSucursal,
+                IdFormaPago = factura.IdFormaPago,
                 FechaEmision = factura.Fecha,
                 Total = (double)factura.DetallesFacturas.Sum(d => d.Cantidad * d.PreUnitario),
                 Detalles = factura.DetallesFacturas.Select(d => new DetalleFacturaDTO
                 {
+                    IdDetalleFactura = d.NroDetalleFactura,
+                    IdFactura = d.NroFactura,
                     IdSuministro = d.IdSuministro,
                     Cantidad = d.Cantidad,
                     PrecioUnitario = d.PreUnitario
@@ -68,10 +74,13 @@ namespace API_Farmacia.Services.Implementations
                 IdFactura = f.NroFactura,
                 IdCliente = f.IdCliente,
                 IdSucursal = f.IdSucursal,
+                IdFormaPago = f.IdFormaPago,
                 FechaEmision = f.Fecha,
                 Total = (double)f.DetallesFacturas.Sum(d => d.Cantidad * d.PreUnitario),
                 Detalles = f.DetallesFacturas.Select(d => new DetalleFacturaDTO
                 {
+                    IdDetalleFactura = d.NroDetalleFactura,
+                    IdFactura = d.NroFactura,
                     IdSuministro = d.IdSuministro,
                     Cantidad = d.Cantidad,
                     PrecioUnitario = d.PreUnitario
@@ -87,11 +96,14 @@ namespace API_Farmacia.Services.Implementations
             {
                 IdFactura = f.NroFactura,
                 IdCliente = f.IdCliente,
-                FechaEmision = f.Fecha,
                 IdSucursal = f.IdSucursal,
+                IdFormaPago = f.IdFormaPago,
+                FechaEmision = f.Fecha,
                 Total = (double)f.DetallesFacturas.Sum(d => d.Cantidad * d.PreUnitario),
                 Detalles = f.DetallesFacturas.Select(d => new DetalleFacturaDTO
                 {
+                    IdDetalleFactura = d.NroDetalleFactura,
+                    IdFactura = d.NroFactura,
                     IdSuministro = d.IdSuministro,
                     Cantidad = d.Cantidad,
                     PrecioUnitario = d.PreUnitario
@@ -105,17 +117,17 @@ namespace API_Farmacia.Services.Implementations
             return _repository.GetRecaudacionTotal();
         }
 
-        public void postFactura(FacturaDTO factura)
+        public void postFactura(FacturaPostDTO factura)
         {
             var facturaModel = new Factura
             {
-                NroFactura = factura.IdFactura,
                 IdCliente = (int)factura.IdCliente,
                 IdFormaPago = (int)factura.IdFormaPago,
                 Fecha = factura.FechaEmision,
                 IdSucursal = (int)factura.IdSucursal,
                 DetallesFacturas = factura.Detalles.Select(d => new DetallesFactura
                 {
+                    NroFactura =_repository.GetNextFacturaNumber(),
                     IdSuministro = d.IdSuministro,
                     Cantidad = d.Cantidad,
                     PreUnitario = d.PrecioUnitario

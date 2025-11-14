@@ -91,5 +91,7 @@ namespace API_Farmacia.Controllers
                 return StatusCode(500, "Error Interno");
             }
         }
+
+
     }
 }

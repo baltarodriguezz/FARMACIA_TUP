@@ -95,17 +95,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FacturaDTO"
+                "$ref": "#/components/schemas/FacturaPostDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/FacturaDTO"
+                "$ref": "#/components/schemas/FacturaPostDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/FacturaDTO"
+                "$ref": "#/components/schemas/FacturaPostDTO"
               }
             }
           }
@@ -153,7 +153,7 @@
       }
     },
     "/api/Factura/FacturaPorCliente/{idCliente}": {
-      "delete": {
+      "get": {
         "tags": [
           "Factura"
         ],
@@ -198,6 +198,37 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Login/login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -274,6 +305,13 @@
             "schema": {
               "type": "integer",
               "format": "int32"
+            }
+          },
+          {
+            "name": "urlfoto",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -423,17 +461,9 @@
   },
   "components": {
     "schemas": {
-      "DetalleFacturaDTO": {
+      "DetalleFacturaPostDTO": {
         "type": "object",
         "properties": {
-          "idDetalleFactura": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "idFactura": {
-            "type": "integer",
-            "format": "int32"
-          },
           "idSuministro": {
             "type": "integer",
             "format": "int32"
@@ -450,13 +480,9 @@
         },
         "additionalProperties": false
       },
-      "FacturaDTO": {
+      "FacturaPostDTO": {
         "type": "object",
         "properties": {
-          "idFactura": {
-            "type": "integer",
-            "format": "int32"
-          },
           "idCliente": {
             "type": "integer",
             "format": "int32",
@@ -476,16 +502,25 @@
             "type": "string",
             "format": "date-time"
           },
-          "total": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
           "detalles": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/DetalleFacturaDTO"
+              "$ref": "#/components/schemas/DetalleFacturaPostDTO"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
             "nullable": true
           }
         },

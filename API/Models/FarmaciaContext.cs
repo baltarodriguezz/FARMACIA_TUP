@@ -400,9 +400,7 @@ public partial class FarmaciaContext : DbContext
 
             entity.ToTable("Detalles_Factura");
 
-            entity.Property(e => e.NroDetalleFactura)
-                .ValueGeneratedNever()
-                .HasColumnName("nro_detalle_factura");
+            entity.Property(e => e.NroDetalleFactura).HasColumnName("nro_detalle_factura");
             entity.Property(e => e.Cantidad).HasColumnName("cantidad");
             entity.Property(e => e.IdSuministro).HasColumnName("id_suministro");
             entity.Property(e => e.NroFactura).HasColumnName("nro_factura");
@@ -610,9 +608,7 @@ public partial class FarmaciaContext : DbContext
         {
             entity.HasKey(e => e.NroFactura).HasName("PK__Facturas__B31FA9AF858D8BF5");
 
-            entity.Property(e => e.NroFactura)
-                .ValueGeneratedNever()
-                .HasColumnName("nro_factura");
+            entity.Property(e => e.NroFactura).HasColumnName("nro_factura");
             entity.Property(e => e.Fecha)
                 .HasColumnType("datetime")
                 .HasColumnName("fecha");

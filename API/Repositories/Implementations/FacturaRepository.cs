@@ -1,5 +1,6 @@
 ﻿using API_Farmacia.Models;
 using API_Farmacia.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
 namespace API_Farmacia.Repositories.Implementations
@@ -13,18 +14,23 @@ namespace API_Farmacia.Repositories.Implementations
         }
         public List<Factura> GetAll()
         {
-            return _context.Facturas.ToList();
+            return _context.Facturas
+                .Include(f => f.DetallesFacturas)
+                .ToList();
         }
 
         public Factura? GetById(int id)
         {
-            return _context.Facturas.Find(id);
+            return _context.Facturas
+                .Include(f => f.DetallesFacturas)
+                .FirstOrDefault(f => f.NroFactura == id);
         }
 
         public List<Factura> GetFacturasEntreFechas(DateTime fechaInicio, DateTime fechaFin)
         {
             var facturas = _context.Facturas
                 .Where(f => f.Fecha >= fechaInicio && f.Fecha <= fechaFin)
+                .Include(f=>f.DetallesFacturas)
                 .ToList();
             return facturas;
         }
@@ -33,8 +39,14 @@ namespace API_Farmacia.Repositories.Implementations
         {
             List<Factura> facturas = _context.Facturas
                 .Where(f => f.IdCliente == clienteId)
+                .Include(f=>f.DetallesFacturas)
                 .ToList();
             return facturas;
+        }
+
+        public int GetNextFacturaNumber()
+        {
+            return _context.Facturas.Max(f => f.NroFactura) + 1;
         }
 
         public double GetRecaudacionTotal()

@@ -65,7 +65,7 @@ namespace API_Farmacia.Controllers
                 return StatusCode(500, "Error Interno");
             }
         }
-        [HttpDelete("FacturaPorCliente/{idCliente}")]
+        [HttpGet("FacturaPorCliente/{idCliente}")]
         public IActionResult GetFacturasPorCliente(int idCliente)
         {
             try
@@ -92,7 +92,7 @@ namespace API_Farmacia.Controllers
             }
         }
         [HttpPost]
-        public IActionResult Post(FacturaDTO factura)
+        public IActionResult Post(FacturaPostDTO factura)
         { 
             try
             {

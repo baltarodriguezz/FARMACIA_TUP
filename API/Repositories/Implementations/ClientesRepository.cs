@@ -85,5 +85,19 @@ namespace API_Farmacia.Repositories.Implementations
 
             return clientes;
         }
+
+        public bool Login(string email, string password)
+        {
+            var cliente = _context.Clientes
+                .FirstOrDefault(c => c.Email == email && c.Contrasena == password);
+            if (cliente != null)
+            {
+                return true;
+            }
+            else  
+            {
+                return false;
+            }
+        }
     }
 }

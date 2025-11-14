@@ -9,5 +9,6 @@ namespace API_Farmacia.Repositories.Interfaces
         Cliente? GetClienteQueMasCompro();
         Cliente? GetClienteConCompraMasGrande();
         List<Cliente>? GetClientesTarjetaCredito();
+        bool Login(string email, string password);
     }
 }

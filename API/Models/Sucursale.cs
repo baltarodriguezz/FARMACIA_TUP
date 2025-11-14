@@ -11,7 +11,7 @@ public partial class Sucursale
 
     public string Nombre { get; set; }
 
-    public int Telefono { get; set; }
+    public long? Telefono { get; set; }
 
     public int IdDireccion { get; set; }
 

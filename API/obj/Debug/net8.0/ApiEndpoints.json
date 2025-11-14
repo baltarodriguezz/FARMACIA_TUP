@@ -75,7 +75,7 @@
     "Parameters": [
       {
         "Name": "factura",
-        "Type": "API_Farmacia.DTOs.FacturaDTO",
+        "Type": "API_Farmacia.DTOs.FacturaPostDTO",
         "IsRequired": true
       }
     ],
@@ -122,7 +122,7 @@
     "ContainingType": "API_Farmacia.Controllers.FacturaController",
     "Method": "GetFacturasPorCliente",
     "RelativePath": "api/Factura/FacturaPorCliente/{idCliente}",
-    "HttpMethod": "DELETE",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -142,6 +142,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "api/Login/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "API_Farmacia.DTOs.LoginDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -195,6 +211,11 @@
       {
         "Name": "stock",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "urlfoto",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],

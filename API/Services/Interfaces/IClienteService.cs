@@ -9,5 +9,6 @@ namespace API_Farmacia.Services.Interfaces
         ClienteDTO? GetClienteQueMasCompro();
         ClienteDTO? GetClienteConCompraMasGrande();
         List<ClienteDTO>? GetClientesTarjetaCredito();
+        bool Login(LoginDto loginDto);
     }
 }

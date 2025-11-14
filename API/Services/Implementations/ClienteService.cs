@@ -105,5 +105,18 @@ namespace API_Farmacia.Services.Implementations
                 return clientesDTO;
             }
         }
+
+        public bool Login(LoginDto loginDto)
+        {
+            var resultado = _repository.Login(loginDto.Email, loginDto.Password);
+            if (resultado)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

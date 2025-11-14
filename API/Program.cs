@@ -1,9 +1,11 @@
+using API_Farmacia.Models; 
 using API_Farmacia.Repositories.Implementations;
 using API_Farmacia.Repositories.Interfaces;
 using API_Farmacia.Services.Implementations;
 using API_Farmacia.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using API_Farmacia.Models; // Asegúrate de importar el namespace correcto
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +25,26 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-    var app = builder.Build();
+// JWT
+var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
+
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(key)
+        };
+    });
+
+builder.Services.AddAuthorization();
+
+var app = builder.Build();
 
 
 // Configure the HTTP request pipeline.
@@ -34,6 +55,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

@@ -10,6 +10,6 @@ namespace API_Farmacia.Services.Interfaces
         double GetRecaudacionTotal();
         List<FacturaDTO> GetFacturasPorCliente(int clienteId);
         List<FacturaDTO> GetFacturasEntreFechas(DateTime fechaInicio, DateTime fechaFin);
-        void postFactura(FacturaDTO factura);
+        void postFactura(FacturaPostDTO factura);
     }
 }

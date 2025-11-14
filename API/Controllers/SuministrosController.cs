@@ -67,7 +67,7 @@ namespace API_Farmacia.Controllers
         }
         // POST api/<SuministrosController>
         [HttpPost]
-        public IActionResult Post( int id, int codBarra, string descripcion, double preUnitario, int TSuministro, int TVenta, int stock)
+        public IActionResult Post( int id, int codBarra, string descripcion, double preUnitario, int TSuministro, int TVenta, int stock, string urlfoto)
         {
             SuministroDTO newSuministro = new SuministroDTO
             {
@@ -77,7 +77,8 @@ namespace API_Farmacia.Controllers
                 PrecioUnitario = preUnitario,
                 IdTipoSuministro = TSuministro,
                 IdTipoVenta = TVenta,
-                Stock = stock
+                Stock = stock,
+                UrlImagen = urlfoto
             };
 
             try
