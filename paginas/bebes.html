@@ -3,33 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bebés | Farmacia La Mano del Momo</title>
+  <title>Bebés | Farmacia Luz</title>
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/output.css">
+  <link rel="stylesheet" href="../assets/output.css?v=3" />
   <style>
     html {
       scroll-behavior: smooth;
+    }
+    
+    .font-family-base {
+      font-family: inherit !important;
     }
   </style>
 </head>
 
 <body class="overflow-x-hidden bg-gray-50">
 
-  <!-- Overlay oscuro para menú / modal -->
   <div id="dark-overlay" class="fixed inset-0 bg-black/60 z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
-  <!-- HEADER (mismo estilo que index) -->
   <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50">
     <div class="flex justify-between items-center py-3 px-8 max-w-7xl mx-auto">
       <a href="../index.html" class="flex items-center gap-2">
         <img src="../assets/img/logo.png" alt="Logo" class="w-14 h-14">
-        <span class="hidden sm:inline font-semibold text-[#275c74] tracking-wide text-lg">Farmacia La Mano del Momo</span>
+        <span class="hidden sm:inline font-semibold text-[#275c74] tracking-wide text-lg">Farmacia Luz</span>
       </a>
 
-      <!-- Menú grande -->
       <nav class="hidden lg:flex gap-8 text-base font-medium text-[#275c74]">
         <a href="../index.html" class="relative group transition">
           Inicio
@@ -57,7 +58,6 @@
         </a>
       </nav>
 
-      <!-- Íconos -->
       <div class="flex items-center gap-5">
         <button class="group relative">
           <img src="../assets/img/icons8-carrito-de-compras-50.png" alt="Carrito" class="w-6 h-6 group-hover:scale-110 transition-transform duration-300">
@@ -74,7 +74,6 @@
     </div>
   </header>
 
-  <!-- MODAL DE INICIO DE SESIÓN -->
   <div
     id="authentication-modal"
     tabindex="-1"
@@ -83,7 +82,6 @@
   >
     <div class="relative p-4 w-full max-w-md max-h-full">
       <div class="relative rounded-lg shadow-sm bg-[#0e4448]">
-        <!-- Header -->
         <div class="flex items-center justify-between p-4 md:p-5 border-b border-gray-200 rounded-t">
           <div class="flex items-center gap-2">
             <img src="../assets/img/logo.png" class="w-10 h-10" alt="">
@@ -108,7 +106,6 @@
           </button>
         </div>
 
-        <!-- Formulario -->
         <div class="p-4 md:p-5">
           <form class="space-y-4" action="#">
             <div>
@@ -163,7 +160,6 @@
     </div>
   </div>
 
-  <!-- MENÚ OFFCANVAS -->
   <div id="menuOffcanvas" class="shadow-lg shadow-black/30 fixed top-0 right-0 h-full w-3/4 max-w-sm bg-[#275c74] text-white transform translate-x-full transition-transform duration-500 ease-in-out z-[999] flex flex-col justify-between">
     <div>
       <div class="flex justify-between items-center p-5 border-b border-white/20">
@@ -205,10 +201,7 @@
       </div>
     </div>
   </div>
- <!-- ====================================================== -->
-<!-- ==================  FOOTER Y ESPACIADO =============== -->
-<!-- ====================================================== -->
-<div class="h-12"></div>
+ <div class="h-12"></div>
 
     <footer class="bg-[#1e4d5f] text-white text-sm py-4 px-5">
         <p class="text-[#cbd5e1] text-xs">Av. Siempre Viva 742, Buenos Aires</p>
@@ -220,11 +213,9 @@
         <p class="text-center text-xs text-gray-300 mt-4">© 2025 Farmacia Luz. Todos los derechos reservados.</p>
     </footer>
 </div>
-  <!-- CONTENIDO PRINCIPAL -->
   <main class="pt-1">
 
-    <!-- SECCIÓN 1: Cuidado diario del bebé -->
-    <section class="bg-[#E6F3F5] py-16 px-6">
+    <section class="bg-[#E6F3F5] py-4 px-6">
       <div class="max-w-7xl mx-auto flex flex-col gap-10">
         <div class="text-center flex flex-col items-center gap-4">
           <h4 class="bg-[#12b1be] text-white text-xs px-3 py-1 rounded-full font-family-base uppercase tracking-wide">
@@ -239,10 +230,11 @@
         </div>
 
         <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
-          <!-- Video Pampers -->
-          <div class="w-full lg:w-1/2 h-80 lg:h-96">
+
+        <div class="w-full lg:w-[48%] flex justify-center items-center">
+          <a href="https://www.pamperslatam.com/" target="_blank" rel="noopener noreferrer" class="w-full max-w-[500px] h-[350px] mx-auto overflow-hidden rounded-2xl block shadow-lg hover:shadow-2xl transition-shadow duration-300">
             <video
-              class="rounded-2xl shadow-lg w-full h-full object-cover"
+              class="w-full h-full object-cover"
               autoplay
               muted
               loop
@@ -251,30 +243,28 @@
               <source src="../img/pampers2.mp4" type="video/mp4">
               Tu navegador no soporta el video.
             </video>
-          </div>
-          
+          </a>
+        </div>
 
-          <!-- Carrusel 1 — DINÁMICO -->
-<div class="relative w-full lg:w-1/2">
-  <div class="relative overflow-hidden">
-    <div id="carrusel-bebes-1"
-         class="flex gap-6 px-2 overflow-x-auto no-scrollbar snap-x snap-mandatory">
-    </div>
-  </div>
-</div>
+        <div class="relative w-full lg:w-1/2">
+          <div class="relative overflow-hidden">
+            <div id="carrusel-bebes-1"
+                class="flex gap-6 px-2 overflow-x-auto no-scrollbar snap-x snap-mandatory">
+            </div>
+          </div>
         </div>
       </div>
-    <div id="grilla-bebes-2"
-     class="flex flex-wrap justify-center gap-8">
-</div>
-
-
-
-        <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
-          <!-- Video Nutrilon -->
-          <div class="w-full lg:w-[48%] h-auto flex justify-center items-center">
+      </div>
+    
+      <div id="grilla-bebes-2"
+           class="flex flex-wrap justify-center gap-8 py-12">
+      </div>
+      
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
+        <div class="w-full lg:w-[48%] flex justify-center items-center">
+          <a href="https://tiendanutriciabago.com.ar/" target="_blank" rel="noopener noreferrer" class="w-full max-w-[500px] h-[350px] mx-auto overflow-hidden rounded-2xl block shadow-lg hover:shadow-2xl transition-shadow duration-300">
             <video
-              class="rounded-2xl shadow-lg w-full max-h-[400px] object-contain"
+              class="w-full h-full object-cover"
               autoplay
               muted
               loop
@@ -283,65 +273,61 @@
               <source src="../assets/img/Nutrilon 4.mp4" type="video/mp4">
               Tu navegador no soporta el video.
             </video>
-            
-          </div>
-            <div class="relative w-full lg:w-1/2">
-  <div class="relative overflow-hidden">
-    <div id="carrusel-bebes-3"
-         class="flex gap-6 px-2 overflow-x-auto no-scrollbar snap-x snap-mandatory">
-    </div>
-  </div>
-</div>
+          </a>
         </div>
-        
+
+        <div class="relative w-full lg:w-1/2">
+          <div class="relative overflow-hidden">
+            <div id="carrusel-bebes-3"
+                 class="flex gap-6 px-2 overflow-x-auto no-scrollbar snap-x snap-mandatory">
+            </div>
+          </div>
+        </div>
       </div>
-      
+        
     </section>
   </main>
 
-  <!-- FOOTER (igual estilo index) -->
-  <footer class="bg-white py-10 px-6 md:px-20">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-      <div>
-        <h2 class="text-2xl font-bold mb-3 font-family-base">Farmacia La Mano del Momo</h2>
-        <p class="text-sm text-black">
-          Más de 25 años brindando atención personalizada y productos de calidad para el bienestar de toda la familia.
-        </p>
-      </div>
-      <div>
-        <h3 class="text-lg font-semibold mb-3 font-family-base">Secciones</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="../index.html" class="hover:text-[#12b1be] transition-colors">Inicio</a></li>
-          <li><a href="../paginas/dermocosmetica.html" class="hover:text-[#12b1be] transition-colors">Dermocosmética</a></li>
-          <li><a href="../paginas/perfumes.html" class="hover:text-[#12b1be] transition-colors">Perfumería</a></li>
-          <li><a href="../paginas/bebes.html" class="hover:text-[#12b1be] transition-colors">Bebés</a></li>
-          <li><a href="#" class="hover:text-[#12b1be] transition-colors">Contacto</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-lg font-semibold mb-3 font-family-base">Contacto</h3>
-        <ul class="space-y-2 text-sm">
-          <li>Achaval Rodriguez 50, Córdoba</li>
-          <li>(011) 4567-8901</li>
-          <li>farmaciasalud@gmail.com</li>
-        </ul>
-        <div class="flex gap-4 mt-4">
-          <a href="#" class="hover:text-[#12b1be] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="hover:text-[#12b1be] transition-colors"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="hover:text-[#12b1be] transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+  <footer class="bg-white py-10 px-4 md:px-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mx-auto max-w-7xl px-4">
+            <div>
+                <h2 class="text-2xl font-bold mb-3 font-family-base">Farmacia Luz</h2>
+                <p class="text-sm text-black">
+                    Más de 25 años brindando atención personalizada y productos de calidad para el bienestar de toda la familia.
+                </p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-3 font-family-base">Secciones</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="../index.html" class="hover:text-[#12b1be] transition-colors">Inicio</a></li>
+                    <li><a href="../paginas/perfumes.html" class="hover:text-[#12b1be] transition-colors">Perfumes</a></li>
+                    <li><a href="../paginas/cuidado-personal.html" class="hover:text-[#12b1be] transition-colors">Cuidado Personal</a></li>
+                    <li><a href="../paginas/dermocomestica.html" class="hover:text-[#12b1be] transition-colors">Dermocosmética</a></li>
+                    <li><a href="../paginas/medicamentos.html" class="hover:text-[#12b1be] transition-colors">Medicamentos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-3 font-family-base">Contacto</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>Achaval Rodriguez 50, Córdoba</li>
+                    <li>(011) 4567-8901</li>
+                    <li>farmacialuz@gmail.com</li>
+                </ul>
+                <div class="flex gap-4 mt-4">
+                    <a href="#" class="hover:text-[#12b1be] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-[#12b1be] transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-[#12b1be] transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="border-t border-gray-200 mt-10 pt-5 text-center text-sm text-gray-500">
-      © 2025 Farmacia Salud+. Todos los derechos reservados.
-    </div>
-  </footer>
+        <div classs="border-t border-gray-700 mt-10 pt-5 text-center text-sm text-gray-500">
+            © 2025 Farmacia Luz. Todos los derechos reservados.
+        </div>
+    </footer>
 
   <script src="../index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-<script type="module" src="../assets/js/bebes.js"></script>
-
-
+<script src="../assets/js/bebes.js"></script>
 
 </body>
 </html>

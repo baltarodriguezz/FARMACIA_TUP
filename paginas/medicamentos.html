@@ -3,62 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Medicamentos - Farmacia La Mano del Momo</title>
+  <title>Medicamentos - Farmacia Luz</title>
 
-  <link rel="stylesheet" href="../assets/output.css">
+  <link rel="stylesheet" href="../assets/output.css?v=3" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     html { scroll-behavior: smooth; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
+    
+    .font-family-base {
+  font-family: inherit !important;
+}
+  
   </style>
 </head>
 
-<body class="bg-[#eaf9ff] overflow-x-hidden">
+<body class="bg-[#E6F3F5] overflow-x-hidden">
 
 <!-- ================================================================= -->
 <!-- ======================== NAVBAR + MENÚ =========================== -->
 <!-- ================================================================= -->
 
-<header class="fixed top-0 left-0 w-full bg-white shadow z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center py-3 px-6">
-
-    <!-- LOGO -->
-    <div class="flex items-center gap-3">
-      <img src="../assets/img/logo.png" class="w-10 h-10" alt="Logo">
-      <h1 class="text-xl font-semibold text-[#275c74]">Farmacia La Mano del Momo</h1>
-    </div>
-
-    <!-- MENÚ DESKTOP -->
-    <nav class="hidden md:flex gap-10 text-base font-medium text-[#275c74]">
-      <a href="../index.html" class="hover:text-[#12b1be]">Inicio</a>
-      <a href="../paginas/perfumes.html" class="hover:text-[#12b1be]">Perfumes</a>
-      <a href="../paginas/cuidado-personal.html" class="hover:text-[#12b1be]">Cuidado Personal</a>
-      <a href="../paginas/dermocomestica.html" class="hover:text-[#12b1be]">Dermocosmética</a>
-
-      <!-- ACTIVO -->
-      <div class="flex flex-col items-center -mt-1">
-        <a href="../paginas/medicamentos.html" class="text-[#12b1be] font-semibold">Medicamentos</a>
-        <span class="w-8 h-[3px] bg-[#12b1be] rounded-full mt-1"></span>
+<header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50">
+    <div class="flex justify-between items-center py-3 px-8 max-w-7xl mx-auto">
+      <a href="../index.html" class="flex items-center gap-2">
+        <img src="../assets/img/logo.png" alt="Logo" class="w-14 h-14">
+        <span class="hidden sm:inline font-semibold text-[#275c74] tracking-wide text-lg">Farmacia Luz</span>
+      </a>
+      <nav class="hidden lg:flex gap-8 text-base font-medium text-[#275c74]">
+        <a href="../index.html" class="relative group transition">
+          Inicio
+          <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#12b1be] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="../paginas/perfumes.html" class="relative group transition">
+          Perfumes
+          <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#12b1be] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="../paginas/cuidado-personal.html" class="relative group transition">
+          Cuidado Personal
+          <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#12b1be] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="../paginas/dermocomestica.html" class="relative group transition">
+          Dermocosmética
+          <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#12b1be] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="../paginas/medicamentos.html" class="relative group transition text-[#12b1be] font-semibold">
+          Medicamentos
+          <span class="absolute left-0 -bottom-1 w-full h-[2px] bg-[#12b1be] transition-all duration-300"></span>
+        </a>
+        <a href="../paginas/bebes.html" class="relative group transition">
+          Bebés
+          <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#12b1be] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </nav>
+      <div class="flex items-center gap-5">
+        <button class="group relative">
+          <img src="../assets/img/icons8-carrito-de-compras-50.png" alt="Carrito" class="w-6 h-6 group-hover:scale-110 transition-transform duration-300">
+        </button>
+        <button id="inicio_sesion" class="group">
+          <img data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" src="../assets/img/icons8-usuario-24.png" alt="Usuario" class="w-6 h-6 group-hover:opacity-70 transition-opacity duration-300">
+        </button>
+        <button id="btnAbrir" class="lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 50 50">
+            <path d="M3 9a1 1 0 1 0 0 2h44a1 1 0 1 0 0-2H3zm0 15a1 1 0 1 0 0 2h44a1 1 0 1 0 0-2H3zm0 15a1 1 0 1 0 0 2h44a1 1 0 1 0 0-2H3z"/>
+          </svg>
+        </button>
       </div>
-
-      <a href="../paginas/bebes.html" class="hover:text-[#12b1be]">Bebés</a>
-    </nav>
-
-    <!-- ICONOS -->
-    <div class="flex items-center gap-4">
-      <img src="../assets/img/icons8-carrito-de-compras-50.png" class="hidden md:block w-6 h-6 cursor-pointer" alt="">
-      <img src="../assets/img/icons8-usuario-24.png" class="hidden md:block w-7 h-7 cursor-pointer" alt="">
-
-      <!-- BOTÓN MENÚ MÓVIL -->
-      <button id="btnAbrir" class="lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 50 50">
-          <path d="M3 9a1 1 0 1 0 0 2h44a1 1 0 1 0 0-2H3zm0 15a1 1 0 1 0 0 2h44a1 1 0 1 0 0-2H3zm0 15a1 1 0 1 0 0 2h44a1 1 0 1 0 0-2H3z"/>
-        </svg>
-      </button>
     </div>
-  </div>
 </header>
 
 <!-- MENÚ OFFCANVAS -->
@@ -90,14 +103,39 @@
     </div>
   </div>
 
-  <p class="text-center text-white/70 text-sm pb-4">© 2025 Farmacia La Mano del Momo</p>
+  <p class="text-center text-white/70 text-sm pb-4">© 2025 Farmacia Luz</p>
 </div>
 
 
 <!-- ESPACIADO -->
-<div class="h-24"></div>
+<div class="h-12"></div>
+    <footer class="bg-[#1e4d5f] text-white text-sm py-4 px-5">
+      <p class="text-[#cbd5e1] text-xs">Av. Siempre Viva 742, Buenos Aires</p>
+      <div class="flex justify-around mt-3">
+          <img src="../assets/img/icons8-whatsapp-48.png" class="w-6" alt="">
+          <img src="../assets/img/icons8-facebook-nuevo-48.png" class="w-6" alt="">
+          <img src="../assets/img/icons8-instagram-48.png" class="w-6" alt="">
+      </div>
+      <p class="text-center text-xs text-gray-300 mt-4">© 2025 Farmacia Luz. Todos los derechos reservados.</p>
+    </footer>
+</div>
 
-<main class="max-w-7xl mx-auto px-4 pb-20 pt-10">
+<main class="max-w-7xl mx-auto px-4 pb-20">
+  <section class="bg-[#E6F3F5] py-5 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col gap-10">
+    <div class="text-center flex flex-col items-center gap-4">
+      <h4 class="bg-[#12b1be] text-white text-xs px-3 py-1 rounded-full font-family-base uppercase tracking-wide">
+        Medicamentos
+      </h4>
+      <h2 class="font-bold text-4xl md:text-5xl font-family-base text-gray-800">
+        Medicamentos de Venta Libre
+      </h2>
+      <p class="text-sm md:text-base font-family-base text-gray-700 max-w-2xl">
+        Todos los medicamentos disponibles en nuestra farmacia.
+      </p>
+    </div>
+  </div>
+</section>
 
 <!-- ================================================================= -->
 <!-- ======================   ANALGÉSICOS (DINÁMICO) ================== -->
@@ -119,11 +157,42 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="bg-white py-10 px-6 md:px-20">
-  <div class="border-t border-gray-200 mt-10 pt-5 text-center text-sm text-gray-500">
-    © 2025 Farmacia Salud+. Todos los derechos reservados.
-  </div>
-</footer>
+<footer class="bg-white py-10 px-4 md:px-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mx-auto max-w-7xl px-4">
+            <div>
+                <h2 class="text-2xl font-bold mb-3 font-family-base">Farmacia Luz</h2>
+                <p class="text-sm text-black">
+                    Más de 25 años brindando atención personalizada y productos de calidad para el bienestar de toda la familia.
+                </p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-3 font-family-base">Secciones</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="../index.html" class="hover:text-[#12b1be] transition-colors">Inicio</a></li>
+                    <li><a href="../paginas/perfumes.html" class="hover:text-[#12b1be] transition-colors">Perfumes</a></li>
+                    <li><a href="../paginas/cuidado-personal.html" class="hover:text-[#12b1be] transition-colors">Cuidado Personal</a></li>
+                    <li><a href="../paginas/dermocomestica.html" class="hover:text-[#12b1be] transition-colors">Dermocosmética</a></li>
+                    <li><a href="../paginas/bebes.html" class="hover:text-[#12b1be] transition-colors">Bebés</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-3 font-family-base">Contacto</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>Achaval Rodriguez 50, Córdoba</li>
+                    <li>(011) 4567-8901</li>
+                    <li>farmacialuz@gmail.com</li>
+                </ul>
+                <div class="flex gap-4 mt-4">
+                    <a href="#" class="hover:text-[#12b1be] transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-[#12b1be] transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-[#12b1be] transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-10 pt-5 text-center text-sm text-gray-500">
+            © 2025 Farmacia Luz. Todos los derechos reservados.
+        </div>
+    </footer>
 
 
 <!-- SCRIPT MENÚ MÓVIL -->
@@ -135,7 +204,7 @@ document.getElementById("btnCerrar").onclick = () =>
   document.getElementById("menuOffcanvas").classList.add("translate-x-full");
 </script>
 
-<script type="module" src="../assets/js/productos.js"></script>
+<script src="../assets/js/productos.js"></script>
 
 
 </body>

@@ -25,21 +25,24 @@ async function cargarCuidadoPersonal() {
             const img = s.urlImagen ? `../assets/img/${s.urlImagen}` : "../assets/img/default.jpg";
             const nombre = s.descripcion.toLowerCase();
 
+            // ✅ REEMPLAZAR ESTA VARIABLE
             const card = `
-                <div class="snap-start bg-white rounded-xl shadow p-4 w-72 hover:shadow-md transition">
-                    <img src="${img}" class="w-48 h-48 object-contain mx-auto mb-4">
+                <div class="snap-start bg-white rounded-xl shadow p-4 w-72 hover:shadow-md transition h-47 flex flex-col">
+                    
+                    <div class="flex-1">
+                        <img src="${img}" class="w-48 h-48 object-contain mx-auto mb-4">
+                        <h3 class="font-semibold text-gray-800">${s.descripcion}</h3>
+                        <p class="text-gray-500 text-sm">${s.codBarra || ""}</p>
+                    </div>
 
-                    <h3 class="font-semibold text-gray-800">${s.descripcion}</h3>
-
-                    <p class="text-gray-500 text-sm">${s.codBarra || ""}</p>
-
-                    <p class="text-xl font-bold text-[#275c74] mt-2">$${precio}</p>
-
-                    <button class="border border-[#12b1be] text-[#12b1be] 
-                                   hover:bg-[#12b1be] hover:text-white 
-                                   w-full py-2 rounded-lg mt-3 transition">
-                        Agregar
-                    </button>
+                    <div class="mt-auto">
+                        <p class="text-xl font-bold text-[#275c74] mt-2">$${precio}</p>
+                        <button class="border border-[#12b1be] text-[#12b1be] 
+                                    hover:bg-[#12b1be] hover:text-white 
+                                    w-full py-2 rounded-lg mt-3 transition">
+                            Agregar
+                        </button>
+                    </div>
                 </div>
             `;
 

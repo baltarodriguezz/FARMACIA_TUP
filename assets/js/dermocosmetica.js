@@ -23,15 +23,22 @@ async function cargarDermocosmetica() {
             const precio = (s.precioUnitario).toLocaleString("es-AR");
             const img = s.urlImagen ? `../assets/img/${s.urlImagen}` : "../assets/img/default.jpg";
 
+            // ✅ REEMPLAZAR ESTA VARIABLE
             const card = `
-                <div class="snap-start w-64 bg-white border border-gray-200 rounded-xl shadow p-5 flex-shrink-0 hover:shadow-xl transition">
-                    <img src="${img}" class="w-40 h-40 object-contain mx-auto mb-3">
-                    <h3 class="font-semibold text-lg mb-1">${s.descripcion}</h3>
-                    <p class="text-sm text-gray-500 mb-2">${s.codBarra || ""}</p>
-                    <p class="text-xl font-bold text-[#275c74] mb-4">$${precio}</p>
-                    <button class="border border-[#12b1be] text-[#12b1be] hover:bg-[#12b1be] hover:text-white rounded-lg w-full py-2 font-medium transition">
-                        Agregar
-                    </button>
+                <div class="snap-start w-64 bg-white border border-gray-200 rounded-xl shadow p-5 flex-shrink-0 hover:shadow-xl transition h-47 flex flex-col">
+                    
+                    <div class="flex-1">
+                        <img src="${img}" class="w-40 h-40 object-contain mx-auto mb-3">
+                        <h3 class="font-semibold text-lg mb-1">${s.descripcion}</h3>
+                        <p class="text-sm text-gray-500 mb-2">${s.codBarra || ""}</p>
+                    </div>
+
+                    <div class="mt-auto">
+                        <p class="text-xl font-bold text-[#275c74] mb-4">$${precio}</p>
+                        <button class="border border-[#12b1be] text-[#12b1be] hover:bg-[#12b1be] hover:text-white rounded-lg w-full py-2 font-medium transition">
+                            Agregar
+                        </button>
+                    </div>
                 </div>
             `;
 
