@@ -89,7 +89,8 @@ async function cargarCuidadoPersonal() {
                 nombre.includes("acondicionador") ||
                 nombre.includes("capilar") ||
                 nombre.includes("mascarilla capilar") ||
-                nombre.includes("ampolla")
+                nombre.includes("ampolla") ||
+                nombre.includes("coloración")
             ) {
                 capilar.innerHTML += card;
                 return;

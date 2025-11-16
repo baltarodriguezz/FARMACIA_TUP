@@ -63,5 +63,13 @@ namespace API_Farmacia.Repositories.Implementations
             _context.Facturas.Add(factura);
             _context.SaveChanges();
         }
+        public async Task<List<Sucursale>> GetAllSucs()
+        {
+            return await _context.Sucursales.ToListAsync();
+        }
+        public async Task<List<FormaPago>> GetAllFormasPago()
+        {
+            return await _context.FormaPagos.ToListAsync();
+        }
     }
 }

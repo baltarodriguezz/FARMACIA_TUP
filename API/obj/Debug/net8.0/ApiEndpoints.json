@@ -305,8 +305,28 @@
   },
   {
     "ContainingType": "API_Farmacia.Controllers.FacturaController",
+    "Method": "GetFormasPago",
+    "RelativePath": "api/Factura/formas-pago",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.FacturaController",
     "Method": "GetRecaudacion",
     "RelativePath": "api/Factura/RecaudacionTotal",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Farmacia.Controllers.FacturaController",
+    "Method": "GetSucursales",
+    "RelativePath": "api/Factura/sucursales",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

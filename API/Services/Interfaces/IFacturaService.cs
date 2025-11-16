@@ -11,5 +11,7 @@ namespace API_Farmacia.Services.Interfaces
         List<FacturaDTO> GetFacturasPorCliente(int clienteId);
         List<FacturaDTO> GetFacturasEntreFechas(DateTime fechaInicio, DateTime fechaFin);
         void postFactura(FacturaPostDTO factura);
+        Task<List<Sucursale>> GetAllSucs();
+        Task<List<FormaPago>> GetAllFormasPago();
     }
 }

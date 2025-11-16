@@ -11,5 +11,7 @@ namespace API_Farmacia.Repositories.Interfaces
         List<Factura> GetFacturasEntreFechas(DateTime fechaInicio, DateTime fechaFin);
         void postFactura(Factura factura);
         int GetNextFacturaNumber();
+        Task<List<Sucursale>> GetAllSucs();
+        Task<List<FormaPago>> GetAllFormasPago();
     }
 }

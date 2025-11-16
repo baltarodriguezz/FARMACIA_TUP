@@ -135,5 +135,13 @@ namespace API_Farmacia.Services.Implementations
             };
             _repository.postFactura(facturaModel);
         }
+        public async Task<List<Sucursale>> GetAllSucs()
+        {
+            return await _repository.GetAllSucs();
+        }
+        public async Task<List<FormaPago>> GetAllFormasPago()
+        {
+            return await _repository.GetAllFormasPago();
+        }
     }
 }

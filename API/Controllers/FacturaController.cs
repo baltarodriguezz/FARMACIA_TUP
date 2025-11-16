@@ -1,6 +1,8 @@
 ﻿using API_Farmacia.DTOs;
+using API_Farmacia.Models;
 using API_Farmacia.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -98,6 +100,30 @@ namespace API_Farmacia.Controllers
             {
                 _service.postFactura(factura);
                 return Ok();
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error Interno");
+            }
+        }
+        [HttpGet("sucursales")]
+        public async Task<IActionResult> GetSucursales()
+        {
+            try
+            {
+                return Ok(await _service.GetAllSucs());
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error Interno");
+            }
+        }
+        [HttpGet("formas-pago")]
+        public async Task<IActionResult> GetFormasPago()
+        {
+            try
+            {
+                return Ok(await _service.GetAllFormasPago());
             }
             catch (Exception)
             {
