@@ -22,29 +22,30 @@ async function cargarCuidadoPersonal() {
         productos.forEach(s => {
 
             const precio = (s.precioUnitario).toLocaleString("es-AR");
-            const img = s.urlImagen ? `../assets/img/${s.urlImagen}` : "../assets/img/default.jpg";
+            const img = s.urlImagen && s.urlImagen.startsWith("http")
+                ? s.urlImagen
+                : `../assets/img/${s.urlImagen || "default.jpg"}`;
             const nombre = s.descripcion.toLowerCase();
 
             // ✅ REEMPLAZAR ESTA VARIABLE
             const card = `
-                <div class="snap-start bg-white rounded-xl shadow p-4 w-72 hover:shadow-md transition h-47 flex flex-col">
+                <div class="snap-start w-64 bg-white border border-gray-200 rounded-xl shadow p-5 flex-shrink-0 hover:shadow-xl transition h-47 flex flex-col">
                     
                     <div class="flex-1">
-                        <img src="${img}" class="w-48 h-48 object-contain mx-auto mb-4">
-                        <h3 class="font-semibold text-gray-800">${s.descripcion}</h3>
-                        <p class="text-gray-500 text-sm">${s.codBarra || ""}</p>
+                        <img src="${img}" class="w-40 h-40 object-contain mx-auto mb-3">
+                        <h3 class="font-semibold text-lg mb-1">${s.descripcion}</h3>
+                        <p class="text-sm text-gray-500 mb-2">${s.codBarra || ""}</p>
                     </div>
 
                     <div class="mt-auto">
-                        <p class="text-xl font-bold text-[#275c74] mt-2">$${precio}</p>
-                        <button class="border border-[#12b1be] text-[#12b1be] 
-                                    hover:bg-[#12b1be] hover:text-white 
-                                    w-full py-2 rounded-lg mt-3 transition">
-                            Agregar
+                        <p class="text-xl font-bold text-[#275c74] mb-4">$${precio}</p>
+                        <button class="border border-[#12b1be] text-[#12b1be] hover:bg-[#12b1be] hover:text-white rounded-lg w-full py-2 font-medium transition">
+                            Agregar al Carrito
                         </button>
                     </div>
                 </div>
             `;
+
 
             // ===========================
             // CLASIFICACIÓN

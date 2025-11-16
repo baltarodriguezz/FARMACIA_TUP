@@ -21,7 +21,9 @@ async function cargarDermocosmetica() {
         productos.forEach(s => {
 
             const precio = (s.precioUnitario).toLocaleString("es-AR");
-            const img = s.urlImagen ? `../assets/img/${s.urlImagen}` : "../assets/img/default.jpg";
+            const img = s.urlImagen && s.urlImagen.startsWith("http")
+                ? s.urlImagen
+                : `../assets/img/${s.urlImagen || "default.jpg"}`;
 
             // ✅ REEMPLAZAR ESTA VARIABLE
             const card = `
@@ -36,7 +38,7 @@ async function cargarDermocosmetica() {
                     <div class="mt-auto">
                         <p class="text-xl font-bold text-[#275c74] mb-4">$${precio}</p>
                         <button class="border border-[#12b1be] text-[#12b1be] hover:bg-[#12b1be] hover:text-white rounded-lg w-full py-2 font-medium transition">
-                            Agregar
+                            Agregar al Carrito
                         </button>
                     </div>
                 </div>

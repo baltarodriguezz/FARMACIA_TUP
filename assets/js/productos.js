@@ -18,7 +18,10 @@ async function cargarMedicamentos() {
             const precio = (s.precioUnitario).toLocaleString("es-AR");
             
             // Lógica de imagen (usa nombre de archivo, no URL completa)
-            const img = s.urlImagen ? `../assets/img/${s.urlImagen}` : "../assets/img/default.jpg";
+            const img = s.urlImagen && s.urlImagen.startsWith("http")
+                ? s.urlImagen
+                : `../assets/img/${s.urlImagen || "default.jpg"}`;
+
 
             const card = document.createElement("div");
             // ✅ REEMPLAZAR ESTAS LÍNEAS
@@ -38,7 +41,7 @@ async function cargarMedicamentos() {
                     <button class="border border-[#12b1be] text-[#12b1be]
                                     hover:bg-[#12b1be] hover:text-white transition
                                     rounded-lg w-full py-2">
-                        Agregar
+                        Agregar al Carrito
                     </button>
                 </div>
             `;

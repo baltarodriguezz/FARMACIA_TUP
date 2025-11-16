@@ -47,7 +47,10 @@ function cargarCarrusel3(productos) {
 // --- TEMPLATES DE CARDS (CORREGIDOS) ---
 
 function crearCardCarrusel(p) {
-    const img = p.urlImagen ? `../assets/img/${p.urlImagen}` : "../assets/img/default.jpg";
+    const img = p.urlImagen && p.urlImagen.startsWith("http")
+    ? p.urlImagen
+    : `../assets/img/${p.urlImagen || "default.jpg"}`;
+
     
     return `
         <div class="snap-start bg-white border border-white/60 rounded-2xl shadow-xl flex-shrink-0 w-64 p-5 hover:shadow-2xl hover:shadow-2xl hover:shadow-black/20 hover:-translate-y-1 transition-all duration-500
@@ -63,7 +66,7 @@ function crearCardCarrusel(p) {
             <div class="mt-auto">
                 <p class="text-xl font-bold text-[#275c74] mb-3">$${p.precioUnitario.toLocaleString("es-AR")}</p>
                 <button class="bg-[#12b1be] hover:bg-[#0e9ca9] text-white font-medium w-full py-2 rounded-lg text-sm transition-colors duration-300">
-                    Agregar al carrito
+                    Agregar al Carrito
                 </button>
             </div>
         </div>
@@ -71,7 +74,10 @@ function crearCardCarrusel(p) {
 }
 
 function crearCardGrilla(p) {
-    const img = p.urlImagen ? `../assets/img/${p.urlImagen}` : "../assets/img/default.jpg";
+    const img = p.urlImagen && p.urlImagen.startsWith("http")
+    ? p.urlImagen
+    : `../assets/img/${p.urlImagen || "default.jpg"}`;
+
 
     return `
         <div class="bg-white rounded-2xl w-80 p-6 flex flex-col items-center text-center shadow-xl hover:shadow-2xl hover:shadow-black/20 hover:scale-[1.02] transition-all duration-500 ease-out h-47 flex flex-col">

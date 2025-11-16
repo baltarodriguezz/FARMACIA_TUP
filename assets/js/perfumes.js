@@ -40,7 +40,7 @@ async function cargarPerfumes() {
 
                     <button class="border border-[#12b1be] text-[#12b1be]
                         hover:bg-[#12b1be] hover:text-white w-full py-2 rounded-lg transition">
-                        Agregar al
+                        Agregar al Carrito
                     </button>
                 </div>
             `;
