@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\matia\\desktop\\farmacia_tup\\api\\services\\implementations\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\implementations\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\matia\\desktop\\farmacia_tup\\api\\services\\interfaces\\icarritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\interfaces\\icarritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\matia\\desktop\\farmacia_tup\\api\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\matia\\desktop\\farmacia_tup\\api\\repositories\\interfaces\\ifacturarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:repositories\\interfaces\\ifacturarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -83,18 +95,6 @@
       "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\suministropostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\matia\\desktop\\farmacia_tup\\api\\services\\implementations\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\implementations\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\matia\\desktop\\farmacia_tup\\api\\services\\interfaces\\icarritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:services\\interfaces\\icarritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\matia\\desktop\\farmacia_tup\\api\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|c:\\users\\matia\\desktop\\farmacia_tup\\api\\dtos\\checkoutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87EB4AC6-796C-48D5-AC5B-591F956D2D7F}|API Farmacia.csproj|solutionrelative:dtos\\checkoutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -142,7 +142,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -154,59 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IFacturaRepository.cs",
-              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Repositories\\Interfaces\\IFacturaRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IFacturaRepository.cs",
-              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Repositories\\Interfaces\\IFacturaRepository.cs*",
-              "RelativeToolTip": "Repositories\\Interfaces\\IFacturaRepository.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T01:07:39.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FacturaRepository.cs",
-              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Repositories\\Implementations\\FacturaRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\FacturaRepository.cs",
-              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Repositories\\Implementations\\FacturaRepository.cs*",
-              "RelativeToolTip": "Repositories\\Implementations\\FacturaRepository.cs*",
-              "ViewState": "AgIAAC4AAAAAAAAAAAA0wEgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:15:45.552Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IFacturaService.cs",
-              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Interfaces\\IFacturaService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IFacturaService.cs",
-              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Interfaces\\IFacturaService.cs*",
-              "RelativeToolTip": "Services\\Interfaces\\IFacturaService.cs*",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAmwA4AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T01:07:04.802Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FacturaService.cs",
-              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Implementations\\FacturaService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\FacturaService.cs",
-              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Implementations\\FacturaService.cs",
-              "RelativeToolTip": "Services\\Implementations\\FacturaService.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAUwJAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:13:57.936Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "ClientesRepository.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Repositories\\Implementations\\ClientesRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\ClientesRepository.cs",
@@ -219,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "IClientesRepository.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Repositories\\Interfaces\\IClientesRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IClientesRepository.cs",
@@ -232,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "ISuministrosRepository.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Repositories\\Interfaces\\ISuministrosRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\ISuministrosRepository.cs",
@@ -245,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "FacturaController.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Controllers\\FacturaController.cs",
               "RelativeDocumentMoniker": "Controllers\\FacturaController.cs",
@@ -258,7 +206,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "FarmaciaContext.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Models\\FarmaciaContext.cs",
               "RelativeDocumentMoniker": "Models\\FarmaciaContext.cs",
@@ -271,7 +219,98 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
+              "Title": "CarritoController.cs",
+              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Controllers\\CarritoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CarritoController.cs",
+              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Controllers\\CarritoController.cs",
+              "RelativeToolTip": "Controllers\\CarritoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:43:41.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ICarritoService.cs",
+              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Interfaces\\ICarritoService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ICarritoService.cs",
+              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Interfaces\\ICarritoService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ICarritoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:56:30.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CarritoService.cs",
+              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Implementations\\CarritoService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\CarritoService.cs",
+              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Implementations\\CarritoService.cs*",
+              "RelativeToolTip": "Services\\Implementations\\CarritoService.cs*",
+              "ViewState": "AgIAADcAAAAAAAAAAAAUwFkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T02:59:20.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IFacturaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Repositories\\Interfaces\\IFacturaRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IFacturaRepository.cs",
+              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Repositories\\Interfaces\\IFacturaRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IFacturaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T01:07:39.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FacturaService.cs",
+              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Implementations\\FacturaService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\FacturaService.cs",
+              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Implementations\\FacturaService.cs",
+              "RelativeToolTip": "Services\\Implementations\\FacturaService.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAUwJAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T00:13:57.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IFacturaService.cs",
+              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Interfaces\\IFacturaService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IFacturaService.cs",
+              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Interfaces\\IFacturaService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IFacturaService.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwA4AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T01:07:04.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FacturaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Repositories\\Implementations\\FacturaRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\FacturaRepository.cs",
+              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Repositories\\Implementations\\FacturaRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\FacturaRepository.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAA0wEgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T00:15:45.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "SuministrosController.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Controllers\\SuministrosController.cs",
               "RelativeDocumentMoniker": "Controllers\\SuministrosController.cs",
@@ -284,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "ClientesController.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Controllers\\ClientesController.cs",
               "RelativeDocumentMoniker": "Controllers\\ClientesController.cs",
@@ -296,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -308,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -320,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "ISuministrosService.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Interfaces\\ISuministrosService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\ISuministrosService.cs",
@@ -332,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "SuministroRepository.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Repositories\\Implementations\\SuministroRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Implementations\\SuministroRepository.cs",
@@ -344,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "SuministroPostDTO.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\DTOs\\SuministroPostDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\SuministroPostDTO.cs",
@@ -356,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
@@ -368,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "DetalleFacturaDTO.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\DTOs\\DetalleFacturaDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\DetalleFacturaDTO.cs",
@@ -380,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "DetalleFacturaPostDTO.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\DTOs\\DetalleFacturaPostDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\DetalleFacturaPostDTO.cs",
@@ -392,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "SuministrosService.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Implementations\\SuministrosService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\SuministrosService.cs",
@@ -401,42 +440,6 @@
               "ViewState": "AgIAAHgAAAAAAAAAAAAIwMYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T12:28:10.958Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CarritoService.cs",
-              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Implementations\\CarritoService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\CarritoService.cs",
-              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Implementations\\CarritoService.cs",
-              "RelativeToolTip": "Services\\Implementations\\CarritoService.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAQwIoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T02:59:20.85Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ICarritoService.cs",
-              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Interfaces\\ICarritoService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\ICarritoService.cs",
-              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Interfaces\\ICarritoService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\ICarritoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T02:56:30.958Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "CarritoController.cs",
-              "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Controllers\\CarritoController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CarritoController.cs",
-              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Controllers\\CarritoController.cs",
-              "RelativeToolTip": "Controllers\\CarritoController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowDwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T02:43:41.382Z"
             },
             {
               "$type": "Document",

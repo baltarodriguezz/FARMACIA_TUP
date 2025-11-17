@@ -17,6 +17,126 @@ function getNameFromEmail(email) {
 let isLoggedIn = false;
 let currentOpenUserMenu = null;
 
+let cartEmptyState  = null;
+let cartItemsWrapper= null;
+let cartItemsList   = null;
+let cartTotalSpan   = null;
+let btnCheckout     = null;
+
+let cartPanel     = null;
+let cartOverlay   = null;
+let cartCloseBtn  = null;
+
+function dibujarCarrito(items) {
+  if (!cartEmptyState || !cartItemsWrapper || !cartItemsList) return;
+
+  if (!items || items.length === 0) {
+    mostrarCarritoVacio();
+    return;
+  }
+
+  cartEmptyState.classList.add("hidden");
+  cartItemsWrapper.classList.remove("hidden");
+  cartItemsList.innerHTML = "";
+
+  let total = 0;
+
+  items.forEach((item) => {
+    const idItem = item.idItem;
+    const nombre = item.descripcion || "Producto";
+    const cantidad = item.cantidad || 1;
+    const precio = item.precioUnitario || 0;
+    const subtotal = cantidad * precio;
+    total += subtotal;
+
+    const li = document.createElement("li");
+    li.className = "flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2";
+
+    li.innerHTML = `
+      <div class="flex-1 min-w-0 pr-2">
+        <p class="text-sm font-semibold text-gray-800 truncate">${nombre}</p>
+        <p class="text-xs text-gray-500">$${precio.toFixed(2)} c/u</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <button class="btn-restar-item text-gray-500 p-0.5 rounded-full hover:bg-gray-200" title="Restar 1">
+          <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg>
+        </button>
+        <span class="font-semibold text-sm">${cantidad}</span>
+        <button class="btn-sumar-item text-gray-500 p-0.5 rounded-full hover:bg-gray-200" title="Sumar 1">
+          <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+        </button>
+      </div>
+      <div class="text-right w-16">
+        <p class="text-sm font-semibold text-gray-900">$${subtotal.toFixed(2)}</p>
+      </div>
+      <div class="ml-1">
+        <button class="btn-eliminar-item text-red-500 hover:text-red-700 p-1 rounded-lg hover:bg-gray-200" title="Eliminar item">
+          <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+    `;
+
+    // ----- AQUÍ ESTÁN LOS CAMBIOS -----
+
+    const btnRestar = li.querySelector('.btn-restar-item');
+    const btnSumar = li.querySelector('.btn-sumar-item');
+    const btnEliminar = li.querySelector('.btn-eliminar-item');
+
+    // Listener para SUMAR
+    btnSumar.addEventListener('click', (e) => {
+      actualizarCantidadItem(idItem, cantidad + 1);
+    });
+
+    // Listener para RESTAR
+    btnRestar.addEventListener('click', (e) => {
+      if (cantidad > 1) {
+        actualizarCantidadItem(idItem, cantidad - 1);
+      } else {
+        eliminarDelCarrito(idItem);
+      }
+    });
+
+    // Listener para ELIMINAR
+    btnEliminar.addEventListener('click', (e) => {
+      eliminarDelCarrito(idItem);
+    });
+
+    cartItemsList.appendChild(li);
+  });
+
+  if (cartTotalSpan) {
+    cartTotalSpan.textContent = "$" + total.toFixed(2);
+  }
+}
+
+  function abrirPanelCarrito() {
+    cartOverlay.classList.add("ignore-panel")
+  if (!cartPanel || !cartOverlay) return;
+  cartPanel.classList.remove("translate-x-full");
+  cartOverlay.classList.remove("hidden");
+  }
+
+  function cerrarCarrito() {
+    cartOverlay.classList.remove("ignore-panel")
+    if (!cartPanel || !cartOverlay) return;
+    cartPanel.classList.add("translate-x-full");
+    cartOverlay.classList.add("hidden");
+  }
+function mostrarCarritoVacio() {
+  if (cartEmptyState) {
+    cartEmptyState.classList.remove("hidden");
+  }
+  if (cartItemsWrapper) {
+    cartItemsWrapper.classList.add("hidden");
+  }
+  if (cartItemsList) {
+    cartItemsList.innerHTML = ""; // Limpiamos por si acaso
+  }
+  if (cartTotalSpan) {
+    cartTotalSpan.textContent = "$0,00"; // Reseteamos el total
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
 
@@ -43,9 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
  
   const cartBtn      = document.getElementById("cartBtn");
-  const cartOverlay  = document.getElementById("cartOverlay");
-  const cartPanel    = document.getElementById("cartPanel");
-  const cartCloseBtn = document.getElementById("cartCloseBtn");
+  cartOverlay  = document.getElementById("cartOverlay");
+  cartPanel    = document.getElementById("cartPanel");
+  cartCloseBtn = document.getElementById("cartCloseBtn");
 
 const perfilNombreInput   = document.getElementById("nombre");
 const perfilApellidoInput = document.getElementById("apellido");
@@ -53,94 +173,25 @@ const perfilEmailInput    = document.getElementById("email2");
 const perfilPassInput     = document.getElementById("password");
 const perfilForm          = document.getElementById("perfilForm");
 
-  // ---------- REFERENCIAS DEL CARRITO ----------
-  const cartEmptyState  = document.getElementById("cartEmptyState");
-  const cartItemsWrapper= document.getElementById("cartItemsWrapper");
-  const cartItemsList   = document.getElementById("cartItemsList");
-  const cartTotalSpan   = document.getElementById("cartTotal");
-  const btnCheckout     = document.getElementById("btnCheckout");
-
-  // ---------- ABRIR / CERRAR ----------
-  function abrirCarrito() {
-    if (!cartPanel || !cartOverlay) return;
-    cartPanel.classList.remove("translate-x-full");
-    cartOverlay.classList.remove("hidden");
-  }
-
-  function cerrarCarrito() {
-    if (!cartPanel || !cartOverlay) return;
-    cartPanel.classList.add("translate-x-full");
-    cartOverlay.classList.add("hidden");
-  }
-
-  if (cartBtn) {
-    cartBtn.addEventListener("click", async () => {
-      await cargarCarritoDelServidor(); // esta función la vimos antes
-      abrirCarrito();
-    });
-  }
+cartEmptyState  = document.getElementById("cartEmptyState");
+cartItemsWrapper= document.getElementById("cartItemsWrapper");
+cartItemsList   = document.getElementById("cartItemsList");
+cartTotalSpan   = document.getElementById("cartTotal");
+btnCheckout     = document.getElementById("btnCheckout")
 
   if (cartCloseBtn) {
     cartCloseBtn.addEventListener("click", cerrarCarrito);
   }
-
-  if (cartOverlay) {
-    cartOverlay.addEventListener("click", cerrarCarrito);
-  }
+  if (cartPanel) {
+  cartPanel.addEventListener(
+    "click",
+    (e) => {
+      e.stopPropagation();
+    },
+  );
+}
 
   // ---------- RENDER DEL CARRITO ----------
-  function mostrarCarritoVacio() {
-    if (!cartEmptyState || !cartItemsWrapper) return;
-    cartEmptyState.classList.remove("hidden");
-    cartItemsWrapper.classList.add("hidden");
-    if (cartTotalSpan) cartTotalSpan.textContent = "$0,00";
-  }
-
-  function dibujarCarrito(items) {
-    if (!cartEmptyState || !cartItemsWrapper || !cartItemsList) return;
-
-    if (!items || items.length === 0) {
-      mostrarCarritoVacio();
-      return;
-    }
-
-    cartEmptyState.classList.add("hidden");
-    cartItemsWrapper.classList.remove("hidden");
-    cartItemsList.innerHTML = "";
-
-    let total = 0;
-
-    items.forEach((item) => {
-      // ajustá estos nombres a tu DTO real
-      const nombre   = item.nombreSuministro || item.nombre || "Producto";
-      const cantidad = item.cantidad || 1;
-      const precio   = item.precioUnitario || item.precio || 0;
-      const subtotal = cantidad * precio;
-      total += subtotal;
-
-      const li = document.createElement("li");
-      li.className = "flex justify-between items-center bg-gray-50 border border-gray-200 rounded-lg px-3 py-2";
-
-      li.innerHTML = `
-        <div>
-          <p class="text-sm font-semibold text-gray-800">${nombre}</p>
-          <p class="text-xs text-gray-500">Cant: ${cantidad}</p>
-        </div>
-        <div class="text-right">
-          <p class="text-sm font-semibold text-gray-900">$${subtotal.toFixed(2)}</p>
-        </div>
-      `;
-
-      cartItemsList.appendChild(li);
-    });
-
-    if (cartTotalSpan) {
-      cartTotalSpan.textContent = "$" + total.toFixed(2);
-    }
-  }
-
-  
-
   const storedToken = localStorage.getItem("authToken");
 
   if (storedToken) {
@@ -407,8 +458,15 @@ document.addEventListener("click", (e) => {
   }
   
   // Lógica de cerrar modal de login al hacer click fuera
-  if (loginModal && !loginModal.contains(e.target) && e.target === loginModal) {
-      cerrarLoginModal();
+if (loginModal && !loginModal.classList.contains("hidden") && !loginModal.contains(e.target) && e.target !== inicioSesionBtn) {
+        cerrarLoginModal();
+  }
+
+if (cartPanel && !cartPanel.classList.contains("translate-x-full") && !cartPanel.contains(e.target) &&                    
+      e.target !== cartBtn &&                             
+      !cartBtn.contains(e.target)                         
+  ) {
+    cerrarCarrito();
   }
 });
 
@@ -563,30 +621,21 @@ document.addEventListener("click", (e) => {
   // =======================
   // Carrito lateral
   // =======================
-
-  function abrirCarrito() {
-    if (!cartPanel || !cartOverlay) return;
-    cartPanel.classList.remove("translate-x-full");
-    cartOverlay.classList.remove("hidden");
-  }
-
-  function cerrarCarrito() {
-    if (!cartPanel || !cartOverlay) return;
-    cartPanel.classList.add("translate-x-full");
-    cartOverlay.classList.add("hidden");
-  }
-
   if (cartBtn) {
-    cartBtn.addEventListener("click", abrirCarrito);
-  }
+    cartBtn.addEventListener("click", async () => {
+      
+      // 1. Revisa si está logueado
+      if (!isLoggedIn) {
+        alert("Inicia sesión o regístrate para acceder al Carrito");
+        abrirLoginModal(); // Abre el modal de login
+        return;
+      }
 
-  if (cartCloseBtn) {
-    cartCloseBtn.addEventListener("click", cerrarCarrito);
-  }
-
-  if (cartOverlay) {
-    cartOverlay.addEventListener("click", cerrarCarrito);
-  }
+      // 2. Si está logueado, carga el carrito y abre el panel
+      await cargarCarritoDelServidor(); 
+      abrirPanelCarrito();
+    });
+  }
 });
 
 // =======================
@@ -841,4 +890,237 @@ function crearHtmlMetodoPago(metodo) {
             </div>
             </div>
     `;
+}
+// =============================
+// LÓGICA DE API DEL CARRITO (CORREGIDA)
+// =============================
+
+// Esta función AHORA SÍ DEVUELVE EL CARRITO
+async function cargarCarritoDelServidor() {
+    const token = localStorage.getItem("authToken");
+    const userId = localStorage.getItem("userId");
+
+    if (!token || !userId) {
+        mostrarCarritoVacio();
+        return null; // No hay usuario, no hay carrito
+    }
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/Carrito/cliente/${userId}`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (!response.ok) {
+            if (response.status === 404) {
+                console.log("No se encontró carrito, creando uno nuevo...");
+                return await crearCarrito(token, userId); // Devuelve el carrito recién creado
+            }
+            throw new Error(`Error ${response.status} al cargar el carrito.`);
+        }
+
+        const text = await response.text();
+        
+        // ESTA ES LA CORRECCIÓN CLAVE:
+        if (!text) {
+            console.log("Carrito existe pero body nulo (sin items).");
+            // Si la API devuelve body nulo, no podemos obtener el ID.
+            // La única forma de obtenerlo es si la API lo devuelve al CREARLO.
+            // Forzamos la creación (que dará 409) y esperamos que eso devuelva el ID.
+            return await crearCarrito(token, userId);
+        }
+
+        const carrito = JSON.parse(text);
+        
+        if (carrito.idCarrito) {
+            localStorage.setItem("cartId", carrito.idCarrito);
+        }
+        
+        dibujarCarrito(carrito.items || []);
+        return carrito; // Devuelve el carrito encontrado
+
+    } catch (err) {
+        console.error("ERROR (cargarCarritoDelServidor):", err);
+        mostrarCarritoVacio();
+        return null; // Devuelve null si falla
+    }
+}
+
+// Esta función AHORA SÍ DEVUELVE EL CARRITO
+async function crearCarrito(token, userId) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/Carrito`, {
+            method: "POST",
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                idCliente: parseInt(userId)
+            })
+        });
+
+        // Si falla (y NO es 409 Conflict), es un error.
+        if (!response.ok && response.status !== 409) {
+            throw new Error('Error al crear el carrito (POST).');
+        }
+
+        // Si la API devuelve 201 (Created) o 200 (OK) con el carrito:
+        const carritoCreado = await response.json().catch(() => null);
+
+        if (carritoCreado && carritoCreado.idCarrito) {
+            localStorage.setItem("cartId", carritoCreado.idCarrito);
+            return carritoCreado; // Devuelve el carrito nuevo
+        }
+
+        // Si el POST da 409 (Conflict) O el body del POST estaba vacío:
+        // Hacemos un GET para obtener el carrito que ya existe.
+        console.warn("POST falló o body vacío (quizás 409 Conflict), reintentando con GET...");
+        
+        const getResponse = await fetch(`${API_BASE_URL}/api/Carrito/cliente/${userId}`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (!getResponse.ok) {
+             throw new Error('Error al OBTENER el carrito (GET) después de crearlo.');
+        }
+
+        const text = await getResponse.text();
+        if (!text) {
+            throw new Error("La API sigue devolviendo body nulo después de GET.");
+        }
+
+        const carritoExistente = JSON.parse(text);
+        if (carritoExistente.idCarrito) {
+            localStorage.setItem("cartId", carritoExistente.idCarrito);
+        }
+        return carritoExistente;
+
+    } catch (err) {
+        console.error("ERROR (crearCarrito):", err);
+        return null; // Falló la creación
+    }
+}
+
+// Esta función se llamará desde los botones "Agregar"
+async function agregarAlCarrito(idSuministro, precioUnitario, cantidad = 1) {
+    const token = localStorage.getItem("authToken");
+    let cartId = localStorage.getItem("cartId");
+
+    if (!token || !isLoggedIn) {
+        alert("Debes iniciar sesión para agregar productos al carrito.");
+        abrirLoginModal();
+        return;
+    }
+
+    // 2. Verificar si tenemos un ID de carrito
+    if (!cartId) {
+        console.log("No hay ID de carrito, cargando/creando uno...");
+        // AHORA `cargarCarritoDelServidor` devuelve el carrito (o null)
+        const carrito = await cargarCarritoDelServidor(); 
+        
+        if (carrito && carrito.idCarrito) {
+            cartId = carrito.idCarrito;
+        } else {
+             alert("Hubo un problema al crear tu carrito. Intenta de nuevo.");
+             return;
+        }
+    }
+
+    // 3. Preparar el item a agregar (payload)
+    const itemPayload = {
+        idSuministro: idSuministro,
+        cantidad: cantidad,
+        precioUnitario: precioUnitario
+    };
+
+    try {
+        // 4. Hacer POST a /api/Carrito/{idCarrito}/items
+        const response = await fetch(`${API_BASE_URL}/api/Carrito/${cartId}/items`, {
+            method: "POST",
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(itemPayload)
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({ message: 'Error al agregar el producto.' }));
+            throw new Error(errorData.message || 'Error desconocido al agregar.');
+        }
+
+        // 5. Si todo sale bien, recargamos y abrimos el carrito
+        await cargarCarritoDelServidor(); // Recarga el carrito con el nuevo item
+        abrirPanelCarrito(); // Muestra el carrito actualizado
+
+    } catch (err) {
+        console.error("ERROR (agregarAlCarrito):", err);
+        alert(`Error: ${err.message}`);
+    }
+}
+async function eliminarDelCarrito(idItem) {
+  const token = localStorage.getItem("authToken");
+  if (!token) {
+    alert("Sesión expirada. Vuelve a iniciar sesión.");
+    return;
+  }
+
+  // Confirmamos antes de borrar
+  if (!confirm("¿Quitar este producto del carrito?")) {
+    return;
+  }
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/Carrito/items/${idItem}`, {
+      method: "DELETE",
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error("No se pudo eliminar el producto.");
+    }
+
+    // Si se eliminó, recargamos el carrito para ver los cambios
+    await cargarCarritoDelServidor();
+
+  } catch (err) {
+    console.error("ERROR (eliminarDelCarrito):", err);
+    alert(err.message);
+  }
+}
+async function actualizarCantidadItem(idItem, nuevaCantidad) {
+  const token = localStorage.getItem("authToken");
+  if (!token) return; // No es necesario alertar en cada click
+
+  // El backend (CarritoService) solo usa "Cantidad" del DTO.
+  // Le pasamos los otros campos en 0 o vacíos.
+  const payload = {
+    cantidad: nuevaCantidad,
+    idSuministro: 0, // El backend no lo usa para actualizar
+    precioUnitario: 0 // El backend no lo usa para actualizar
+  };
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/Carrito/items/${idItem}`, {
+      method: "PUT",
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      throw new Error("No se pudo actualizar la cantidad.");
+    }
+
+    // Si se actualizó, recargamos el carrito
+    await cargarCarritoDelServidor();
+
+  } catch (err) {
+    console.error("ERROR (actualizarCantidadItem):", err);
+    alert(err.message);
+  }
 }

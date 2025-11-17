@@ -20,6 +20,17 @@
     .font-family-base {
   font-family: inherit !important;
 }
+#cartPanel {
+  pointer-events: auto;
+}
+
+#cartOverlay {
+  pointer-events: auto;
+}
+
+#cartOverlay.ignore-panel {
+  pointer-events: none;
+}
   </style>
 </head>
 
@@ -62,7 +73,7 @@
         </a>
       </nav>
       <div class="flex items-center gap-5">
-        <button class="group relative">
+        <button id="cartBtn" class="group relative">
           <img src="../assets/img/icons8-carrito-de-compras-50.png" alt="Carrito" class="w-6 h-6 group-hover:scale-110 transition-transform duration-300">
         </button>
         <span id="userGreeting" class="hidden text-sm font-semibold text-[#275c74]"></span>
@@ -238,7 +249,6 @@ document.getElementById("btnCerrar").onclick = () =>
       </div>
       <p class="text-center text-xs text-gray-300 mt-4">© 2025 Farmacia Luz. Todos los derechos reservados.</p>
     </footer>
-</div>
   
 
   <!-- CONTENIDO PRINCIPAL -->
@@ -395,6 +405,46 @@ document.getElementById("btnCerrar").onclick = () =>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
   <script src="../index.js"></script>
   <script src="../assets/js/perfumes.js"></script>
+
+  <div id="cartOverlay" class="hidden fixed inset-0 bg-black/50 z-[9999] transition-opacity"></div>
+
+<div id="cartPanel" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-[9999] shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="flex flex-col h-full">
+        
+        <div class="flex justify-between items-center p-4 border-b">
+            <h2 class="text-xl font-semibold text-gray-800">Mi Carrito</h2>
+            <button id="cartCloseBtn" class="text-gray-400 hover:text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-4">
+            
+            <div id="cartEmptyState" class="text-center py-10">
+                <svg class="w-16 h-16 mx-auto text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                <p class="mt-4 text-gray-500">Tu carrito está vacío.</p>
+                <p class="text-sm text-gray-400">Agrega productos para verlos aquí.</p>
+            </div>
+
+            <div id="cartItemsWrapper" class="hidden">
+                <ul id="cartItemsList" class="space-y-3">
+                    </ul>
+            </div>
+
+        </div>
+
+        <div class="p-4 border-t bg-gray-50">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-lg font-semibold text-gray-800">Total:</span>
+                <span id="cartTotal" class="text-xl font-bold text-[#275c74]">$0,00</span>
+            </div>
+            <button id="btnCheckout" class="w-full bg-[#1e6e75] text-white py-3 rounded-lg font-semibold hover:bg-[#12b1be] transition">
+                Finalizar Compra
+            </button>
+        </div>
+
+    </div>
+</div>
 
 
 </body>

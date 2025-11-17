@@ -57,17 +57,35 @@ namespace API_Farmacia.Services.Implementations
 
         public void AgregarItem(int idCarrito, CarritoItemCreateDTO dto)
         {
-            var suministro = _context.Suministros.Find(dto.IdSuministro);
+            // 1. Buscamos si el item (mismo suministro) YA EXISTE en ese carrito
+            var itemExistente = _context.CarritoItems.FirstOrDefault(
+                i => i.IdCarrito == idCarrito && i.IdSuministro == dto.IdSuministro
+            );
 
-            var item = new CarritoItem
+            if (itemExistente != null)
             {
-                IdCarrito = idCarrito,
-                IdSuministro = dto.IdSuministro,
-                Cantidad = dto.Cantidad,
-                PrecioUnitario = (decimal)suministro.PrecioUnitario
-            };
+                // 2. Si existe, solo actualizamos la cantidad
+                itemExistente.Cantidad += dto.Cantidad;
+            }
+            else
+            {
+                // 3. Si no existe, lo creamos (como antes)
+                //    (Usamos el precio de la BD, no el del DTO, por seguridad)
+                var suministro = _context.Suministros.Find(dto.IdSuministro);
+                if (suministro == null)
+                    throw new Exception("Suministro no encontrado"); // Agregamos un control
 
-            _context.CarritoItems.Add(item);
+                var item = new CarritoItem
+                {
+                    IdCarrito = idCarrito,
+                    IdSuministro = dto.IdSuministro,
+                    Cantidad = dto.Cantidad,
+                    PrecioUnitario = (decimal)suministro.PrecioUnitario
+                };
+                _context.CarritoItems.Add(item);
+            }
+
+            // 4. Guardamos los cambios
             _context.SaveChanges();
         }
 
