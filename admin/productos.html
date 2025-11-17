@@ -146,12 +146,6 @@ document.getElementById("btnCancelar").addEventListener("click", () => {
 document.getElementById("formProducto").addEventListener("submit", async e => {
     e.preventDefault();
 
-    let nuevoId = editId;
-    if (nuevoId === null) {
-        const max = productosCache.length ? Math.max(...productosCache.map(x => x.idSuministro)) : 0;
-        nuevoId = max + 1;
-    }
-
     const descripcion = inputDescripcion.value.trim();
     const precio      = parseFloat(inputPrecio.value);
     const stock       = parseInt(inputStock.value);
@@ -163,34 +157,32 @@ document.getElementById("formProducto").addEventListener("submit", async e => {
         return;
     }
 
-    // La API usa QUERYSTRING (NO JSON)
-    const params = new URLSearchParams({
-        id: nuevoId,
-        codBarra: codBarra,
-        descripcion: descripcion,
-        preUnitario: precio,
-        TSuministro: 1,
-        TVenta: 1,
-        stock: stock,
-        urlfoto: urlfoto
-    });
+    let url = `${API_URL}/Suministros`;
+    let method = "POST";
 
-    let url = "";
-    let method = "";
-
-    if (editId === null) {
-        // POST api/Suministros?id=...
-        url = `${API_URL}/Suministros?${params.toString()}`;
-        method = "POST";
-    } else {
-        // PUT api/Suministros/{id}?descripcion=...
-        params.delete("id");
-        url = `${API_URL}/Suministros/${editId}?${params.toString()}`;
+    if (editId !== null) {
         method = "PUT";
+        url = `${API_URL}/Suministros/${editId}`;
     }
 
+    const data = {
+    codBarra: codBarra,
+    descripcion: descripcion,
+    precioUnitario: precio,
+    idTipoSuministro: 1,
+    idTipoVenta: 1,
+    stock: stock,
+    urlImagen: urlfoto
+};
+
+
     try {
-        const resp = await fetch(url, { method });
+        const resp = await fetch(url, {
+            method,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
         const text = await resp.text();
 
         if (!resp.ok) {
@@ -207,6 +199,7 @@ document.getElementById("formProducto").addEventListener("submit", async e => {
     modal.classList.add("hidden");
     await cargarProductos();
 });
+
 
 // ==================== EDITAR ====================
 window.editar = async id => {
@@ -249,6 +242,7 @@ window.eliminar = async id => {
 // ==================== INICIO ====================
 cargarProductos();
 </script>
+
 
 
 

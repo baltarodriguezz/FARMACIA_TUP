@@ -412,3 +412,86 @@ C:\Users\matia\Desktop\FARMACIA_TUP\API\obj\Debug\net8.0\refint\API Farmacia.dll
 C:\Users\matia\Desktop\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.pdb
 C:\Users\matia\Desktop\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.genruntimeconfig.cache
 C:\Users\matia\Desktop\FARMACIA_TUP\API\obj\Debug\net8.0\ref\API Farmacia.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\appsettings.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\efpt.config.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\API Farmacia.staticwebassets.endpoints.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\API Farmacia.exe
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\API Farmacia.deps.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\API Farmacia.runtimeconfig.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\API Farmacia.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\API Farmacia.pdb
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\System.Runtime.Caching.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.csproj.AssemblyReference.cache
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.AssemblyInfoInputs.cache
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.AssemblyInfo.cs
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.csproj.CoreCompileInputs.cache
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.sourcelink.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\scopedcss\bundle\API Farmacia.styles.css
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\API Farm.D207A777.Up2Date
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\refint\API Farmacia.dll
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.pdb
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\API Farmacia.genruntimeconfig.cache
+C:\Users\franc\OneDrive\Desktop\progra\FARMACIA_TUP\API\obj\Debug\net8.0\ref\API Farmacia.dll
