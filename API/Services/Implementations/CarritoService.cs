@@ -127,7 +127,7 @@ namespace API_Farmacia.Services.Implementations
             var factura = new Factura
             {
                 IdCliente = carrito.IdCliente,
-                IdSucursal = 1, // si querés, podés parametrizar esto
+                IdSucursal = dto.IdSucursal, // si querés, podés parametrizar esto
                 IdFormaPago = dto.IdFormaPago,
                 Fecha = DateTime.Now,
                 DetallesFacturas = new List<DetallesFactura>()

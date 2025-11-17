@@ -7,5 +7,6 @@
         public string Apellido { get; set; }
         public int IdDireccion { get; set; }
         public string Email { get; set; }
+        public int IdTipoUsuario { get; set; }
     }
 }

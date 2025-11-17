@@ -14,14 +14,46 @@ function getNameFromEmail(email) {
   return rawName.charAt(0).toUpperCase() + rawName.slice(1);
 }
 
+// ==================================
+// ====== FUNCIÓN ADMIN AÑADIDA =====
+// ==================================
+/**
+ * Muestra u oculta el botón del panel de administrador según el rol.
+ * @param {string | number} roleId El ID del rol del usuario.
+ */
+function checkAdminPanel(roleId) {
+  const adminBtn = document.getElementById("adminPanelBtn");
+  if (!adminBtn) return; // No hacer nada si el botón no existe
+
+  // Compara como número (tu API devuelve 3)
+  if (parseInt(roleId, 10) === 3) {
+    adminBtn.classList.remove("hidden");
+  } else {
+    adminBtn.classList.add("hidden");
+  }
+}
+// ==================================
+
+
 let isLoggedIn = false;
 let currentOpenUserMenu = null;
 
-let cartEmptyState  = null;
+let cartEmptyState  = null;
 let cartItemsWrapper= null;
-let cartItemsList   = null;
-let cartTotalSpan   = null;
-let btnCheckout     = null;
+let cartItemsList   = null;
+let cartTotalSpan   = null;
+let btnCheckout     = null;
+
+let cartPanelTitle = null;
+let cartView = null;
+let checkoutView = null;
+let cartFooter = null;
+let checkoutFooter = null;
+let sucursalSelect = null;
+let formaPagoSelect = null;
+let checkoutItemsList = null;
+let btnConfirmarCompra = null;
+let btnCancelarCheckout = null;
 
 let cartPanel     = null;
 let cartOverlay   = null;
@@ -110,14 +142,12 @@ function dibujarCarrito(items) {
 }
 
   function abrirPanelCarrito() {
-    cartOverlay.classList.add("ignore-panel")
   if (!cartPanel || !cartOverlay) return;
   cartPanel.classList.remove("translate-x-full");
   cartOverlay.classList.remove("hidden");
   }
 
   function cerrarCarrito() {
-    cartOverlay.classList.remove("ignore-panel")
     if (!cartPanel || !cartOverlay) return;
     cartPanel.classList.add("translate-x-full");
     cartOverlay.classList.add("hidden");
@@ -140,7 +170,7 @@ function mostrarCarritoVacio() {
 document.addEventListener("DOMContentLoaded", () => {
 
 
-  const perfilBtn        = document.getElementById("perfilBtn");
+  const perfilBtn       = document.getElementById("perfilBtn");
   const userMenuNoSesion = document.getElementById("userMenuNoSesion");
   const userMenuSesion   = document.getElementById("userMenuSesion");
   const inicioSesionBtn  = document.getElementById("inicio_sesion");
@@ -162,9 +192,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnCerrar     = document.getElementById("btnCerrar");
 
  
-  const cartBtn      = document.getElementById("cartBtn");
-  cartOverlay  = document.getElementById("cartOverlay");
-  cartPanel    = document.getElementById("cartPanel");
+  const cartBtn     = document.getElementById("cartBtn");
+  cartOverlay = document.getElementById("cartOverlay");
+  cartPanel   = document.getElementById("cartPanel");
   cartCloseBtn = document.getElementById("cartCloseBtn");
 
 const perfilNombreInput   = document.getElementById("nombre");
@@ -173,11 +203,22 @@ const perfilEmailInput    = document.getElementById("email2");
 const perfilPassInput     = document.getElementById("password");
 const perfilForm          = document.getElementById("perfilForm");
 
-cartEmptyState  = document.getElementById("cartEmptyState");
+cartEmptyState  = document.getElementById("cartEmptyState");
 cartItemsWrapper= document.getElementById("cartItemsWrapper");
-cartItemsList   = document.getElementById("cartItemsList");
-cartTotalSpan   = document.getElementById("cartTotal");
+cartItemsList   = document.getElementById("cartItemsList");
+cartTotalSpan   = document.getElementById("cartTotal");
 btnCheckout     = document.getElementById("btnCheckout")
+
+cartPanelTitle = document.getElementById("cartPanelTitle");
+cartView = document.getElementById("cartView");
+checkoutView = document.getElementById("checkoutView");
+cartFooter = document.getElementById("cartFooter");
+checkoutFooter = document.getElementById("checkoutFooter");
+sucursalSelect = document.getElementById("sucursalSelect");
+formaPagoSelect = document.getElementById("formaPagoSelect");
+checkoutItemsList = document.getElementById("checkoutItemsList");
+btnConfirmarCompra = document.getElementById("btnConfirmarCompra");
+btnCancelarCheckout = document.getElementById("btnCancelarCheckout");
 
   if (cartCloseBtn) {
     cartCloseBtn.addEventListener("click", cerrarCarrito);
@@ -189,6 +230,17 @@ btnCheckout     = document.getElementById("btnCheckout")
       e.stopPropagation();
     },
   );
+  }
+  // ... (después de if (cartOverlay) { ... })
+
+if (btnCheckout) {
+    btnCheckout.addEventListener("click", iniciarCheckout);
+}
+if (btnConfirmarCompra) {
+    btnConfirmarCompra.addEventListener("click", confirmarCompra);
+}
+if (btnCancelarCheckout) {
+    btnCancelarCheckout.addEventListener("click", cancelarCheckout);
 }
 
   // ---------- RENDER DEL CARRITO ----------
@@ -196,10 +248,15 @@ btnCheckout     = document.getElementById("btnCheckout")
 
   if (storedToken) {
     isLoggedIn = true;
-
-    fetchCurrentUser();
+    fetchCurrentUser(); // Esto ahora también revisará el rol
   } else {
     isLoggedIn = false;
+    // ==================================
+    // ====== MODIFICACIÓN AÑADIDA ======
+    // ==================================
+    // Nos aseguramos que el botón admin esté oculto si no hay sesión
+    checkAdminPanel(null); 
+    // ==================================
   }
 
 
@@ -249,7 +306,7 @@ if (perfilForm) {
 
     try {
       const res = await fetch(`${API_BASE_URL}/api/Clientes/me`, {
-        method: "PUT",                   // o "PATCH" según tu API
+        method: "PUT",           // o "PATCH" según tu API
         headers: {
           "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -279,7 +336,7 @@ if (perfilForm) {
   });
 }
 
-  
+ 
   async function fetchCurrentUser() {
     const token = localStorage.getItem("authToken");
     if (!token) {
@@ -300,6 +357,9 @@ if (perfilForm) {
         // Token vencido / inválido
         localStorage.removeItem("authToken");
         localStorage.removeItem("userName");
+        localStorage.removeItem("userId");
+        localStorage.removeItem("userRole"); // Limpiamos el rol
+        checkAdminPanel(null);               // Ocultamos el botón
         isLoggedIn = false;
         return;
       }
@@ -319,6 +379,23 @@ if (perfilForm) {
 
       localStorage.setItem("userName", nombre);
       localStorage.setItem("userId", cliente.idCliente);
+
+      // ==================================
+      // ====== LÓGICA DE ROL CORREGIDA =====
+      // ==================================
+      
+      // Asumimos que el cliente tiene un campo "idTipoUsuario" (camelCase)
+      // Esta es la línea que cambiamos:
+      if (cliente.idTipoUsuario) { 
+        localStorage.setItem("userRole", cliente.idTipoUsuario);
+        checkAdminPanel(cliente.idTipoUsuario); // Muestra/oculta el botón
+      } else {
+        // Si no viene el rol, lo limpiamos por seguridad
+        localStorage.removeItem("userRole");
+        checkAdminPanel(null); // Oculta el botón
+      }
+      // ==================================
+
 
       if (nombreUsuarioSpan) {
         nombreUsuarioSpan.textContent = nombre;
@@ -349,7 +426,7 @@ if (perfilForm) {
 
     menuElement.classList.remove("hidden");
     requestAnimationFrame(() => {
-      menuElement.classList.remove("translate-x-4", "opacity-0");
+      menuElement.classList.remove("scale-95", "opacity-0");
     });
     currentOpenUserMenu = menuElement;
   }
@@ -357,13 +434,13 @@ if (perfilForm) {
   function cerrarMenu(menuElement) {
     if (!menuElement) return;
 
-    menuElement.classList.add("translate-x-4", "opacity-0");
+    menuElement.classList.add("scale-95", "opacity-0");
     setTimeout(() => {
       menuElement.classList.add("hidden");
       if (currentOpenUserMenu === menuElement) {
         currentOpenUserMenu = null;
       }
-    }, 150);
+    }, 300);
   }
 
   function toggleUserMenu() {
@@ -459,12 +536,12 @@ document.addEventListener("click", (e) => {
   
   // Lógica de cerrar modal de login al hacer click fuera
 if (loginModal && !loginModal.classList.contains("hidden") && !loginModal.contains(e.target) && e.target !== inicioSesionBtn) {
-        cerrarLoginModal();
+      cerrarLoginModal();
   }
 
-if (cartPanel && !cartPanel.classList.contains("translate-x-full") && !cartPanel.contains(e.target) &&                    
-      e.target !== cartBtn &&                             
-      !cartBtn.contains(e.target)                         
+if (cartPanel && !cartPanel.classList.contains("translate-x-full") && !cartPanel.contains(e.target) &&       
+      e.target !== cartBtn &&                       
+      !cartBtn.contains(e.target)                     
   ) {
     cerrarCarrito();
   }
@@ -529,6 +606,7 @@ if (cartPanel && !cartPanel.classList.contains("translate-x-full") && !cartPanel
         isLoggedIn = true;
 
         // pedimos datos reales del cliente
+        // fetchCurrentUser() AHORA revisará el rol y mostrará el botón admin si aplica
         await fetchCurrentUser();
 
         cerrarLoginModal();
@@ -553,6 +631,12 @@ if (cartPanel && !cartPanel.classList.contains("translate-x-full") && !cartPanel
       localStorage.removeItem("authToken");
       localStorage.removeItem("userName");
       localStorage.removeItem("userId");
+      // ==================================
+      // ====== MODIFICACIÓN AÑADIDA ======
+      // ==================================
+      localStorage.removeItem("userRole"); // Limpia el rol
+      checkAdminPanel(null);               // Oculta el botón admin
+      // ==================================
       isLoggedIn = false;
 
       if (userMenuSesion) cerrarMenu(userMenuSesion);
@@ -577,11 +661,17 @@ if (cartPanel && !cartPanel.classList.contains("translate-x-full") && !cartPanel
           localStorage.removeItem("authToken");
           localStorage.removeItem("userName");
           localStorage.removeItem("userId");
+          // ==================================
+          // ====== MODIFICACIÓN AÑADIDA ======
+          // ==================================
+          localStorage.removeItem("userRole"); // Limpia el rol
+          // checkAdminPanel(null); // No es necesario, la página redirigirá
+          // ==================================
           isLoggedIn = false; // Asegúrate de actualizar el estado
 
           // No necesitamos ocultar menús aquí, porque va a redirigir
           // Simplemente nos aseguramos de que el token esté borrado antes de ir a index.html
-  });
+    });
 }
 
   // =======================
@@ -599,7 +689,10 @@ if (cartPanel && !cartPanel.classList.contains("translate-x-full") && !cartPanel
   }
 
   if (btnAbrir) {
-    btnAbrir.addEventListener("click", abrirOffcanvas);
+    btnAbrir.addEventListener("click", (e) => {
+      e.stopPropagation();
+      abrirOffcanvas();
+    });
   }
 
   if (btnCerrar) {
@@ -622,20 +715,20 @@ if (cartPanel && !cartPanel.classList.contains("translate-x-full") && !cartPanel
   // Carrito lateral
   // =======================
   if (cartBtn) {
-    cartBtn.addEventListener("click", async () => {
-      
-      // 1. Revisa si está logueado
-      if (!isLoggedIn) {
-        alert("Inicia sesión o regístrate para acceder al Carrito");
-        abrirLoginModal(); // Abre el modal de login
-        return;
-      }
+    cartBtn.addEventListener("click", async () => {
+      
+      // 1. Revisa si está logueado
+      if (!isLoggedIn) {
+        alert("Inicia sesión o regístrate para acceder al Carrito");
+        abrirLoginModal(); // Abre el modal de login
+        return;
+      }
 
-      // 2. Si está logueado, carga el carrito y abre el panel
-      await cargarCarritoDelServidor(); 
-      abrirPanelCarrito();
-    });
-  }
+      // 2. Si está logueado, carga el carrito y abre el panel
+      await cargarCarritoDelServidor(); 
+      abrirPanelCarrito();
+    });
+  }
 });
 
 // =======================
@@ -1123,4 +1216,167 @@ async function actualizarCantidadItem(idItem, nuevaCantidad) {
     console.error("ERROR (actualizarCantidadItem):", err);
     alert(err.message);
   }
+}
+// =============================
+// LÓGICA DE CHECKOUT
+// =============================
+
+function cancelarCheckout() {
+    // Ocultar vista de checkout
+    if (checkoutView) checkoutView.classList.add("hidden");
+    if (checkoutFooter) checkoutFooter.classList.add("hidden");
+
+    // Mostrar vista de carrito
+    if (cartView) cartView.classList.remove("hidden");
+    if (cartFooter) cartFooter.classList.remove("hidden");
+
+    // Restaurar título
+    if (cartPanelTitle) cartPanelTitle.textContent = "Mi Carrito";
+}
+
+async function iniciarCheckout() {
+    // 1. Verificar que el carrito no esté vacío
+    if (!cartItemsList || cartItemsList.children.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+    }
+
+    // 2. Ocultar vista de carrito
+    if (cartView) cartView.classList.add("hidden");
+    if (cartFooter) cartFooter.classList.add("hidden");
+
+    // 3. Mostrar vista de checkout
+    if (checkoutView) checkoutView.classList.remove("hidden");
+    if (checkoutFooter) checkoutFooter.classList.remove("hidden");
+
+    // 4. Cambiar título
+    if (cartPanelTitle) cartPanelTitle.textContent = "Finalizar Compra";
+
+    // 5. Copiar items del carrito al resumen
+    if (checkoutItemsList) {
+        checkoutItemsList.innerHTML = ''; // Limpiar resumen
+        const items = cartItemsList.querySelectorAll("li");
+        items.forEach(item => {
+            // Clonamos el item para no moverlo
+            const clone = item.cloneNode(true);
+            // Quitamos los botones de +/-/eliminar del resumen
+            clone.querySelector('.btn-restar-item')?.remove();
+            clone.querySelector('.btn-sumar-item')?.remove();
+            clone.querySelector('.btn-eliminar-item')?.remove();
+            clone.classList.add("py-2", "border-b"); // Estilo simple
+            clone.classList.remove("bg-gray-50", "px-3", "py-2", "gap-3");
+            checkoutItemsList.appendChild(clone);
+        });
+    }
+
+    // 6. Poblar los dropdowns
+    await poblarDropdowns();
+}
+
+async function poblarDropdowns() {
+    const token = localStorage.getItem("authToken");
+    if (!token || !sucursalSelect || !formaPagoSelect) return;
+
+    // Seteamos estado de "cargando"
+    sucursalSelect.innerHTML = `<option value="">Cargando...</option>`;
+    formaPagoSelect.innerHTML = `<option value="">Cargando...</option>`;
+
+    try {
+        const [sucursalesRes, formasPagoRes] = await Promise.all([
+            fetch(`${API_BASE_URL}/api/Factura/sucursales`, { headers: { 'Authorization': `Bearer ${token}` } }),
+            fetch(`${API_BASE_URL}/api/Factura/formas-pago`, { headers: { 'Authorization': `Bearer ${token}` } })
+        ]);
+
+        if (!sucursalesRes.ok || !formasPagoRes.ok) {
+            throw new Error("Error al cargar datos de checkout");
+        }
+
+        const sucursales = await sucursalesRes.json();
+        const formasPago = await formasPagoRes.json();
+
+        // Poblar Sucursales
+        sucursalSelect.innerHTML = `<option value="">-- Seleccione una sucursal --</option>`;
+        sucursales.forEach(s => {
+            // Asumo que el objeto es { idSucursal: 1, nombre: "..." }
+            sucursalSelect.innerHTML += `<option value="${s.idSucursal}">${s.nombre || s.descripcion}</option>`;
+        });
+
+        // Poblar Formas de Pago
+        formaPagoSelect.innerHTML = `<option value="">-- Seleccione un método de pago --</option>`;
+        formasPago.forEach(f => {
+            // Asumo que el objeto es { idFormaPago: 1, nombre: "..." }
+            formaPagoSelect.innerHTML += `<option value="${f.idFormaPago}">${f.nombre || f.descripcion}</option>`;
+        });
+
+    } catch (err) {
+        console.error("ERROR (poblarDropdowns):", err);
+        sucursalSelect.innerHTML = `<option value="">Error al cargar</option>`;
+        formaPagoSelect.innerHTML = `<option value="">Error al cargar</option>`;
+    }
+}
+
+async function confirmarCompra() {
+    const token = localStorage.getItem("authToken");
+    const cartId = localStorage.getItem("cartId");
+    
+    // 1. Validar selección
+    const idSucursal = sucursalSelect.value;
+    const idFormaPago = formaPagoSelect.value;
+
+    if (!idSucursal || !idFormaPago) {
+        alert("Por favor, selecciona una sucursal y un método de pago.");
+        return;
+    }
+
+    if (!token || !cartId) {
+        alert("Error de sesión o carrito no encontrado. Intenta recargar la página.");
+        return;
+    }
+
+    // Deshabilitar botón para evitar doble click
+    btnConfirmarCompra.disabled = true;
+    btnConfirmarCompra.textContent = "Procesando...";
+
+    try {
+        // 2. Llamar al endpoint de CHECKOUT
+        // (Tu API /api/Carrito/{idCarrito}/checkout espera un body con los IDs)
+        const response = await fetch(`${API_BASE_URL}/api/Carrito/${cartId}/checkout`, {
+            method: "POST",
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                idSucursal: parseInt(idSucursal),
+                idFormaPago: parseInt(idFormaPago)
+                // Tu API se encargará de convertir el Carrito en Factura
+            })
+        });
+
+        if (!response.ok) {
+             const errorData = await response.json().catch(() => ({ message: 'Error al procesar el pago.' }));
+            throw new Error(errorData.message || 'Error desconocido al confirmar.');
+        }
+
+        // 3. Éxito
+        alert("¡Compra realizada con éxito! Se ha generado tu factura.");
+        
+        // Limpiamos el cartId viejo
+        localStorage.removeItem("cartId"); 
+        
+        // Cerramos y reseteamos el carrito
+        cerrarCarrito();
+        mostrarCarritoVacio(); 
+        
+        // Volvemos a poner el panel en modo "Carrito" (para la próxima vez que se abra)
+        cancelarCheckout(); 
+
+    } catch (err) {
+        console.error("ERROR (confirmarCompra):", err);
+        alert(`Error al procesar la compra: ${err.message}`);
+    } finally {
+        // Reactivar botón
+        btnConfirmarCompra.disabled = false;
+        btnConfirmarCompra.textContent = "Confirmar Compra";
+    }
 }

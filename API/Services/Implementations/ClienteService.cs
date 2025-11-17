@@ -26,6 +26,9 @@ namespace API_Farmacia.Services.Implementations
                     Apellido = cliente.Apellido,
                     IdDireccion = cliente.IdDireccion,
                     Email = cliente.Email,
+
+                    // --- AÑADIR ESTA LÍNEA AQUÍ TAMBIÉN ---
+                    IdTipoUsuario = (int)cliente.IdTipoUsuario
                 };
                 clientesDTO.Add(clienteDTO);
             }
@@ -40,14 +43,15 @@ namespace API_Farmacia.Services.Implementations
             if (cliente == null)
                 return null;
 
-            
+
             ClienteDTO clienteDTO = new ClienteDTO
             {
                 IdCliente = cliente.IdCliente,
                 Nombre = cliente.Nombre,
                 Apellido = cliente.Apellido,
                 IdDireccion = cliente.IdDireccion,
-                Email = cliente.Email
+                Email = cliente.Email,
+                IdTipoUsuario = (int)cliente.IdTipoUsuario,
             };
 
             return clienteDTO;
@@ -85,6 +89,7 @@ namespace API_Farmacia.Services.Implementations
                 clienteDTO.Apellido = cliente.Apellido;
                 clienteDTO.IdDireccion = cliente.IdDireccion;
                 clienteDTO.Email = cliente.Email;
+                clienteDTO.IdTipoUsuario = (int)cliente.IdTipoUsuario;
                 return clienteDTO;
             }
         }
@@ -102,6 +107,7 @@ namespace API_Farmacia.Services.Implementations
                 clienteDTO.Apellido = cliente.Apellido;
                 clienteDTO.IdDireccion = cliente.IdDireccion;
                 clienteDTO.Email = cliente.Email;
+                clienteDTO.IdTipoUsuario = (int)cliente.IdTipoUsuario;
                 return clienteDTO;
             }
         }
@@ -119,6 +125,7 @@ namespace API_Farmacia.Services.Implementations
                 clienteDTO.Apellido = cliente.Apellido;
                 clienteDTO.IdDireccion = cliente.IdDireccion;
                 clienteDTO.Email = cliente.Email;
+                clienteDTO.IdTipoUsuario = (int)cliente.IdTipoUsuario;
                 return clienteDTO;
             }
         }
@@ -140,6 +147,7 @@ namespace API_Farmacia.Services.Implementations
                         Apellido = cliente.Apellido,
                         IdDireccion = cliente.IdDireccion,
                         Email = cliente.Email,
+                        IdTipoUsuario = (int)cliente.IdTipoUsuario,
                     };
                     clientesDTO.Add(clienteDTO);
                 }

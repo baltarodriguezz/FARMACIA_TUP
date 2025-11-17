@@ -761,6 +761,10 @@
           "idFormaPago": {
             "type": "integer",
             "format": "int32"
+          },
+          "idSucursal": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
