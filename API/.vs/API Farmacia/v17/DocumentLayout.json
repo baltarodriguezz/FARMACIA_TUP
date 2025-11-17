@@ -162,8 +162,7 @@
               "RelativeToolTip": "Repositories\\Implementations\\ClientesRepository.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAAswFwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T23:39:53.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T23:39:53.716Z"
             },
             {
               "$type": "Document",
@@ -175,8 +174,7 @@
               "RelativeToolTip": "Repositories\\Interfaces\\IClientesRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T23:39:34.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-13T23:39:34.466Z"
             },
             {
               "$type": "Document",
@@ -188,8 +186,7 @@
               "RelativeToolTip": "Repositories\\Interfaces\\ISuministrosRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T12:45:18.66Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T12:45:18.66Z"
             },
             {
               "$type": "Document",
@@ -201,8 +198,7 @@
               "RelativeToolTip": "Controllers\\FacturaController.cs",
               "ViewState": "AgIAAHYAAAAAAAAAAADwv4MAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:35:52.678Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:35:52.678Z"
             },
             {
               "$type": "Document",
@@ -214,8 +210,7 @@
               "RelativeToolTip": "Models\\FarmaciaContext.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAA2wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T12:24:15.238Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T12:24:15.238Z"
             },
             {
               "$type": "Document",
@@ -227,8 +222,7 @@
               "RelativeToolTip": "Controllers\\CarritoController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T02:43:41.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T02:43:41.382Z"
             },
             {
               "$type": "Document",
@@ -240,8 +234,7 @@
               "RelativeToolTip": "Services\\Interfaces\\ICarritoService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T02:56:30.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T02:56:30.958Z"
             },
             {
               "$type": "Document",
@@ -249,9 +242,9 @@
               "Title": "CarritoService.cs",
               "DocumentMoniker": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Implementations\\CarritoService.cs",
               "RelativeDocumentMoniker": "Services\\Implementations\\CarritoService.cs",
-              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Implementations\\CarritoService.cs*",
-              "RelativeToolTip": "Services\\Implementations\\CarritoService.cs*",
-              "ViewState": "AgIAADcAAAAAAAAAAAAUwFkAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\matia\\Desktop\\FARMACIA_TUP\\API\\Services\\Implementations\\CarritoService.cs",
+              "RelativeToolTip": "Services\\Implementations\\CarritoService.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAswGYAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T02:59:20.85Z",
               "EditorCaption": ""
@@ -266,8 +259,7 @@
               "RelativeToolTip": "Repositories\\Interfaces\\IFacturaRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T01:07:39.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T01:07:39.128Z"
             },
             {
               "$type": "Document",
@@ -279,8 +271,7 @@
               "RelativeToolTip": "Services\\Implementations\\FacturaService.cs",
               "ViewState": "AgIAAHYAAAAAAAAAAAAUwJAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:13:57.936Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:13:57.936Z"
             },
             {
               "$type": "Document",
@@ -292,8 +283,7 @@
               "RelativeToolTip": "Services\\Interfaces\\IFacturaService.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAmwA4AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T01:07:04.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T01:07:04.802Z"
             },
             {
               "$type": "Document",
@@ -305,8 +295,7 @@
               "RelativeToolTip": "Repositories\\Implementations\\FacturaRepository.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAA0wEgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:15:45.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:15:45.552Z"
             },
             {
               "$type": "Document",
@@ -318,8 +307,7 @@
               "RelativeToolTip": "Controllers\\SuministrosController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T12:32:30.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T12:32:30.961Z"
             },
             {
               "$type": "Document",
