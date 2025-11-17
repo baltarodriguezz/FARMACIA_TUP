@@ -88,22 +88,30 @@
 
   </main>
 <script>
+// ==========================================================
+// ¡ASEGÚRATE DE QUE ESTA CONSTANTE ESTÉ DEFINIDA AQUÍ O EN api.js!
+// (Basado en tus otros archivos, esta es la constante que usas)
+// ==========================================================
+const API_BASE_URL = "https://localhost:7028";
+
+
 const modal = document.getElementById("modalProducto");
 const tabla = document.getElementById("tablaProductos");
 const tituloModal = document.getElementById("tituloModal");
 
 const inputDescripcion = document.getElementById("descripcion");
-const inputPrecio      = document.getElementById("precioUnitario");
-const inputStock       = document.getElementById("stock");
-const inputCodBarra    = document.getElementById("codBarra");
-const inputUrlImagen   = document.getElementById("urlImagen");
+const inputPrecio       = document.getElementById("precioUnitario");
+const inputStock        = document.getElementById("stock");
+const inputCodBarra     = document.getElementById("codBarra");
+const inputUrlImagen    = document.getElementById("urlImagen");
 
 let editId = null;
 let productosCache = [];
 
 // ==================== CARGAR PRODUCTOS ====================
 async function cargarProductos() {
-    const datos = await apiGet("Suministros");
+    // Asumimos que apiGet ya incluye el /api/ o usa API_BASE_URL correctamente
+    const datos = await apiGet("Suministros"); 
     productosCache = datos;
 
     tabla.innerHTML = "";
@@ -146,55 +154,52 @@ document.getElementById("btnCancelar").addEventListener("click", () => {
 document.getElementById("formProducto").addEventListener("submit", async e => {
     e.preventDefault();
 
-    let nuevoId = editId;
-    if (nuevoId === null) {
-        const max = productosCache.length ? Math.max(...productosCache.map(x => x.idSuministro)) : 0;
-        nuevoId = max + 1;
-    }
-
     const descripcion = inputDescripcion.value.trim();
     const precio      = parseFloat(inputPrecio.value);
     const stock       = parseInt(inputStock.value);
-    const codBarra    = parseInt(inputCodBarra.value || "0");
+    
+    // --- (MODIFICACIÓN PASADA: enviar null si está vacío) ---
+    const codBarra = parseInt(inputCodBarra.value || "0");    
     const urlfoto     = inputUrlImagen.value || "";
 
     if (!descripcion || isNaN(precio) || isNaN(stock)) {
         alert("Completá descripción, precio y stock correctamente.");
         return;
     }
+    
+    // --- CORRECCIÓN AQUÍ (Añadido /api/) ---
+    let url = `${API_BASE_URL}/api/Suministros`;
+    let method = "POST";
 
-    // La API usa QUERYSTRING (NO JSON)
-    const params = new URLSearchParams({
-        id: nuevoId,
-        codBarra: codBarra,
-        descripcion: descripcion,
-        preUnitario: precio,
-        TSuministro: 1,
-        TVenta: 1,
-        stock: stock,
-        urlfoto: urlfoto
-    });
-
-    let url = "";
-    let method = "";
-
-    if (editId === null) {
-        // POST api/Suministros?id=...
-        url = `${API_URL}/Suministros?${params.toString()}`;
-        method = "POST";
-    } else {
-        // PUT api/Suministros/{id}?descripcion=...
-        params.delete("id");
-        url = `${API_URL}/Suministros/${editId}?${params.toString()}`;
+    if (editId !== null) {
         method = "PUT";
+        // --- CORRECCIÓN AQUÍ (Añadido /api/) ---
+        url = `${API_BASE_URL}/api/Suministros/${editId}`;
     }
 
+    const data = {
+        // (Tuve que cambiar tu DTO a int? para codBarra, si no lo hiciste, usa 0)
+        codBarra: codBarra, 
+        descripcion: descripcion,
+        precioUnitario: precio,
+        idTipoSuministro: 1,
+        idTipoVenta: 1,
+        stock: stock,
+        urlImagen: urlfoto
+    };
+
     try {
-        const resp = await fetch(url, { method });
+        const resp = await fetch(url, {
+            method,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
         const text = await resp.text();
 
         if (!resp.ok) {
-            alert(`Error al guardar (${resp.status}): ${text}`);
+            // Ahora la alerta mostrará el 404
+            alert(`Error al guardar (${resp.status}): ${text}`); 
             return;
         }
 
@@ -208,12 +213,14 @@ document.getElementById("formProducto").addEventListener("submit", async e => {
     await cargarProductos();
 });
 
+
 // ==================== EDITAR ====================
 window.editar = async id => {
     editId = id;
     tituloModal.textContent = "Editar Producto";
 
-    const p = await apiGet(`Suministros/${id}`);
+    // Asumimos que apiGet ya incluye el /api/
+    const p = await apiGet(`Suministros/${id}`); 
 
     inputDescripcion.value = p.descripcion;
     inputPrecio.value      = p.precioUnitario;
@@ -229,7 +236,8 @@ window.eliminar = async id => {
     if (!confirm("¿Seguro que deseas eliminar este producto?")) return;
 
     try {
-        const resp = await fetch(`${API_URL}/Suministros/${id}`, { method: "DELETE" });
+        // --- CORRECCIÓN AQUÍ (Añadido /api/) ---
+        const resp = await fetch(`${API_BASE_URL}/api/Suministros/${id}`, { method: "DELETE" });
         const message = await resp.text();
 
         if (!resp.ok) {
@@ -249,6 +257,7 @@ window.eliminar = async id => {
 // ==================== INICIO ====================
 cargarProductos();
 </script>
+
 
 
 

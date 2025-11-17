@@ -3,7 +3,7 @@
     public class SuministroPostDTO
     {
         public int CodBarra { get; set; }
-        public string Descripcion { get; set; }
+        public string? Descripcion { get; set; }
         public double PrecioUnitario { get; set; }
         public int IdTipoSuministro { get; set; }
         public int IdTipoVenta { get; set; }

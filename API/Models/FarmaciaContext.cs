@@ -91,11 +91,9 @@ public partial class FarmaciaContext : DbContext
     {
         modelBuilder.Entity<Barrio>(entity =>
         {
-            entity.HasKey(e => e.IdBarrio).HasName("PK__Barrios__1121F0B208463750");
+            entity.HasKey(e => e.IdBarrio).HasName("PK__Barrios__1121F0B2BD37276B");
 
-            entity.Property(e => e.IdBarrio)
-                .ValueGeneratedNever()
-                .HasColumnName("id_barrio");
+            entity.Property(e => e.IdBarrio).HasColumnName("id_barrio");
             entity.Property(e => e.IdLocalidad).HasColumnName("id_localidad");
             entity.Property(e => e.Nombre)
                 .IsRequired()
@@ -106,12 +104,12 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdLocalidadNavigation).WithMany(p => p.Barrios)
                 .HasForeignKey(d => d.IdLocalidad)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Barrios__id_loca__5165187F");
+                .HasConstraintName("FK__Barrios__id_loca__7F2BE32F");
         });
 
         modelBuilder.Entity<Carrito>(entity =>
         {
-            entity.HasKey(e => e.IdCarrito).HasName("PK__Carritos__83A2AD9CDBA920E5");
+            entity.HasKey(e => e.IdCarrito).HasName("PK__Carritos__83A2AD9CEDFB478F");
 
             entity.Property(e => e.IdCarrito).HasColumnName("id_carrito");
             entity.Property(e => e.Estado)
@@ -129,12 +127,12 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.Carritos)
                 .HasForeignKey(d => d.IdCliente)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Carritos__estado__395884C4");
+                .HasConstraintName("FK__Carritos__id_cli__02084FDA");
         });
 
         modelBuilder.Entity<CarritoItem>(entity =>
         {
-            entity.HasKey(e => e.IdItem).HasName("PK__Carrito___87C9438BED38A550");
+            entity.HasKey(e => e.IdItem).HasName("PK__Carrito___87C9438B61A75BEE");
 
             entity.ToTable("Carrito_Items");
 
@@ -148,17 +146,17 @@ public partial class FarmaciaContext : DbContext
 
             entity.HasOne(d => d.IdCarritoNavigation).WithMany(p => p.CarritoItems)
                 .HasForeignKey(d => d.IdCarrito)
-                .HasConstraintName("FK__Carrito_I__id_ca__3C34F16F");
+                .HasConstraintName("FK__Carrito_I__id_ca__00200768");
 
             entity.HasOne(d => d.IdSuministroNavigation).WithMany(p => p.CarritoItems)
                 .HasForeignKey(d => d.IdSuministro)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Carrito_I__id_su__3D2915A8");
+                .HasConstraintName("FK__Carrito_I__id_su__01142BA1");
         });
 
         modelBuilder.Entity<Ciudad>(entity =>
         {
-            entity.HasKey(e => e.IdCiudad).HasName("PK__Ciudad__B7DC4CD509E6406F");
+            entity.HasKey(e => e.IdCiudad).HasName("PK__Ciudad__B7DC4CD54BB677C9");
 
             entity.ToTable("Ciudad");
 
@@ -175,12 +173,12 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdPaisNavigation).WithMany(p => p.Ciudads)
                 .HasForeignKey(d => d.IdPais)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Ciudad__id_pais__4BAC3F29");
+                .HasConstraintName("FK__Ciudad__id_pais__02FC7413");
         });
 
         modelBuilder.Entity<Cliente>(entity =>
         {
-            entity.HasKey(e => e.IdCliente).HasName("PK__Clientes__677F38F585D28B36");
+            entity.HasKey(e => e.IdCliente).HasName("PK__Clientes__677F38F5086A7D6B");
 
             entity.Property(e => e.IdCliente)
                 .ValueGeneratedNever()
@@ -198,7 +196,9 @@ public partial class FarmaciaContext : DbContext
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("email");
-            entity.Property(e => e.IdDireccion).HasColumnName("id_direccion");
+            entity.Property(e => e.IdDireccion)
+                .ValueGeneratedOnAdd()
+                .HasColumnName("id_direccion");
             entity.Property(e => e.IdTipoUsuario).HasColumnName("id_tipo_usuario");
             entity.Property(e => e.Nombre)
                 .IsRequired()
@@ -209,16 +209,16 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdDireccionNavigation).WithMany(p => p.Clientes)
                 .HasForeignKey(d => d.IdDireccion)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Clientes__id_dir__60A75C0F");
+                .HasConstraintName("FK__Clientes__id_dir__05D8E0BE");
 
             entity.HasOne(d => d.IdTipoUsuarioNavigation).WithMany(p => p.Clientes)
                 .HasForeignKey(d => d.IdTipoUsuario)
-                .HasConstraintName("FK__Clientes__id_tip__40058253");
+                .HasConstraintName("FK__Clientes__id_tip__06CD04F7");
         });
 
         modelBuilder.Entity<ClienteObraSocial>(entity =>
         {
-            entity.HasKey(e => e.IdClienteObraSocial).HasName("PK__Cliente___7CBE496AC31DC577");
+            entity.HasKey(e => e.IdClienteObraSocial).HasName("PK__Cliente___7CBE496A7BF2978E");
 
             entity.ToTable("Cliente_Obra_Social");
 
@@ -231,17 +231,17 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.ClienteObraSocials)
                 .HasForeignKey(d => d.IdCliente)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Cliente_O__id_cl__73BA3083");
+                .HasConstraintName("FK__Cliente_O__id_cl__03F0984C");
 
             entity.HasOne(d => d.IdObraSocialNavigation).WithMany(p => p.ClienteObraSocials)
                 .HasForeignKey(d => d.IdObraSocial)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Cliente_O__id_ob__74AE54BC");
+                .HasConstraintName("FK__Cliente_O__id_ob__04E4BC85");
         });
 
         modelBuilder.Entity<Cobertura>(entity =>
         {
-            entity.HasKey(e => e.IdCobertura).HasName("PK__Cobertur__E64144A078C142FE");
+            entity.HasKey(e => e.IdCobertura).HasName("PK__Cobertur__E64144A0E6B8A138");
 
             entity.Property(e => e.IdCobertura)
                 .ValueGeneratedNever()
@@ -255,27 +255,27 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdLocalidadNavigation).WithMany(p => p.Coberturas)
                 .HasForeignKey(d => d.IdLocalidad)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Cobertura__id_lo__797309D9");
+                .HasConstraintName("FK__Cobertura__id_lo__07C12930");
 
             entity.HasOne(d => d.IdMesNavigation).WithMany(p => p.Coberturas)
                 .HasForeignKey(d => d.IdMes)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Cobertura__id_me__787EE5A0");
+                .HasConstraintName("FK__Cobertura__id_me__08B54D69");
 
             entity.HasOne(d => d.IdObraSocialNavigation).WithMany(p => p.Coberturas)
                 .HasForeignKey(d => d.IdObraSocial)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Cobertura__id_ob__7A672E12");
+                .HasConstraintName("FK__Cobertura__id_ob__09A971A2");
 
             entity.HasOne(d => d.IdTipoSuministroNavigation).WithMany(p => p.Coberturas)
                 .HasForeignKey(d => d.IdTipoSuministro)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Cobertura__id_ti__778AC167");
+                .HasConstraintName("FK__Cobertura__id_ti__0A9D95DB");
         });
 
         modelBuilder.Entity<Contacto>(entity =>
         {
-            entity.HasKey(e => e.IdContacto).HasName("PK__Contacto__099A52B851171CEC");
+            entity.HasKey(e => e.IdContacto).HasName("PK__Contacto__099A52B8DCCFB017");
 
             entity.Property(e => e.IdContacto)
                 .ValueGeneratedNever()
@@ -291,17 +291,17 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.Contactos)
                 .HasForeignKey(d => d.IdCliente)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Contactos__id_cl__656C112C");
+                .HasConstraintName("FK__Contactos__id_cl__0B91BA14");
 
             entity.HasOne(d => d.IdTipoContactoNavigation).WithMany(p => p.Contactos)
                 .HasForeignKey(d => d.IdTipoContacto)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Contactos__id_ti__66603565");
+                .HasConstraintName("FK__Contactos__id_ti__0C85DE4D");
         });
 
         modelBuilder.Entity<DetalleEntrega>(entity =>
         {
-            entity.HasKey(e => e.IdDetalle).HasName("PK__Detalle___4F1332DED343D120");
+            entity.HasKey(e => e.IdDetalle).HasName("PK__Detalle___4F1332DEC1E81ABE");
 
             entity.ToTable("Detalle_Entrega");
 
@@ -315,17 +315,17 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdEntregaNavigation).WithMany(p => p.DetalleEntregas)
                 .HasForeignKey(d => d.IdEntrega)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Detalle_E__id_en__32AB8735");
+                .HasConstraintName("FK__Detalle_E__id_en__0D7A0286");
 
             entity.HasOne(d => d.IdSuministroNavigation).WithMany(p => p.DetalleEntregas)
                 .HasForeignKey(d => d.IdSuministro)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Detalle_E__id_su__339FAB6E");
+                .HasConstraintName("FK__Detalle_E__id_su__0E6E26BF");
         });
 
         modelBuilder.Entity<DetalleReembolso>(entity =>
         {
-            entity.HasKey(e => e.IdDetalleReembolso).HasName("PK__Detalle___1C649FD6BFF073D2");
+            entity.HasKey(e => e.IdDetalleReembolso).HasName("PK__Detalle___1C649FD6323F2B7F");
 
             entity.ToTable("Detalle_Reembolso");
 
@@ -345,27 +345,27 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdCoberturaNavigation).WithMany(p => p.DetalleReembolsos)
                 .HasForeignKey(d => d.IdCobertura)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Detalle_R__id_co__1EA48E88");
+                .HasConstraintName("FK__Detalle_R__id_co__0F624AF8");
 
             entity.HasOne(d => d.IdReembolsoNavigation).WithMany(p => p.DetalleReembolsos)
                 .HasForeignKey(d => d.IdReembolso)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Detalle_R__id_re__1BC821DD");
+                .HasConstraintName("FK__Detalle_R__id_re__10566F31");
 
             entity.HasOne(d => d.IdSuministroNavigation).WithMany(p => p.DetalleReembolsos)
                 .HasForeignKey(d => d.IdSuministro)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Detalle_R__id_su__1DB06A4F");
+                .HasConstraintName("FK__Detalle_R__id_su__114A936A");
 
             entity.HasOne(d => d.NroFacturaNavigation).WithMany(p => p.DetalleReembolsos)
                 .HasForeignKey(d => d.NroFactura)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Detalle_R__nro_f__1CBC4616");
+                .HasConstraintName("FK_Detalle_Rnro_f_1CBC4616");
         });
 
         modelBuilder.Entity<DetalleRespaldo>(entity =>
         {
-            entity.HasKey(e => e.IdDetalleRespaldo).HasName("PK__Detalle___469DB852C275566F");
+            entity.HasKey(e => e.IdDetalleRespaldo).HasName("PK__Detalle___469DB852BF0633C4");
 
             entity.ToTable("Detalle_Respaldo");
 
@@ -381,7 +381,7 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdEstadoRespaldoNavigation).WithMany(p => p.DetalleRespaldos)
                 .HasForeignKey(d => d.IdEstadoRespaldo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Detalle_R__id_es__160F4887");
+                .HasConstraintName("FK__Detalle_R__id_es__1332DBDC");
 
             entity.HasOne(d => d.IdRespaldoNavigation).WithMany(p => p.DetalleRespaldos)
                 .HasForeignKey(d => d.IdRespaldo)
@@ -396,7 +396,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<DetallesFactura>(entity =>
         {
-            entity.HasKey(e => e.NroDetalleFactura).HasName("PK__Detalles__C9E29E6B64A590FE");
+            entity.HasKey(e => e.NroDetalleFactura).HasName("PK_Detalles_C9E29E6B64A590FE");
 
             entity.ToTable("Detalles_Factura");
 
@@ -411,17 +411,17 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdSuministroNavigation).WithMany(p => p.DetallesFacturas)
                 .HasForeignKey(d => d.IdSuministro)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Detalles___id_su__02FC7413");
+                .HasConstraintName("FK_Detalles_id_su_02FC7413");
 
             entity.HasOne(d => d.NroFacturaNavigation).WithMany(p => p.DetallesFacturas)
                 .HasForeignKey(d => d.NroFactura)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Detalles___nro_f__02084FDA");
+                .HasConstraintName("FK_Detalles_nro_f_02084FDA");
         });
 
         modelBuilder.Entity<DetallesRecetum>(entity =>
         {
-            entity.HasKey(e => e.NroDetalleReceta).HasName("PK__Detalles__F45AC7EB5D61A6DF");
+            entity.HasKey(e => e.NroDetalleReceta).HasName("PK__Detalles__F45AC7EB0FF2DEB1");
 
             entity.ToTable("Detalles_receta");
 
@@ -435,23 +435,21 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdSuministroNavigation).WithMany(p => p.DetallesReceta)
                 .HasForeignKey(d => d.IdSuministro)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Detalles___id_su__0A9D95DB");
+                .HasConstraintName("FK__Detalles___id_su__17F790F9");
 
             entity.HasOne(d => d.NroRecetaNavigation).WithMany(p => p.DetallesReceta)
                 .HasForeignKey(d => d.NroReceta)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Detalles___nro_r__09A971A2");
+                .HasConstraintName("FK__Detalles___nro_r__18EBB532");
         });
 
         modelBuilder.Entity<Direccion>(entity =>
         {
-            entity.HasKey(e => e.IdDireccion).HasName("PK__Direccio__25C35D07A44C2C89");
+            entity.HasKey(e => e.IdDireccion).HasName("PK__Direccio__25C35D07355C5798");
 
             entity.ToTable("Direccion");
 
-            entity.Property(e => e.IdDireccion)
-                .ValueGeneratedNever()
-                .HasColumnName("id_direccion");
+            entity.Property(e => e.IdDireccion).HasColumnName("id_direccion");
             entity.Property(e => e.IdBarrio).HasColumnName("id_barrio");
             entity.Property(e => e.NomCalle)
                 .IsRequired()
@@ -463,12 +461,12 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdBarrioNavigation).WithMany(p => p.Direccions)
                 .HasForeignKey(d => d.IdBarrio)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Direccion__id_ba__5441852A");
+                .HasConstraintName("FK__Direccion__id_ba__19DFD96B");
         });
 
         modelBuilder.Entity<EmpleadoExterno>(entity =>
         {
-            entity.HasKey(e => e.IdEmpleadoExterno).HasName("PK__Empleado__C43FE3BC91C3BED5");
+            entity.HasKey(e => e.IdEmpleadoExterno).HasName("PK__Empleado__C43FE3BC9B2B9B63");
 
             entity.ToTable("Empleado_Externo");
 
@@ -490,7 +488,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<EmpleadosInterno>(entity =>
         {
-            entity.HasKey(e => e.IdEmpleado).HasName("PK__Empleado__88B513945E797ED8");
+            entity.HasKey(e => e.IdEmpleado).HasName("PK__Empleado__88B51394048F7DDB");
 
             entity.ToTable("Empleados_internos");
 
@@ -514,22 +512,22 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdDireccionNavigation).WithMany(p => p.EmpleadosInternos)
                 .HasForeignKey(d => d.IdDireccion)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Empleados__id_di__282DF8C2");
+                .HasConstraintName("FK__Empleados__id_di__1AD3FDA4");
 
             entity.HasOne(d => d.IdRolNavigation).WithMany(p => p.EmpleadosInternos)
                 .HasForeignKey(d => d.IdRol)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Empleados__id_ro__29221CFB");
+                .HasConstraintName("FK__Empleados__id_ro__1BC821DD");
 
             entity.HasOne(d => d.IdSucursalNavigation).WithMany(p => p.EmpleadosInternos)
                 .HasForeignKey(d => d.IdSucursal)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Empleados__id_su__2739D489");
+                .HasConstraintName("FK__Empleados__id_su__1CBC4616");
         });
 
         modelBuilder.Entity<EmpresaLogistica>(entity =>
         {
-            entity.HasKey(e => e.IdLogistica).HasName("PK__Empresa___889ADDD922C5BFE1");
+            entity.HasKey(e => e.IdLogistica).HasName("PK__Empresa___889ADDD98DC19A6A");
 
             entity.ToTable("Empresa_Logistica");
 
@@ -550,7 +548,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Entrega>(entity =>
         {
-            entity.HasKey(e => e.IdEntrega).HasName("PK__Entregas__017C2C8A1941CC28");
+            entity.HasKey(e => e.IdEntrega).HasName("PK__Entregas__017C2C8A8898A0DE");
 
             entity.Property(e => e.IdEntrega)
                 .ValueGeneratedNever()
@@ -565,32 +563,32 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdEmpleadoExternoNavigation).WithMany(p => p.Entregas)
                 .HasForeignKey(d => d.IdEmpleadoExterno)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Entregas__id_emp__2EDAF651");
+                .HasConstraintName("FK__Entregas__id_emp__1DB06A4F");
 
             entity.HasOne(d => d.IdEmpleadoReceptorNavigation).WithMany(p => p.Entregas)
                 .HasForeignKey(d => d.IdEmpleadoReceptor)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Entregas__id_emp__2FCF1A8A");
+                .HasConstraintName("FK__Entregas__id_emp__1EA48E88");
 
             entity.HasOne(d => d.IdLogisticaNavigation).WithMany(p => p.Entregas)
                 .HasForeignKey(d => d.IdLogistica)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Entregas__id_log__2BFE89A6");
+                .HasConstraintName("FK__Entregas__id_log__1F98B2C1");
 
             entity.HasOne(d => d.IdProveedorNavigation).WithMany(p => p.Entregas)
                 .HasForeignKey(d => d.IdProveedor)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Entregas__id_pro__2CF2ADDF");
+                .HasConstraintName("FK__Entregas__id_pro__208CD6FA");
 
             entity.HasOne(d => d.IdSucursalNavigation).WithMany(p => p.Entregas)
                 .HasForeignKey(d => d.IdSucursal)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Entregas__id_suc__2DE6D218");
+                .HasConstraintName("FK__Entregas__id_suc__2180FB33");
         });
 
         modelBuilder.Entity<EstadoRespaldo>(entity =>
         {
-            entity.HasKey(e => e.IdEstadoRespaldo).HasName("PK__Estado_R__CD606870234F5167");
+            entity.HasKey(e => e.IdEstadoRespaldo).HasName("PK__Estado_R__CD606870DC573A41");
 
             entity.ToTable("Estado_Respaldo");
 
@@ -606,7 +604,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Factura>(entity =>
         {
-            entity.HasKey(e => e.NroFactura).HasName("PK__Facturas__B31FA9AF858D8BF5");
+            entity.HasKey(e => e.NroFactura).HasName("PK_Facturas_B31FA9AF858D8BF5");
 
             entity.Property(e => e.NroFactura).HasColumnName("nro_factura");
             entity.Property(e => e.Fecha)
@@ -619,22 +617,22 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.Facturas)
                 .HasForeignKey(d => d.IdCliente)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Facturas__id_cli__7D439ABD");
+                .HasConstraintName("FK_Facturasid_cli_7D439ABD");
 
             entity.HasOne(d => d.IdFormaPagoNavigation).WithMany(p => p.Facturas)
                 .HasForeignKey(d => d.IdFormaPago)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Facturas__id_for__7F2BE32F");
+                .HasConstraintName("FK_Facturasid_for_7F2BE32F");
 
             entity.HasOne(d => d.IdSucursalNavigation).WithMany(p => p.Facturas)
                 .HasForeignKey(d => d.IdSucursal)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Facturas__id_Suc__7E37BEF6");
+                .HasConstraintName("FK_Facturasid_Suc_7E37BEF6");
         });
 
         modelBuilder.Entity<FormaPago>(entity =>
         {
-            entity.HasKey(e => e.IdFormaPago).HasName("PK__Forma_Pa__DA9B39EE553FD2A1");
+            entity.HasKey(e => e.IdFormaPago).HasName("PK__Forma_Pa__DA9B39EE0D7EE7DA");
 
             entity.ToTable("Forma_Pago");
 
@@ -650,7 +648,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Localidad>(entity =>
         {
-            entity.HasKey(e => e.IdLocalidad).HasName("PK__Localida__9A5E82AA0B078604");
+            entity.HasKey(e => e.IdLocalidad).HasName("PK__Localida__9A5E82AA4C485C3C");
 
             entity.ToTable("Localidad");
 
@@ -667,12 +665,12 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdCiudadNavigation).WithMany(p => p.Localidads)
                 .HasForeignKey(d => d.IdCiudad)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Localidad__id_ci__4E88ABD4");
+                .HasConstraintName("FK__Localidad__id_ci__25518C17");
         });
 
         modelBuilder.Entity<Medico>(entity =>
         {
-            entity.HasKey(e => e.Matricula).HasName("PK__Medicos__30962D14AE39DA49");
+            entity.HasKey(e => e.Matricula).HasName("PK__Medicos__30962D149DC0456A");
 
             entity.Property(e => e.Matricula)
                 .ValueGeneratedNever()
@@ -697,7 +695,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Mese>(entity =>
         {
-            entity.HasKey(e => e.IdMes).HasName("PK__Meses__6C8AF5372B333503");
+            entity.HasKey(e => e.IdMes).HasName("PK__Meses__6C8AF537EE64A854");
 
             entity.Property(e => e.IdMes)
                 .ValueGeneratedNever()
@@ -711,7 +709,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<ObrasSociale>(entity =>
         {
-            entity.HasKey(e => e.IdObraSocial).HasName("PK__Obras_so__89039DF6BBE28242");
+            entity.HasKey(e => e.IdObraSocial).HasName("PK__Obras_so__89039DF6AF103BDB");
 
             entity.ToTable("Obras_sociales");
 
@@ -734,7 +732,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Pai>(entity =>
         {
-            entity.HasKey(e => e.IdPais).HasName("PK__Pais__0941A3A76E8A9605");
+            entity.HasKey(e => e.IdPais).HasName("PK__Pais__0941A3A7284F5955");
 
             entity.Property(e => e.IdPais)
                 .ValueGeneratedNever()
@@ -748,7 +746,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Proveedor>(entity =>
         {
-            entity.HasKey(e => e.IdProveedor).HasName("PK__Proveedo__8D3DFE28D6C74449");
+            entity.HasKey(e => e.IdProveedor).HasName("PK__Proveedo__8D3DFE28B7E4386C");
 
             entity.ToTable("Proveedor");
 
@@ -769,7 +767,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Recetum>(entity =>
         {
-            entity.HasKey(e => e.NroReceta).HasName("PK__Receta__6658081646A2212E");
+            entity.HasKey(e => e.NroReceta).HasName("PK__Receta__665808162C5D3BE6");
 
             entity.Property(e => e.NroReceta)
                 .ValueGeneratedNever()
@@ -781,17 +779,17 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.Receta)
                 .HasForeignKey(d => d.IdCliente)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Receta__id_clien__05D8E0BE");
+                .HasConstraintName("FK__Receta__id_clien__2645B050");
 
             entity.HasOne(d => d.MatriculaNavigation).WithMany(p => p.Receta)
                 .HasForeignKey(d => d.Matricula)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Receta__matricul__06CD04F7");
+                .HasConstraintName("FK__Receta__matricul__2739D489");
         });
 
         modelBuilder.Entity<Reembolso>(entity =>
         {
-            entity.HasKey(e => e.IdReembolso).HasName("PK__Reembols__51DA5136C94D6385");
+            entity.HasKey(e => e.IdReembolso).HasName("PK__Reembols__51DA51368D1B2C85");
 
             entity.Property(e => e.IdReembolso)
                 .ValueGeneratedNever()
@@ -807,12 +805,12 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdObraSocialNavigation).WithMany(p => p.Reembolsos)
                 .HasForeignKey(d => d.IdObraSocial)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Reembolso__id_ob__18EBB532");
+                .HasConstraintName("FK__Reembolso__id_ob__282DF8C2");
         });
 
         modelBuilder.Entity<Respaldo>(entity =>
         {
-            entity.HasKey(e => e.IdRespaldo).HasName("PK__Respaldo__41B4F7736278537B");
+            entity.HasKey(e => e.IdRespaldo).HasName("PK__Respaldo__41B4F773A3A9B6E9");
 
             entity.Property(e => e.IdRespaldo)
                 .ValueGeneratedNever()
@@ -826,21 +824,21 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdEstadoRespaldoNavigation).WithMany(p => p.Respaldos)
                 .HasForeignKey(d => d.IdEstadoRespaldo)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Respaldos__id_es__10566F31");
+                .HasConstraintName("FK__Respaldos__id_es__29221CFB");
 
             entity.HasOne(d => d.IdFacturaNavigation).WithMany(p => p.Respaldos)
                 .HasForeignKey(d => d.IdFactura)
-                .HasConstraintName("FK__Respaldos__id_fa__114A936A");
+                .HasConstraintName("FK_Respaldosid_fa_114A936A");
 
             entity.HasOne(d => d.NroRecetaNavigation).WithMany(p => p.Respaldos)
                 .HasForeignKey(d => d.NroReceta)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Respaldos__nro_r__0F624AF8");
+                .HasConstraintName("FK__Respaldos__nro_r__2B0A656D");
         });
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.IdRol).HasName("PK__Roles__6ABCB5E01EC06D15");
+            entity.HasKey(e => e.IdRol).HasName("PK__Roles__6ABCB5E0619B652B");
 
             entity.Property(e => e.IdRol)
                 .ValueGeneratedNever()
@@ -854,7 +852,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Sucursale>(entity =>
         {
-            entity.HasKey(e => e.IdSucursal).HasName("PK__Sucursal__8D4556B4B456907E");
+            entity.HasKey(e => e.IdSucursal).HasName("PK__Sucursal__8D4556B4B9A6C814");
 
             entity.Property(e => e.IdSucursal)
                 .ValueGeneratedNever()
@@ -870,12 +868,12 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdDireccionNavigation).WithMany(p => p.Sucursales)
                 .HasForeignKey(d => d.IdDireccion)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Sucursale__id_di__693CA210");
+                .HasConstraintName("FK__Sucursale__id_di__2BFE89A6");
         });
 
         modelBuilder.Entity<Suministro>(entity =>
         {
-            entity.HasKey(e => e.IdSuministro).HasName("PK__Suminist__ABFE9BD113F13DC7");
+            entity.HasKey(e => e.IdSuministro).HasName("PK__Suminist__ABFE9BD151938501");
 
             entity.Property(e => e.IdSuministro).HasColumnName("id_suministro");
             entity.Property(e => e.CodBarra).HasColumnName("cod_barra");
@@ -887,7 +885,7 @@ public partial class FarmaciaContext : DbContext
             entity.Property(e => e.IdTipoVenta).HasColumnName("id_tipo_venta");
             entity.Property(e => e.PrecioUnitario).HasColumnName("precio_unitario");
             entity.Property(e => e.Stock)
-                .HasAnnotation("Relational:DefaultConstraintName", "DF__Suministr__stock__3493CFA7")
+                .HasAnnotation("Relational:DefaultConstraintName", "DF__Suministr__stock__7E37BEF6")
                 .HasColumnName("stock");
             entity.Property(e => e.UrlImagen)
                 .IsRequired()
@@ -898,17 +896,17 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.IdTipoSuministroNavigation).WithMany(p => p.Suministros)
                 .HasForeignKey(d => d.IdTipoSuministro)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Suministr__id_ti__6E01572D");
+                .HasConstraintName("FK__Suministr__id_ti__2CF2ADDF");
 
             entity.HasOne(d => d.IdTipoVentaNavigation).WithMany(p => p.Suministros)
                 .HasForeignKey(d => d.IdTipoVenta)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Suministr__id_ti__6EF57B66");
+                .HasConstraintName("FK__Suministr__id_ti__2DE6D218");
         });
 
         modelBuilder.Entity<TipoContacto>(entity =>
         {
-            entity.HasKey(e => e.IdTipoContacto).HasName("PK__Tipo_con__CA854C0D74F212E0");
+            entity.HasKey(e => e.IdTipoContacto).HasName("PK__Tipo_con__CA854C0D56DACDB9");
 
             entity.ToTable("Tipo_contacto");
 
@@ -924,7 +922,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<TipoUsuario>(entity =>
         {
-            entity.HasKey(e => e.IdTipoUsuario).HasName("PK__Tipo_Usu__B17D78C8DFE9D941");
+            entity.HasKey(e => e.IdTipoUsuario).HasName("PK__Tipo_Usu__B17D78C8CEC429F2");
 
             entity.ToTable("Tipo_Usuario");
 
@@ -940,7 +938,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<TiposSuministro>(entity =>
         {
-            entity.HasKey(e => e.IdTipoSuministro).HasName("PK__Tipos_Su__22748C158E4B6F2D");
+            entity.HasKey(e => e.IdTipoSuministro).HasName("PK__Tipos_Su__22748C156D49DB34");
 
             entity.ToTable("Tipos_Suministros");
 
@@ -956,7 +954,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<TiposVentum>(entity =>
         {
-            entity.HasKey(e => e.IdTipoVenta).HasName("PK__Tipos_Ve__2D950228F6833FAE");
+            entity.HasKey(e => e.IdTipoVenta).HasName("PK__Tipos_Ve__2D9502285EC71009");
 
             entity.ToTable("Tipos_Venta");
 

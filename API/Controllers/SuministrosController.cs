@@ -69,7 +69,6 @@ namespace API_Farmacia.Controllers
         [HttpPost]
         public IActionResult Post(SuministroPostDTO suministro)
         {
-            
             try
             {
                 var result = _service.Add(suministro);
@@ -78,9 +77,9 @@ namespace API_Farmacia.Controllers
                 else
                     return BadRequest("Error al agregar el suministro");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(500, "Error Interno");
+                return StatusCode(500, $"Error Interno: {ex.InnerException?.Message ?? ex.Message}");
             }
         }
 

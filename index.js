@@ -720,7 +720,6 @@ if (cartPanel && !cartPanel.classList.contains("translate-x-full") && !cartPanel
       // 1. Revisa si está logueado
       if (!isLoggedIn) {
         alert("Inicia sesión o regístrate para acceder al Carrito");
-        abrirLoginModal(); // Abre el modal de login
         return;
       }
 
