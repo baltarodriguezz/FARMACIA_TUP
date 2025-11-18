@@ -104,6 +104,64 @@ namespace API_Farmacia.Repositories.Implementations
                 return false;
             }
         }
+        public Barrio GetBarrioByNombre(string nombre)
+        {
+            if (string.IsNullOrWhiteSpace(nombre))
+                return null;
+
+            
+            return _context.Barrios.FirstOrDefault(b => b.Nombre.ToLower() == nombre.ToLower());
+        }
+        public Localidad GetLocalidadByNombre(string nombre)
+        {
+            return _context.Localidads
+                .FirstOrDefault(l => l.Nombre.ToLower() == nombre.ToLower());
+            
+        }
+
+        public Ciudad GetCiudadByNombre(string nombre)
+        {
+            return _context.Ciudads
+                .FirstOrDefault(c => c.Nombre.ToLower() == nombre.ToLower());
+            
+        }
+
+        public Pai GetPaisByNombre(string nombre)
+        {
+            return _context.Pais
+                .FirstOrDefault(p => p.Nombre.ToLower() == nombre.ToLower());
+            // Ajusta "Pais" y "Nombre" a como se llaman en tu modelo
+        }
+
+        public Pai CrearPais(Pai pais)
+        {
+            _context.Pais.Add(pais);
+            _context.SaveChanges();
+            return pais;
+        }
+
+
+        public Ciudad CrearCiudad(Ciudad ciudad)
+        {
+            _context.Ciudads.Add(ciudad);
+            _context.SaveChanges();
+            return ciudad;
+        }
+
+
+        public Localidad CrearLocalidad(Localidad localidad)
+        {
+            _context.Localidads.Add(localidad);
+            _context.SaveChanges();
+            return localidad;
+        }
+
+        public Barrio CrearBarrio(Barrio barrio)
+        {
+            _context.Barrios.Add(barrio);
+            _context.SaveChanges();
+            return barrio;
+        }
 
         public void Update(Cliente cliente)
         {

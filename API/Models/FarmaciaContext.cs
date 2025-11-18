@@ -109,7 +109,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Carrito>(entity =>
         {
-            entity.HasKey(e => e.IdCarrito).HasName("PK__Carritos__83A2AD9CEDFB478F");
+            entity.HasKey(e => e.IdCarrito).HasName("PK__Carritos__83A2AD9CA608127C");
 
             entity.Property(e => e.IdCarrito).HasColumnName("id_carrito");
             entity.Property(e => e.Estado)
@@ -132,7 +132,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<CarritoItem>(entity =>
         {
-            entity.HasKey(e => e.IdItem).HasName("PK__Carrito___87C9438B61A75BEE");
+            entity.HasKey(e => e.IdItem).HasName("PK__Carrito___87C9438B8B809D7A");
 
             entity.ToTable("Carrito_Items");
 
@@ -156,13 +156,11 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Ciudad>(entity =>
         {
-            entity.HasKey(e => e.IdCiudad).HasName("PK__Ciudad__B7DC4CD54BB677C9");
+            entity.HasKey(e => e.IdCiudad).HasName("PK__Ciudad__B7DC4CD58163ADFA");
 
             entity.ToTable("Ciudad");
 
-            entity.Property(e => e.IdCiudad)
-                .ValueGeneratedNever()
-                .HasColumnName("id_ciudad");
+            entity.Property(e => e.IdCiudad).HasColumnName("id_ciudad");
             entity.Property(e => e.IdPais).HasColumnName("id_pais");
             entity.Property(e => e.Nombre)
                 .IsRequired()
@@ -180,9 +178,7 @@ public partial class FarmaciaContext : DbContext
         {
             entity.HasKey(e => e.IdCliente).HasName("PK__Clientes__677F38F5086A7D6B");
 
-            entity.Property(e => e.IdCliente)
-                .ValueGeneratedNever()
-                .HasColumnName("id_cliente");
+            entity.Property(e => e.IdCliente).HasColumnName("id_cliente");
             entity.Property(e => e.Apellido)
                 .IsRequired()
                 .HasMaxLength(50)
@@ -196,9 +192,7 @@ public partial class FarmaciaContext : DbContext
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("email");
-            entity.Property(e => e.IdDireccion)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("id_direccion");
+            entity.Property(e => e.IdDireccion).HasColumnName("id_direccion");
             entity.Property(e => e.IdTipoUsuario).HasColumnName("id_tipo_usuario");
             entity.Property(e => e.Nombre)
                 .IsRequired()
@@ -218,7 +212,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<ClienteObraSocial>(entity =>
         {
-            entity.HasKey(e => e.IdClienteObraSocial).HasName("PK__Cliente___7CBE496A7BF2978E");
+            entity.HasKey(e => e.IdClienteObraSocial).HasName("PK__Cliente___7CBE496AE40DF6B1");
 
             entity.ToTable("Cliente_Obra_Social");
 
@@ -241,7 +235,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Cobertura>(entity =>
         {
-            entity.HasKey(e => e.IdCobertura).HasName("PK__Cobertur__E64144A0E6B8A138");
+            entity.HasKey(e => e.IdCobertura).HasName("PK__Cobertur__E64144A040AD7D7F");
 
             entity.Property(e => e.IdCobertura)
                 .ValueGeneratedNever()
@@ -275,7 +269,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Contacto>(entity =>
         {
-            entity.HasKey(e => e.IdContacto).HasName("PK__Contacto__099A52B8DCCFB017");
+            entity.HasKey(e => e.IdContacto).HasName("PK__Contacto__099A52B8A0E9723A");
 
             entity.Property(e => e.IdContacto)
                 .ValueGeneratedNever()
@@ -301,7 +295,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<DetalleEntrega>(entity =>
         {
-            entity.HasKey(e => e.IdDetalle).HasName("PK__Detalle___4F1332DEC1E81ABE");
+            entity.HasKey(e => e.IdDetalle).HasName("PK__Detalle___4F1332DE221D6718");
 
             entity.ToTable("Detalle_Entrega");
 
@@ -325,7 +319,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<DetalleReembolso>(entity =>
         {
-            entity.HasKey(e => e.IdDetalleReembolso).HasName("PK__Detalle___1C649FD6323F2B7F");
+            entity.HasKey(e => e.IdDetalleReembolso).HasName("PK__Detalle___1C649FD659940CDC");
 
             entity.ToTable("Detalle_Reembolso");
 
@@ -365,7 +359,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<DetalleRespaldo>(entity =>
         {
-            entity.HasKey(e => e.IdDetalleRespaldo).HasName("PK__Detalle___469DB852BF0633C4");
+            entity.HasKey(e => e.IdDetalleRespaldo).HasName("PK__Detalle___469DB852FD4D3A17");
 
             entity.ToTable("Detalle_Respaldo");
 
@@ -421,7 +415,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<DetallesRecetum>(entity =>
         {
-            entity.HasKey(e => e.NroDetalleReceta).HasName("PK__Detalles__F45AC7EB0FF2DEB1");
+            entity.HasKey(e => e.NroDetalleReceta).HasName("PK__Detalles__F45AC7EB03D9DDB3");
 
             entity.ToTable("Detalles_receta");
 
@@ -449,12 +443,8 @@ public partial class FarmaciaContext : DbContext
 
             entity.ToTable("Direccion");
 
-            entity.Property(e => e.IdDireccion)
-                .ValueGeneratedNever()
-                .HasColumnName("id_direccion");
-            entity.Property(e => e.IdBarrio)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("id_barrio");
+            entity.Property(e => e.IdDireccion).HasColumnName("id_direccion");
+            entity.Property(e => e.IdBarrio).HasColumnName("id_barrio");
             entity.Property(e => e.NomCalle)
                 .IsRequired()
                 .HasMaxLength(50)
@@ -470,7 +460,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<EmpleadoExterno>(entity =>
         {
-            entity.HasKey(e => e.IdEmpleadoExterno).HasName("PK__Empleado__C43FE3BC9B2B9B63");
+            entity.HasKey(e => e.IdEmpleadoExterno).HasName("PK__Empleado__C43FE3BC2A960899");
 
             entity.ToTable("Empleado_Externo");
 
@@ -492,7 +482,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<EmpleadosInterno>(entity =>
         {
-            entity.HasKey(e => e.IdEmpleado).HasName("PK__Empleado__88B51394048F7DDB");
+            entity.HasKey(e => e.IdEmpleado).HasName("PK__Empleado__88B5139467D5123C");
 
             entity.ToTable("Empleados_internos");
 
@@ -531,7 +521,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<EmpresaLogistica>(entity =>
         {
-            entity.HasKey(e => e.IdLogistica).HasName("PK__Empresa___889ADDD98DC19A6A");
+            entity.HasKey(e => e.IdLogistica).HasName("PK__Empresa___889ADDD9B59C6937");
 
             entity.ToTable("Empresa_Logistica");
 
@@ -552,7 +542,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Entrega>(entity =>
         {
-            entity.HasKey(e => e.IdEntrega).HasName("PK__Entregas__017C2C8A8898A0DE");
+            entity.HasKey(e => e.IdEntrega).HasName("PK__Entregas__017C2C8AFE3C0369");
 
             entity.Property(e => e.IdEntrega)
                 .ValueGeneratedNever()
@@ -592,7 +582,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<EstadoRespaldo>(entity =>
         {
-            entity.HasKey(e => e.IdEstadoRespaldo).HasName("PK__Estado_R__CD606870DC573A41");
+            entity.HasKey(e => e.IdEstadoRespaldo).HasName("PK__Estado_R__CD606870457CD4DC");
 
             entity.ToTable("Estado_Respaldo");
 
@@ -636,7 +626,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<FormaPago>(entity =>
         {
-            entity.HasKey(e => e.IdFormaPago).HasName("PK__Forma_Pa__DA9B39EE0D7EE7DA");
+            entity.HasKey(e => e.IdFormaPago).HasName("PK__Forma_Pa__DA9B39EE27949DC9");
 
             entity.ToTable("Forma_Pago");
 
@@ -652,13 +642,11 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Localidad>(entity =>
         {
-            entity.HasKey(e => e.IdLocalidad).HasName("PK__Localida__9A5E82AA4C485C3C");
+            entity.HasKey(e => e.IdLocalidad).HasName("PK__Localida__9A5E82AAD852864B");
 
             entity.ToTable("Localidad");
 
-            entity.Property(e => e.IdLocalidad)
-                .ValueGeneratedNever()
-                .HasColumnName("id_localidad");
+            entity.Property(e => e.IdLocalidad).HasColumnName("id_localidad");
             entity.Property(e => e.IdCiudad).HasColumnName("id_ciudad");
             entity.Property(e => e.Nombre)
                 .IsRequired()
@@ -674,7 +662,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Medico>(entity =>
         {
-            entity.HasKey(e => e.Matricula).HasName("PK__Medicos__30962D149DC0456A");
+            entity.HasKey(e => e.Matricula).HasName("PK__Medicos__30962D1451446A42");
 
             entity.Property(e => e.Matricula)
                 .ValueGeneratedNever()
@@ -699,7 +687,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Mese>(entity =>
         {
-            entity.HasKey(e => e.IdMes).HasName("PK__Meses__6C8AF537EE64A854");
+            entity.HasKey(e => e.IdMes).HasName("PK__Meses__6C8AF5379D0FCC64");
 
             entity.Property(e => e.IdMes)
                 .ValueGeneratedNever()
@@ -713,7 +701,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<ObrasSociale>(entity =>
         {
-            entity.HasKey(e => e.IdObraSocial).HasName("PK__Obras_so__89039DF6AF103BDB");
+            entity.HasKey(e => e.IdObraSocial).HasName("PK__Obras_so__89039DF65471919D");
 
             entity.ToTable("Obras_sociales");
 
@@ -736,11 +724,9 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Pai>(entity =>
         {
-            entity.HasKey(e => e.IdPais).HasName("PK__Pais__0941A3A7284F5955");
+            entity.HasKey(e => e.IdPais).HasName("PK__Pais__0941A3A77327902E");
 
-            entity.Property(e => e.IdPais)
-                .ValueGeneratedNever()
-                .HasColumnName("id_pais");
+            entity.Property(e => e.IdPais).HasColumnName("id_pais");
             entity.Property(e => e.Nombre)
                 .IsRequired()
                 .HasMaxLength(50)
@@ -750,7 +736,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Proveedor>(entity =>
         {
-            entity.HasKey(e => e.IdProveedor).HasName("PK__Proveedo__8D3DFE28B7E4386C");
+            entity.HasKey(e => e.IdProveedor).HasName("PK__Proveedo__8D3DFE28BC16DD53");
 
             entity.ToTable("Proveedor");
 
@@ -771,7 +757,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Recetum>(entity =>
         {
-            entity.HasKey(e => e.NroReceta).HasName("PK__Receta__665808162C5D3BE6");
+            entity.HasKey(e => e.NroReceta).HasName("PK__Receta__66580816648082C3");
 
             entity.Property(e => e.NroReceta)
                 .ValueGeneratedNever()
@@ -793,7 +779,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Reembolso>(entity =>
         {
-            entity.HasKey(e => e.IdReembolso).HasName("PK__Reembols__51DA51368D1B2C85");
+            entity.HasKey(e => e.IdReembolso).HasName("PK__Reembols__51DA513641093D00");
 
             entity.Property(e => e.IdReembolso)
                 .ValueGeneratedNever()
@@ -814,7 +800,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Respaldo>(entity =>
         {
-            entity.HasKey(e => e.IdRespaldo).HasName("PK__Respaldo__41B4F773A3A9B6E9");
+            entity.HasKey(e => e.IdRespaldo).HasName("PK__Respaldo__41B4F7737739A51B");
 
             entity.Property(e => e.IdRespaldo)
                 .ValueGeneratedNever()
@@ -837,12 +823,12 @@ public partial class FarmaciaContext : DbContext
             entity.HasOne(d => d.NroRecetaNavigation).WithMany(p => p.Respaldos)
                 .HasForeignKey(d => d.NroReceta)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Respaldos__nro_r__2B0A656D");
+                .HasConstraintName("FK__Respaldos__nro_r__2A164134");
         });
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.IdRol).HasName("PK__Roles__6ABCB5E0619B652B");
+            entity.HasKey(e => e.IdRol).HasName("PK__Roles__6ABCB5E0F2D64719");
 
             entity.Property(e => e.IdRol)
                 .ValueGeneratedNever()
@@ -856,7 +842,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<Sucursale>(entity =>
         {
-            entity.HasKey(e => e.IdSucursal).HasName("PK__Sucursal__8D4556B4B9A6C814");
+            entity.HasKey(e => e.IdSucursal).HasName("PK__Sucursal__8D4556B48A8B2A19");
 
             entity.Property(e => e.IdSucursal)
                 .ValueGeneratedNever()
@@ -910,7 +896,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<TipoContacto>(entity =>
         {
-            entity.HasKey(e => e.IdTipoContacto).HasName("PK__Tipo_con__CA854C0D56DACDB9");
+            entity.HasKey(e => e.IdTipoContacto).HasName("PK__Tipo_con__CA854C0D4D8AF402");
 
             entity.ToTable("Tipo_contacto");
 
@@ -926,7 +912,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<TipoUsuario>(entity =>
         {
-            entity.HasKey(e => e.IdTipoUsuario).HasName("PK__Tipo_Usu__B17D78C8CEC429F2");
+            entity.HasKey(e => e.IdTipoUsuario).HasName("PK__Tipo_Usu__B17D78C81D5A89E6");
 
             entity.ToTable("Tipo_Usuario");
 
@@ -942,7 +928,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<TiposSuministro>(entity =>
         {
-            entity.HasKey(e => e.IdTipoSuministro).HasName("PK__Tipos_Su__22748C156D49DB34");
+            entity.HasKey(e => e.IdTipoSuministro).HasName("PK__Tipos_Su__22748C155D924F4F");
 
             entity.ToTable("Tipos_Suministros");
 
@@ -958,7 +944,7 @@ public partial class FarmaciaContext : DbContext
 
         modelBuilder.Entity<TiposVentum>(entity =>
         {
-            entity.HasKey(e => e.IdTipoVenta).HasName("PK__Tipos_Ve__2D9502285EC71009");
+            entity.HasKey(e => e.IdTipoVenta).HasName("PK__Tipos_Ve__2D9502283D4D033C");
 
             entity.ToTable("Tipos_Venta");
 

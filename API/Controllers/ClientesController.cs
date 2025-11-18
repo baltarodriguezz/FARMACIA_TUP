@@ -150,8 +150,15 @@ namespace API_Farmacia.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                var mensaje = ex.InnerException?.Message ?? ex.Message;
+
+                Console.WriteLine("ERROR EN REGISTRO CLIENTE:");
+                Console.WriteLine(mensaje);
+                Console.WriteLine(ex.StackTrace);
+
+                return BadRequest($"Error al registrar cliente: {mensaje}");
             }
+
         }
 
 

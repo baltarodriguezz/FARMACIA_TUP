@@ -15,5 +15,16 @@ namespace API_Farmacia.Repositories.Interfaces
 
         Direccion CrearDireccion(Direccion direccion);
         Cliente CrearCliente(Cliente cliente);
+
+        public Barrio GetBarrioByNombre(string nombre);
+        public Barrio CrearBarrio(Barrio barrio);
+
+        Localidad GetLocalidadByNombre(string nombre);
+        Localidad CrearLocalidad(Localidad localidad);
+        Ciudad GetCiudadByNombre(string nombre);
+        Ciudad CrearCiudad(Ciudad ciudad);
+
+        Pai GetPaisByNombre(string nombre);
+        Pai CrearPais(Pai pais);
     }
 }

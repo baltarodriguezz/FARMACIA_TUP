@@ -845,6 +845,10 @@
             "type": "string",
             "nullable": true
           },
+          "pais": {
+            "type": "string",
+            "nullable": true
+          },
           "ciudad": {
             "type": "string",
             "nullable": true
