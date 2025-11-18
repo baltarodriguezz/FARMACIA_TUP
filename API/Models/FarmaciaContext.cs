@@ -449,8 +449,12 @@ public partial class FarmaciaContext : DbContext
 
             entity.ToTable("Direccion");
 
-            entity.Property(e => e.IdDireccion).HasColumnName("id_direccion");
-            entity.Property(e => e.IdBarrio).HasColumnName("id_barrio");
+            entity.Property(e => e.IdDireccion)
+                .ValueGeneratedNever()
+                .HasColumnName("id_direccion");
+            entity.Property(e => e.IdBarrio)
+                .ValueGeneratedOnAdd()
+                .HasColumnName("id_barrio");
             entity.Property(e => e.NomCalle)
                 .IsRequired()
                 .HasMaxLength(50)

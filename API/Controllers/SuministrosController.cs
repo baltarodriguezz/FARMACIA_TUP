@@ -65,6 +65,8 @@ namespace API_Farmacia.Controllers
                 return StatusCode(500, "Error Interno");
             }
         }
+        // En SuministrosController.cs
+
         // POST api/<SuministrosController>
         [HttpPost]
         public IActionResult Post(SuministroPostDTO suministro)
@@ -73,7 +75,9 @@ namespace API_Farmacia.Controllers
             {
                 var result = _service.Add(suministro);
                 if (result)
-                    return Ok("Suministro agregado con exito");
+                    // --- CORRECCIÓN AQUÍ ---
+                    // Enviar un objeto JSON, no texto plano
+                    return Ok(new { message = "Suministro agregado con exito" });
                 else
                     return BadRequest("Error al agregar el suministro");
             }
@@ -85,13 +89,15 @@ namespace API_Farmacia.Controllers
 
         // PUT api/<SuministrosController>/5
         [HttpPut("{id}")]
-        public IActionResult Put(SuministroPostDTO suministro , int id)
+        public IActionResult Put(SuministroPostDTO suministro, int id)
         {
             try
             {
-                var result = _service.Update(suministro , id);
+                var result = _service.Update(suministro, id);
                 if (result)
-                    return Ok("Suministro actualizado con exito");
+                    // --- CORRECCIÓN AQUÍ ---
+                    // Enviar un objeto JSON, no texto plano
+                    return Ok(new { message = "Suministro actualizado con exito" });
                 else
                     return BadRequest("Error al actualizar el suministro");
             }
@@ -100,24 +106,28 @@ namespace API_Farmacia.Controllers
                 return StatusCode(500, "Error Interno");
             }
         }
-        
+
         // DELETE api/<SuministrosController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id) // <-- CAMBIAR void POR IActionResult
         {
             try
             {
                 var result = _service.Delete(id);
                 if (result)
-                    Ok("Suministro eliminado con exito");
+                    // --- CORRECCIÓN AQUÍ ---
+                    return Ok(new { message = "Suministro eliminado con exito" });
                 else
-                    BadRequest("Error al eliminar el suministro");
+                    // --- CORRECCIÓN AQUÍ ---
+                    return BadRequest("Error al eliminar el suministro");
             }
             catch (Exception)
             {
-                StatusCode(500, "Error Interno");
+                // --- CORRECCIÓN AQUÍ ---
+                return StatusCode(500, "Error Interno");
             }
         }
+
         [HttpGet("TiposSuministros")]
         public IActionResult GetTiposSuministros()
         {

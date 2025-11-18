@@ -49,6 +49,7 @@
             <th class="p-3">Nombre</th>
             <th class="p-3">Precio</th>
             <th class="p-3">Stock</th>
+            <th class="p-3">Tipo</th>
             <th class="p-3">Acciones</th>
           </tr>
         </thead>
@@ -62,11 +63,14 @@
       <div class="bg-white rounded-xl p-6 w-96 shadow-xl">
         <h2 id="tituloModal" class="text-xl font-bold text-[#275c74] mb-4">Nuevo Producto</h2>
 
-        <form id="formProducto" class="flex flex-col gap-3">
+        <form id="formProducto" class="flex flex-col gap-3" novalidate>
 
           <input id="descripcion" placeholder="Descripción" class="border rounded p-2" />
           <input id="precioUnitario" placeholder="Precio" type="number" class="border rounded p-2" />
           <input id="stock" placeholder="Stock" type="number" class="border rounded p-2" />
+          <select id="tipo_suministro" class="border rounded p-2 bg-white">
+            <option value="">-- Seleccionar tipo --</option>
+            </select>
           <input id="codBarra" placeholder="Código de barras" type="number" class="border rounded p-2" />
           <input id="urlImagen" placeholder="Nombre imagen (opcional)" class="border rounded p-2" />
 
@@ -88,47 +92,65 @@
 
   </main>
 <script>
-// ==========================================================
-// ¡ASEGÚRATE DE QUE ESTA CONSTANTE ESTÉ DEFINIDA AQUÍ O EN api.js!
-// (Basado en tus otros archivos, esta es la constante que usas)
-// ==========================================================
-const API_BASE_URL = "https://localhost:7028";
-
-
 const modal = document.getElementById("modalProducto");
 const tabla = document.getElementById("tablaProductos");
 const tituloModal = document.getElementById("tituloModal");
 
 const inputDescripcion = document.getElementById("descripcion");
-const inputPrecio       = document.getElementById("precioUnitario");
-const inputStock        = document.getElementById("stock");
-const inputCodBarra     = document.getElementById("codBarra");
-const inputUrlImagen    = document.getElementById("urlImagen");
+const inputPrecio      = document.getElementById("precioUnitario");
+const inputStock       = document.getElementById("stock");
+const inputCodBarra    = document.getElementById("codBarra");
+const inputUrlImagen   = document.getElementById("urlImagen");
+const inputTipoSuministro = document.getElementById("tipo_suministro");
 
 let editId = null;
 let productosCache = [];
+let tiposCache = [];
 
 // ==================== CARGAR PRODUCTOS ====================
 async function cargarProductos() {
-    // Asumimos que apiGet ya incluye el /api/ o usa API_BASE_URL correctamente
-    const datos = await apiGet("Suministros"); 
+    const datos = await apiGet("Suministros");
     productosCache = datos;
 
     tabla.innerHTML = "";
 
     datos.forEach(p => {
+        // --- MODIFICACIÓN ---
+        // Buscar la descripción del tipo en el caché
+        const tipo = tiposCache.find(t => t.idTipoSuministro === p.idTipoSuministro);
+        const tipoDesc = tipo ? tipo.tipo : "N/A"; // Usar "N/A" si no se encuentra
+
         tabla.innerHTML += `
         <tr>
             <td class="p-3">${p.idSuministro}</td>
             <td class="p-3">${p.descripcion}</td>
             <td class="p-3">$${p.precioUnitario}</td>
             <td class="p-3">${p.stock}</td>
+            <td class="p-3">${tipoDesc}</td>
             <td class="p-3 flex gap-2">
                 <button onclick="editar(${p.idSuministro})" class="text-blue-600 hover:underline">Editar</button>
                 <button onclick="eliminar(${p.idSuministro})" class="text-red-600 hover:underline">Eliminar</button>
             </td>
         </tr>`;
     });
+}
+async function cargarTiposSuministro() {
+    try {
+        tiposCache = await apiGet("Suministros/TiposSuministros");
+        
+        // Limpiamos por si acaso
+        inputTipoSuministro.innerHTML = '<option value="">-- Seleccionar tipo --</option>'; 
+        
+        // Llenamos el combo
+        tiposCache.forEach(tipo => {
+            const opcion = new Option(tipo.tipo, tipo.idTipoSuministro);
+            inputTipoSuministro.add(opcion);
+        });
+
+    } catch (err) {
+        console.error("No se pudieron cargar los tipos de suministro", err);
+        alert("Error crítico: No se pudieron cargar los tipos de suministro.");
+    }
 }
 
 // ==================== NUEVO ====================
@@ -139,6 +161,7 @@ document.getElementById("btnNuevo").addEventListener("click", () => {
     inputDescripcion.value = "";
     inputPrecio.value      = "";
     inputStock.value       = "";
+    inputTipoSuministro.value = "";
     inputCodBarra.value    = "";
     inputUrlImagen.value   = "";
 
@@ -152,59 +175,75 @@ document.getElementById("btnCancelar").addEventListener("click", () => {
 
 // ==================== GUARDAR ====================
 document.getElementById("formProducto").addEventListener("submit", async e => {
-    e.preventDefault();
+    e.preventDefault(); // Siempre prevenir el envío por defecto
 
+    // --- NUEVA VALIDACIÓN DETALLADA ---
+
+    // 1. Obtener todos los valores
     const descripcion = inputDescripcion.value.trim();
-    const precio      = parseFloat(inputPrecio.value);
-    const stock       = parseInt(inputStock.value);
-    
-    // --- (MODIFICACIÓN PASADA: enviar null si está vacío) ---
-    const codBarra = parseInt(inputCodBarra.value || "0");    
-    const urlfoto     = inputUrlImagen.value || "";
+    const precioStr = inputPrecio.value;
+    const stockStr = inputStock.value;
+    const tipoSuministroIdStr = inputTipoSuministro.value;
+    const codBarraStr = inputCodBarra.value;
+    const urlfoto = inputUrlImagen.value.trim();
 
-    if (!descripcion || isNaN(precio) || isNaN(stock)) {
-        alert("Completá descripción, precio y stock correctamente.");
+    // 2. Validar campo por campo
+    if (!descripcion) {
+        alert("Por favor, completá la Descripción.");
         return;
     }
-    
-    // --- CORRECCIÓN AQUÍ (Añadido /api/) ---
-    let url = `${API_BASE_URL}/api/Suministros`;
-    let method = "POST";
 
-    if (editId !== null) {
-        method = "PUT";
-        // --- CORRECCIÓN AQUÍ (Añadido /api/) ---
-        url = `${API_BASE_URL}/api/Suministros/${editId}`;
+    const precio = parseFloat(precioStr);
+    if (!precioStr || isNaN(precio) || precio <= 0) {
+        alert("Por favor, ingresá un Precio válido (mayor a 0).");
+        return;
     }
 
+    const stock = parseInt(stockStr);
+    if (!stockStr || isNaN(stock) || stock < 0) {
+        alert("Por favor, ingresá un Stock válido (0 o más).");
+        return;
+    }
+
+    const tipoSuministroId = parseInt(tipoSuministroIdStr);
+    if (!tipoSuministroIdStr || isNaN(tipoSuministroId)) {
+        alert("Por favor, seleccioná un Tipo de Suministro.");
+        return;
+    }
+
+    const codBarra = parseInt(codBarraStr);
+    if (!codBarraStr || isNaN(codBarra) || codBarra <= 0) {
+        alert("Por favor, ingresá un Código de Barras válido (mayor a 0).");
+        return;
+    }
+
+    if (!urlfoto) {
+        alert("Por favor, completá la URL de la Imagen.");
+        return;
+    }
+
+    // --- FIN DE LA VALIDACIÓN ---
+
+    // 3. Si todo está OK, crear el objeto de datos
     const data = {
-        // (Tuve que cambiar tu DTO a int? para codBarra, si no lo hiciste, usa 0)
-        codBarra: codBarra, 
+        codBarra: codBarra,
         descripcion: descripcion,
         precioUnitario: precio,
-        idTipoSuministro: 1,
-        idTipoVenta: 1,
+        idTipoSuministro: tipoSuministroId,
+        idTipoVenta: 1, // Mantenemos el '1' que tenías
         stock: stock,
         urlImagen: urlfoto
     };
 
+    // 4. Enviar a la API
     try {
-        const resp = await fetch(url, {
-            method,
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        });
-
-        const text = await resp.text();
-
-        if (!resp.ok) {
-            // Ahora la alerta mostrará el 404
-            alert(`Error al guardar (${resp.status}): ${text}`); 
-            return;
+        if (editId === null) {
+            await apiPost("Suministros", data);
+        } else {
+            await apiPut(`Suministros/${editId}`, data);
         }
-
     } catch (err) {
-        alert("No se pudo conectar con el servidor.");
+        alert("Error al guardar: " + err.message);
         console.error(err);
         return;
     }
@@ -213,18 +252,17 @@ document.getElementById("formProducto").addEventListener("submit", async e => {
     await cargarProductos();
 });
 
-
 // ==================== EDITAR ====================
 window.editar = async id => {
     editId = id;
     tituloModal.textContent = "Editar Producto";
 
-    // Asumimos que apiGet ya incluye el /api/
-    const p = await apiGet(`Suministros/${id}`); 
+    const p = await apiGet(`Suministros/${id}`);
 
     inputDescripcion.value = p.descripcion;
     inputPrecio.value      = p.precioUnitario;
     inputStock.value       = p.stock;
+    inputTipoSuministro.value = p.idTipoSuministro;
     inputCodBarra.value    = p.codBarra;
     inputUrlImagen.value   = p.urlImagen;
 
@@ -236,18 +274,12 @@ window.eliminar = async id => {
     if (!confirm("¿Seguro que deseas eliminar este producto?")) return;
 
     try {
-        // --- CORRECCIÓN AQUÍ (Añadido /api/) ---
-        const resp = await fetch(`${API_BASE_URL}/api/Suministros/${id}`, { method: "DELETE" });
-        const message = await resp.text();
-
-        if (!resp.ok) {
-            alert(`No se pudo eliminar (${resp.status}): ${message}`);
-            return;
-        }
+        // Usamos la función helper de api.js
+        await apiDelete(`Suministros/${id}`);
 
     } catch (err) {
         console.error(err);
-        alert("Error de red al eliminar.");
+        alert("Error de red al eliminar: " + err.message);
         return;
     }
 
@@ -255,9 +287,12 @@ window.eliminar = async id => {
 };
 
 // ==================== INICIO ====================
-cargarProductos();
+async function iniciarPagina() {
+    await cargarTiposSuministro();
+    await cargarProductos();
+}
+iniciarPagina();
 </script>
-
 
 
 

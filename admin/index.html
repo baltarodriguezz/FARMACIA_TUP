@@ -74,6 +74,39 @@
       </div>
     </section>
 
+     <!-- GRAFICO VENTAS POR MES -->
+      <section class="bg-white rounded-xl shadow p-6 mb-6">
+        <h2 class="text-xl font-semibold text-[#275c74] mb-4">Ventas por mes (comparación de años)</h2>
+        <canvas id="chartVentasMes" class="w-full max-w-2xl h-40 mx-auto"></canvas>
+      </section>
+       <!-- GRAFICO PRODUCTOS POR CATEGORÍA -->
+      <section class="bg-white rounded-xl shadow p-6 mb-6">
+        <h2 class="text-xl font-semibold text-[#275c74] mb-4">Productos más vendidos por categoría</h2>
+        <canvas id="chartCategorias" class="w-full max-w-xl h-56 mx-auto"></canvas>
+      </section>
+       <!-- STOCK BAJO -->
+      <section class="bg-white rounded-xl shadow p-6 mb-6">
+        <h2 class="text-xl font-semibold text-[#275c74] mb-4">Productos con stock bajo</h2>
+        <table class="w-full border-collapse text-sm">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="p-3 text-left">Producto</th>
+              <th class="p-3 text-left">Código</th>
+              <th class="p-3 text-right">Stock</th>
+            </tr>
+          </thead>
+          <tbody id="tablaStockBajo" class="divide-y"></tbody>
+        </table>
+        <p id="mensajeStockBajo" class="mt-3 text-sm text-gray-500 hidden">
+          No hay productos con stock por debajo del umbral.
+        </p>
+      </section>
+      <!-- GRAFICO VENTAS POR FORMA DE PAGO -->
+      <section class="bg-white rounded-xl shadow p-6 mb-6">
+        <h2 class="text-xl font-semibold text-[#275c74] mb-4">Ventas por forma de pago</h2>
+        <canvas id="chartFormaPago" class="w-full max-w-xl h-56 mx-auto"></canvas>
+      </section>
+
     <!-- TABLA DE VENTAS -->
     <section class="bg-white rounded-xl shadow p-6">
       <h2 class="text-xl font-semibold text-[#275c74] mb-4">Últimas ventas</h2>
@@ -96,53 +129,371 @@
   <!-- SCRIPT API -->
   <script src="../assets/js/api.js"></script>
 
+  <!-- LIBRERÍA DE GRÁFICOS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <!-- SCRIPT DASHBOARD -->
-  <script>
-    document.addEventListener("DOMContentLoaded", async () => {
-      try {
-        const clientes    = await apiGet("Clientes");
-        const suministros = await apiGet("Suministros");
-        const facturas    = await apiGet("Factura");
+  <script src="../assets/js/api.js"></script>
 
-        // Tarjetas
-        document.getElementById("totalProductos").textContent = suministros.length;
-        document.getElementById("totalClientes").textContent  = clientes.length;
-        document.getElementById("totalVentas").textContent    = facturas.length;
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        const totalIngresos = facturas.reduce((acc, f) => acc + f.total, 0);
-        document.getElementById("totalIngresos").textContent =
-          "$" + totalIngresos.toLocaleString("es-AR");
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      const clientesRespuesta = await apiGet("Clientes");
+      const suministros = await apiGet("Suministros");
+      const facturas = await apiGet("Factura");
 
-        // Crear un diccionario de clientes para lookup
-        const mapClientes = {};
-        clientes.forEach(c => {
-          mapClientes[c.idCliente] = `${c.nombre} ${c.apellido}`;
+      // Obtenemos el array completo de usuarios (clientes + admins, etc.)
+      const clientesCompletos = Array.isArray(clientesRespuesta.data) 
+          ? clientesRespuesta.data 
+          : Array.isArray(clientesRespuesta) ? clientesRespuesta : [];
+
+      // --- CORRECCIÓN: Filtrar solo clientes (Tipo Usuario 1) ---
+      const clientesReales = clientesCompletos.filter(c => c.idTipoUsuario === 1);
+
+      // Tarjetas
+      document.getElementById("totalProductos").textContent = suministros.length;
+      document.getElementById("totalClientes").textContent = clientesReales.length; // ¡Arreglado!
+      document.getElementById("totalVentas").textContent = facturas.length;
+
+      const totalIngresos = facturas.reduce((acc, f) => acc + f.total, 0);
+      document.getElementById("totalIngresos").textContent =
+        "$" + totalIngresos.toLocaleString("es-AR");
+
+      
+      // --- INICIO CÓDIGO DE GRÁFICOS ---
+        
+      // GRÁFICO: VENTAS POR MES (COMPARACIÓN DE AÑOS)
+      const ahora = new Date();
+      const anioActual = ahora.getFullYear();
+      const aniosComparar = [anioActual - 2, anioActual - 1, anioActual];
+
+      const ventasPorMesPorAnio = {};
+      aniosComparar.forEach(anio => {
+        ventasPorMesPorAnio[anio] = new Array(12).fill(0);
+      });
+
+      facturas.forEach(f => {
+        if (!f.fechaEmision) return;
+        const fecha = new Date(f.fechaEmision);
+        if (isNaN(fecha.getTime())) return;
+
+        const anio = fecha.getFullYear();
+        if (!ventasPorMesPorAnio[anio]) return;
+
+        const mes = fecha.getMonth();
+        ventasPorMesPorAnio[anio][mes] += Number(f.total || 0);
+      });
+
+      const etiquetasMeses = [
+        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+      ];
+
+      const canvas = document.getElementById("chartVentasMes");
+      if (canvas) {
+        const ctx = canvas.getContext("2d");
+
+        const coloresBorde = ["#22c55e", "#275c74", "#12b1be"];
+        const coloresFondo = [
+          "rgba(34, 197, 94, 0.35)",
+          "rgba(39, 92, 116, 0.35)",
+          "rgba(18, 177, 190, 0.35)"
+        ];
+
+        const datasets = aniosComparar.map((anio, index) => ({
+          label: `Ventas ${anio}`,
+          data: ventasPorMesPorAnio[anio],
+          backgroundColor: coloresFondo[index] || "rgba(148, 163, 184, 0.35)",
+          borderColor: coloresBorde[index] || "#94a3b8",
+          borderWidth: 1
+        }));
+
+        new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: etiquetasMeses,
+            datasets
+          },
+          options: {
+            responsive: false,
+            scales: {
+              y: {
+                min: 500000,
+                max: 6000000,
+                ticks: {
+                  stepSize: 500000,
+                  callback: value => {
+                    const n = Number(value);
+                    if (n === 500000 || n % 1000000 === 0) {
+                      return "$" + n.toLocaleString("es-AR");
+                    }
+                    return "";
+                  }
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                display: true
+              }
+            }
+          }
         });
+      }
 
-        // Tabla ventas
-        const tbody = document.getElementById("tablaVentas");
-        tbody.innerHTML = "";
+        // GRÁFICO: PRODUCTOS MÁS VENDIDOS POR CATEGORÍA
+      const tiposSuministroNombres = {
+        1: "Medicamento",
+        2: "Perfume",
+        3: "Dermocosmética",
+        4: "Cuidado Personal",
+        5: "Bebés",
+        6: "Cabello"
+      };
 
-        facturas.slice(0, 5).forEach(f => {
-          const nombreCompleto = mapClientes[f.idCliente] ?? "Cliente desconocido";
-          const fecha = f.fechaEmision.split("T")[0];
-          const total = f.total;
+      const mapSuministros = {};
+      suministros.forEach(s => {
+        mapSuministros[s.idSuministro] = s;
+      });
 
-          tbody.innerHTML += `
+      const cantidadPorCategoria = {};
+
+      facturas.forEach(f => {
+        if (!Array.isArray(f.detalles)) return;
+
+        f.detalles.forEach(d => {
+          const s = mapSuministros[d.idSuministro];
+          if (!s) return;
+
+          let tipoId = null;
+          if (typeof s.idTipoSuministro !== "undefined") {
+            tipoId = s.idTipoSuministro;
+          } else if (typeof s.id_tipo_suministro !== "undefined") {
+            tipoId = s.id_tipo_suministro;
+          }
+
+          const categoria =
+            (s.tipoSuministro && s.tipoSuministro.tipo) ||
+            s.tipo ||
+            (tipoId != null
+              ? (tiposSuministroNombres[tipoId] || `Tipo ${tipoId}`)
+              : "Sin categoría");
+
+          const cantidad = Number(d.cantidad || 0);
+          if (!cantidadPorCategoria[categoria]) {
+            cantidadPorCategoria[categoria] = 0;
+          }
+          cantidadPorCategoria[categoria] += cantidad;
+        });
+      });
+
+      let labelsCategorias = Object.keys(cantidadPorCategoria);
+      let dataCategorias = labelsCategorias.map(c => cantidadPorCategoria[c]);
+
+      if (labelsCategorias.length > 6) {
+        const combinados = labelsCategorias.map((label, idx) => ({
+          label,
+          value: dataCategorias[idx]
+        }));
+        combinados.sort((a, b) => b.value - a.value);
+
+        const top = combinados.slice(0, 5);
+        const resto = combinados.slice(5)
+          .reduce((acc, item) => acc + item.value, 0);
+
+        labelsCategorias = top.map(x => x.label);
+        dataCategorias = top.map(x => x.value);
+
+        if (resto > 0) {
+          labelsCategorias.push("Otras");
+          dataCategorias.push(resto);
+        }
+      }
+
+      const canvasCategorias = document.getElementById("chartCategorias");
+      if (canvasCategorias && labelsCategorias.length > 0) {
+        const ctxCat = canvasCategorias.getContext("2d");
+
+        new Chart(ctxCat, {
+          type: "pie",
+          data: {
+            labels: labelsCategorias,
+            datasets: [
+              {
+                data: dataCategorias,
+                backgroundColor: [
+                  "#0ea5e9",
+                  "#22c55e",
+                  "#f97316",
+                  "#a855f7",
+                  "#e11d48",
+                  "#6366f1",
+                  "#6b7280"
+                ],
+                borderColor: "#ffffff",
+                borderWidth: 1
+              }
+            ]
+          },
+          options: {
+            responsive: false,
+            plugins: {
+              legend: {
+                position: "bottom"
+              }
+            }
+          }
+        });
+      }
+
+        // GRÁFICO: VENTAS POR FORMA DE PAGO
+      const formasPago = {
+        1: "Efectivo",
+        2: "Débito",
+        3: "Crédito 1 pago",
+        4: "Crédito 3 cuotas",
+        5: "Crédito 6 cuotas",
+        6: "Transferencia",
+        7: "Mercado Pago"
+      };
+
+      const montosPorForma = {};
+
+      facturas.forEach(f => {
+        const id = f.idFormaPago;
+        if (id == null) return;
+
+        const monto = Number(f.total || 0);
+        if (!montosPorForma[id]) {
+          montosPorForma[id] = 0;
+        }
+        montosPorForma[id] += monto;
+      });
+
+      let labelsForma = Object.keys(montosPorForma);
+      let dataForma = labelsForma.map(id => montosPorForma[id]);
+
+      labelsForma = labelsForma.map(id => {
+        const num = Number(id);
+        return formasPago[num] || `Forma ${id}`;
+      });
+
+      const canvasForma = document.getElementById("chartFormaPago");
+      if (canvasForma && labelsForma.length > 0) {
+        const ctxForma = canvasForma.getContext("2d");
+
+        new Chart(ctxForma, {
+          type: "pie",
+          data: {
+            labels: labelsForma,
+            datasets: [
+              {
+                data: dataForma,
+                backgroundColor: [
+                  "#22c55e",
+                  "#0ea5e9",
+                  "#f97316",
+                  "#a855f7",
+                  "#e11d48",
+                  "#6366f1",
+                  "#6b7280"
+                ],
+                borderColor: "#ffffff",
+                borderWidth: 1
+              }
+            ]
+          },
+          options: {
+            responsive: false,
+            plugins: {
+              legend: {
+                position: "bottom"
+              }
+            }
+          }
+        });
+      }
+
+        // STOCK BAJO
+      const UMBRAL_STOCK = 10;
+
+      const productosStockBajo = suministros
+        .filter(s => typeof s.stock === "number" && s.stock <= UMBRAL_STOCK)
+        .sort((a, b) => a.stock - b.stock);
+
+      const cuerpoStock = document.getElementById("tablaStockBajo");
+      const mensajeStock = document.getElementById("mensajeStockBajo");
+
+      if (cuerpoStock) {
+        cuerpoStock.innerHTML = "";
+
+        if (productosStockBajo.length === 0) {
+          if (mensajeStock) {
+            mensajeStock.classList.remove("hidden");
+          }
+        } else {
+          if (mensajeStock) {
+            mensajeStock.classList.add("hidden");
+          }
+
+          productosStockBajo.forEach(s => {
+            const codigo = s.codBarra || s.cod_barra || "";
+            const stock = typeof s.stock === "number" ? s.stock : "";
+            const nombre = s.descripcion || "Sin descripción";
+
+            const fila = document.createElement("tr");
+            fila.innerHTML = `
+                <td class="p-3">${nombre}</td>
+                <td class="p-3">${codigo}</td>
+                <td class="p-3 text-right">${stock}</td>
+              `;
+            cuerpoStock.appendChild(fila);
+          });
+        }
+      }
+    
+      // --- FIN CÓDIGO DE GRÁFICOS ---
+
+
+      // Crear un diccionario de clientes para lookup
+      // Usamos clientesCompletos para que la tabla muestre el nombre correcto
+      // incluso si la factura es de un admin (tipo 3)
+      const mapClientes = {};
+      clientesCompletos.forEach(c => {
+        mapClientes[c.idCliente] = `${c.nombre} ${c.apellido}`;
+      });
+
+      // Ordenar las facturas por fecha (de más nueva a más vieja)
+      const facturasOrdenadas = [...facturas].sort((a, b) => {
+          return new Date(b.fechaEmision) - new Date(a.fechaEmision);
+      });
+
+      // Tabla ventas
+      const tbody = document.getElementById("tablaVentas");
+      tbody.innerHTML = "";
+
+      // Usar el array ordenado
+      facturasOrdenadas.slice(0, 5).forEach(f => {
+        const nombreCompleto = mapClientes[f.idCliente] ?? "Cliente desconocido";
+        const fecha = f.fechaEmision.split("T")[0];
+        const total = f.total;
+
+        tbody.innerHTML += `
             <tr>
               <td class="p-3">${nombreCompleto}</td>
               <td class="p-3">${fecha}</td>
-              <td class="p-3 text-[#12b1be] font-semibold">$${total}</td>
+              <td class="p-3 text-[#12b1be] font-semibold">$${total.toLocaleString("es-AR")}</td>
             </tr>
           `;
-        });
+      });
 
-      } catch (err) {
-        console.error("Error cargando dashboard:", err);
-        alert("Error al conectarse con la API");
-      }
-    });
-  </script>
-
+    } catch (err) {
+      console.error("Error cargando dashboard:", err);
+      alert("Error al conectarse con la API");
+    }
+  });
+</script>
 </body>
 </html>
