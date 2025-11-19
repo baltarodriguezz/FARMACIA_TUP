@@ -7,8 +7,7 @@ function crearCardCuidado(s) {
 
   // 1. Crear el elemento
   const cardEl = document.createElement('div');
- cardEl.className = "snap-start w-64 bg-white border border-gray-200 rounded-xl shadow p-5 flex-shrink-0 hover:shadow-xl transition flex flex-col";
-
+  cardEl.className = "snap-start w-64 bg-white border border-gray-200 rounded-xl shadow p-5 flex-shrink-0 hover:shadow-xl transition h-47 flex flex-col";
 
   // 2. Definir su HTML (sin onclick)
   cardEl.innerHTML = `

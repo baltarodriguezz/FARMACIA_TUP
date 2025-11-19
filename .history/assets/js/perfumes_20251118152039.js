@@ -16,7 +16,8 @@ async function cargarPerfumes() {
 
             const card = document.createElement("div");
             card.className =
-    "snap-start bg-white border border-gray-200 rounded-xl shadow-sm flex-shrink-0 w-64 p-5 hover:shadow-xl transition h-[430px] flex flex-col";
+                "snap-start bg-white border border-gray-200 rounded-xl shadow-sm flex-shrink-0 w-64 p-5 hover:shadow-xl transition h-47 flex flex-col";
+
             // 1. HTML sin el "onclick"
             card.innerHTML = `
                 <div class="flex-1">

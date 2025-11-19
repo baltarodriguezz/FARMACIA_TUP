@@ -15,8 +15,9 @@ async function cargarPerfumes() {
             const imagen = p.urlImagen || "../assets/img/default.jpg";
 
             const card = document.createElement("div");
-            card.className =
-    "snap-start bg-white border border-gray-200 rounded-xl shadow-sm flex-shrink-0 w-64 p-5 hover:shadow-xl transition h-[430px] flex flex-col";
+             cardEl.className = "snap-start w-64 bg-white border border-gray-200 rounded-xl shadow p-5 flex-shrink-0 hover:shadow-xl transition flex flex-col";
+
+
             // 1. HTML sin el "onclick"
             card.innerHTML = `
                 <div class="flex-1">

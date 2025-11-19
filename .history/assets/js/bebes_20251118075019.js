@@ -22,7 +22,7 @@ function cargarCarrusel1(productos) {
   if (!cont) return;
   cont.innerHTML = "";
   productos.slice(0, 4).forEach(p => {
-    cont.appendChild(crearCardCarrusel(p));
+    cont.appendChild(crearCardCarrusel(p)); // Usamos appendChild
   });
 }
 
@@ -31,7 +31,7 @@ function cargarMedPediatrica(productos) {
   if (!cont) return;
   cont.innerHTML = "";
   productos.slice(4, 7).forEach(p => {
-    cont.appendChild(crearCardGrilla(p));
+    cont.appendChild(crearCardGrilla(p)); // Usamos appendChild
   });
 }
 
@@ -40,11 +40,11 @@ function cargarCarrusel3(productos) {
   if (!cont) return;
   cont.innerHTML = "";
   productos.slice(7, 10).forEach(p => {
-    cont.appendChild(crearCardCarrusel(p));
+    cont.appendChild(crearCardCarrusel(p)); // Usamos appendChild
   });
 }
 
-// --- TEMPLATES DE CARDS ---
+// --- TEMPLATES DE CARDS (CORREGIDOS) ---
 
 function crearCardCarrusel(p) {
   const img = p.urlImagen && p.urlImagen.startsWith("http")
@@ -52,7 +52,7 @@ function crearCardCarrusel(p) {
     : `../assets/img/${p.urlImagen || "default.jpg"}`;
 
   const cardEl = document.createElement('div');
-  cardEl.className = "snap-start w-64 bg-white border border-gray-200 rounded-xl shadow p-5 flex-shrink-0 hover:shadow-xl transition flex flex-col";
+  cardEl.className = "snap-start bg-white border border-white/60 rounded-2xl shadow-xl flex-shrink-0 w-64 p-5 hover:shadow-2xl hover:shadow-2xl hover:shadow-black/20 hover:-translate-y-1 transition-all duration-500 ease-out flex flex-col";
 
   cardEl.innerHTML = `
     <div class="flex-1">
@@ -81,7 +81,7 @@ function crearCardGrilla(p) {
     : `../assets/img/${p.urlImagen || "default.jpg"}`;
 
   const cardEl = document.createElement('div');
-  cardEl.className = "bg-white rounded-2xl w-80 p-6 flex flex-col items-center text-center shadow-xl hover:shadow-2xl hover:shadow-black/20 hover:scale-[1.02] transition-all duration-500 ease-out flex flex-col";
+  cardEl.className = "bg-white rounded-2xl w-80 p-6 flex flex-col items-center text-center shadow-xl hover:shadow-2xl hover:shadow-black/20 hover:scale-[1.02] transition-all duration-500 ease-out h-47 flex flex-col";
 
   cardEl.innerHTML = `
     <div class="flex-1 flex flex-col items-center">
